@@ -60,7 +60,7 @@ class AuthorizationTokenModel : NSObject {
         
         let request = NSMutableURLRequest(url: URL(string: strUrl)!)
         request.httpMethod = "GET"
-        print("FETCH : " , request.url)
+        print("FETCH : " , request.url as Any)
         
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let dataTask = session.dataTask(with: request as URLRequest)

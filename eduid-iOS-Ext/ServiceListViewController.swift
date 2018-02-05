@@ -175,10 +175,10 @@ class ServiceListViewController: UIViewController {
     func authRequest(adress : URL , homepageLink : String){
         
         let authToken = AuthorizationTokenModel()
-        print(self.token?.giveAccessToken()!)
+        print(self.token?.giveAccessToken()! as Any)
         let idToken = self.token?.giveTokenID()?.last
-        print(self.token?.giveTokenID()?.first)
-        print(self.token?.giveTokenID()?.last)
+        print(self.token?.giveTokenID()?.first as Any)
+        print(self.token?.giveTokenID()?.last as Any)
         let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.apString! , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKey!["public"]?.getKid())! , keyToSign: self.sessionKey!["private"]!)
         print("ASSERT : \(assert!)")
         

@@ -235,7 +235,6 @@
 		68199B271FCD8A8B001AE0D0 = {
 			isa = PBXGroup;
 			children = (
-				68DD33822023315B00F824EE /* SectionController */,
 				68199B321FCD8A8B001AE0D0 /* eduid-iOS */,
 				68199B4A1FCD8A8B001AE0D0 /* eduid-iOSTests */,
 				68199B551FCD8A8B001AE0D0 /* eduid-iOSUITests */,
@@ -401,13 +400,6 @@
 				68ADAD002023378B006491C2 /* ProfileEntry.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		68DD33822023315B00F824EE /* SectionController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SectionController;
 			sourceTree = "<group>";
 		};
 		68DD33832023316400F824EE /* SectionController */ = {

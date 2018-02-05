@@ -29,8 +29,8 @@ class UserInfoModel : NSObject {
             return
         }
         
-        let request = NSMutableURLRequest(url: self.userinfoURI!)
-        let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+//        let request = NSMutableURLRequest(url: self.userinfoURI!)
+//        let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         
         request.httpMethod = "GET"
 //        request.addValue(, forHTTPHeaderField: <#T##String#>)
