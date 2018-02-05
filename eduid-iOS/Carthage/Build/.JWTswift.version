@@ -1,0 +1,9 @@
+{
+  "commitish" : "0.0.26",
+  "iOS" : [
+    {
+      "name" : "JWTswift",
+      "hash" : "e34bb54867f5945008ebcf80e301b022a23d4d9dc35844719aba7e51f490096f"
+    }
+  ]
+}

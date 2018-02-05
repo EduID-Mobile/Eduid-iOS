@@ -1,0 +1,11 @@
+framework module NVActivityIndicatorViewAppExtension {
+  umbrella header "NVActivityIndicatorViewAppExtension.h"
+
+  export *
+  module * { export * }
+}
+
+module NVActivityIndicatorViewAppExtension.Swift {
+    header "NVActivityIndicatorViewAppExtension-Swift.h"
+    requires objc
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Counter" representedClassName="Counter" syncable="YES" codeGenerationType="class">
+        <attribute name="counter" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="EduidConfiguration" representedClassName="EduidConfiguration" syncable="YES" codeGenerationType="class">
+        <attribute name="auth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endSession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introspection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="issuer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jwksUri" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="revocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userInfo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Protocols" representedClassName="Protocols" syncable="YES" codeGenerationType="class">
+        <attribute name="baseurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="protocol_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tokens" representedClassName="Tokens" syncable="YES" codeGenerationType="class">
+        <attribute name="accessToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tokenType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserServices" representedClassName="UserServices" syncable="YES" codeGenerationType="class">
+        <attribute name="baseurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rsd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="token_target" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Counter" positionX="-36" positionY="45" width="128" height="60"/>
+        <element name="EduidConfiguration" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Protocols" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Tokens" positionX="-36" positionY="9" width="128" height="105"/>
+        <element name="UserServices" positionX="-18" positionY="27" width="128" height="120"/>
+    </elements>
+</model>

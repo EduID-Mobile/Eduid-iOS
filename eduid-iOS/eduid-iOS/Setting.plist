@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RSDprotocol</key>
+	<string>https://eduid.htwchur.ch/rsd/index.php</string>
+	<key>ConfigURL</key>
+	<string>https://eduid.htwchur.ch/oidc/.well-known/openid-configuration</string>
+	<key>ClientID</key>
+	<string>ios dev</string>
+	<key>ClientPass</key>
+	<string>EsfafWyegBorIdKonWacVobOshNig9</string>
+</dict>
+</plist>
