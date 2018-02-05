@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 import JWTswift
-
+//DONT USED THIS CLASS ANYMORE
 class ServiceListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,10 +22,6 @@ class ServiceListViewController: UIViewController {
     var apString : String?
     
     private var sessionKey : [String : Key]?
-    
-    
-    //    private var availableServices : [String] = [String]()
-    
     private var authprotocols : [String]?
     
     override func viewDidLoad() {

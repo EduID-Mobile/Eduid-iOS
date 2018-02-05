@@ -252,9 +252,7 @@ class ExtensionLoginViewController: UIViewController {
         self.tokenModel?.downloadSuccess.listener = nil
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toProfileExtension", sender: self)
-
         }
-//        self.performSegue(withIdentifier: "toProfileExtension", sender: self)
     }
     
     func loginUnsuccessful(){

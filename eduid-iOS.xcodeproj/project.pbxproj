@@ -339,15 +339,15 @@
 				68CD9A462012250E000A2407 /* appicontest.png */,
 				686BF8771FD02FFF00751B08 /* eduid-iOS-Ext.entitlements */,
 				6810E97920171CFA00E020E6 /* ExtensionLoginViewController.swift */,
-				686BF8691FD02DF000751B08 /* ServiceListViewController.swift */,
+				687917132024BEDB00E529C2 /* ServiceViewController.swift */,
+				687917172024CA4900E529C2 /* ServiceSectionController.swift */,
+				687917152024BF2900E529C2 /* Service.swift */,
+				687917192024CF3A00E529C2 /* ServiceCell.swift */,
+				6879171A2024CF3A00E529C2 /* ServiceCell.xib */,
 				686BF86B1FD02DF000751B08 /* MainInterface.storyboard */,
 				686BF86E1FD02DF000751B08 /* Info.plist */,
 				68531EE920220EF8008E79CE /* ExtensionAssets.xcassets */,
-				687917152024BF2900E529C2 /* Service.swift */,
-				687917132024BEDB00E529C2 /* ServiceViewController.swift */,
-				687917172024CA4900E529C2 /* ServiceSectionController.swift */,
-				687917192024CF3A00E529C2 /* ServiceCell.swift */,
-				6879171A2024CF3A00E529C2 /* ServiceCell.xib */,
+				686BF8691FD02DF000751B08 /* ServiceListViewController.swift */,
 			);
 			path = "eduid-iOS-Ext";
 			sourceTree = "<group>";

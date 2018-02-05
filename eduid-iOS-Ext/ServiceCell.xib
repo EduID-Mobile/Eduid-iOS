@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,26 +22,27 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pu-3p-Z41">
-                        <rect key="frame" x="16" y="0.0" width="307" height="50"/>
+                        <rect key="frame" x="16" y="0.0" width="271" height="50"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-tX-pQu">
-                        <rect key="frame" x="300" y="0.0" width="39" height="50"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-tX-pQu">
+                        <rect key="frame" x="305" y="0.0" width="34" height="50"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                         <state key="normal" title="&gt;"/>
                     </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailingMargin" secondItem="7pu-3p-Z41" secondAttribute="trailing" id="1BM-RV-saG"/>
                 <constraint firstAttribute="trailing" secondItem="rLr-tX-pQu" secondAttribute="trailing" id="5fE-Wc-Oar"/>
                 <constraint firstAttribute="bottom" secondItem="rLr-tX-pQu" secondAttribute="bottom" id="LU6-TX-KqS"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="Piq-Q2-qrg"/>
                 <constraint firstItem="rLr-tX-pQu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="W2G-9F-Yi0"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottomMargin" id="ky1-rm-XKm"/>
+                <constraint firstItem="rLr-tX-pQu" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.1" id="mxg-cg-7UN"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="nPb-b6-Kqp"/>
+                <constraint firstItem="7pu-3p-Z41" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.8" id="y3D-De-v31"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="339" height="50"/>

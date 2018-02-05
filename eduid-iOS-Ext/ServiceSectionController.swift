@@ -13,16 +13,20 @@ import JWTswift
 class ServiceSectionController: ListSectionController {
 
     private var entry : Service!
-    private var token : TokenModel!
+    private weak var token : TokenModel!
+    private weak var protocolsModel : ProtocolsModel!
+    private weak var authToken : AuthorizationTokenModel!
     private var audience : String!
     private var sessionKeys : [String: Key]!
     
-    init(entry : Service, token: TokenModel, aud : String, sessionKeys : [String: Key]){
+    init(entry : Service, token: TokenModel, protocolsModel : ProtocolsModel, authToken : AuthorizationTokenModel, aud : String, sessionKeys : [String: Key]){
         super.init()
         self.entry = entry
         self.token = token
         self.audience = aud
         self.sessionKeys = sessionKeys
+        self.protocolsModel = protocolsModel
+        self.authToken = authToken
     }
     
     override func numberOfItems() -> Int {
@@ -51,11 +55,17 @@ class ServiceSectionController: ListSectionController {
     
     override func didSelectItem(at index: Int) {
         print("did select item : \(index)")
+        guard let adress = self.protocolsModel.getApislink(entryNumber: index), let homeLink = self.protocolsModel.getHomepageLink(entryNumber: index) else {
+            print("no apis found")
+            return
+        }
+        
+        authRequest(adress: adress, homepageLink: homeLink)
     }
     
     func authRequest(adress : URL , homepageLink : String){
         
-        let authToken = AuthorizationTokenModel()
+        
         print(self.token?.giveAccessToken()! as Any)
         let idToken = self.token?.giveTokenID()?.last
         print(self.token?.giveTokenID()?.first! as Any)
@@ -63,6 +73,11 @@ class ServiceSectionController: ListSectionController {
         let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.audience , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKeys!["public"]?.getKid())! , keyToSign: self.sessionKeys!["private"]!)
         print("ASSERT : \(assert!)")
         
+        guard let vc = self.viewController as? ServiceViewController else{
+            print("error getting view controller on request method")
+            return
+        }
+        vc.showLoadUI()
         authToken.fetch(address: adress, assertionBody: assert!)
     }
     

@@ -472,7 +472,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.364482"
+            timestampString = "539531648.442421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -504,7 +504,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.364603"
+            timestampString = "539531648.442836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
@@ -536,7 +536,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.364691"
+            timestampString = "539531648.443133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -726,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceListViewController.swift"
-            timestampString = "539283464.364911"
+            timestampString = "539531648.443514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "checkDownload(downloaded:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -838,7 +838,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.365098"
+            timestampString = "539531648.443681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -854,7 +854,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.365153"
+            timestampString = "539531648.443917"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
@@ -870,7 +870,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.365207"
+            timestampString = "539531648.444168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -886,11 +886,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceListViewController.swift"
-            timestampString = "539283464.3652591"
+            timestampString = "539531648.4444031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -902,7 +902,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.365304"
+            timestampString = "539531648.444452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -934,7 +934,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "539277189.366228"
+            timestampString = "539528994.008163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "350"
@@ -950,11 +950,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceListViewController.swift"
-            timestampString = "539283464.365409"
+            timestampString = "539531648.444725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "showProtocols()"
             landmarkType = "7">
          </BreakpointContent>
@@ -962,11 +962,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/AuthorizationTokenModel.swift"
-            timestampString = "539023766.694272"
+            timestampString = "539531648.444775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -978,15 +978,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/AuthorizationTokenModel.swift"
-            timestampString = "539023766.694324"
+            timestampString = "539531648.444824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "urlSession(_:dataTask:didReceive:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -994,15 +994,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/AuthorizationTokenModel.swift"
-            timestampString = "539023766.694371"
+            timestampString = "539531648.444869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "urlSession(_:dataTask:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1014,11 +1014,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceListViewController.swift"
-            timestampString = "539283464.365527"
+            timestampString = "539531648.444913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "authRequest(adress:homepageLink:)"
             landmarkType = "7">
             <Locations>
@@ -1058,11 +1058,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/AuthorizationTokenModel.swift"
-            timestampString = "539023766.694466"
+            timestampString = "539531648.4449559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -1094,7 +1094,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.365623"
+            timestampString = "539531648.445022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -1110,7 +1110,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "539283464.365677"
+            timestampString = "539531648.445242"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
@@ -1142,11 +1142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceListViewController.swift"
-            timestampString = "539283464.365755"
+            timestampString = "539531648.445495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "authRequest(adress:homepageLink:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1394,16 +1394,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceSectionController.swift"
-            timestampString = "539510438.019629"
+            timestampString = "539531648.44582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "cellForItem(at:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "numberOfItems()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1414,11 +1414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceViewController.swift"
-            timestampString = "539519002.02386"
+            timestampString = "539531648.445877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "listAdapter(_:sectionControllerFor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1430,12 +1430,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceViewController.swift"
-            timestampString = "539519002.024214"
+            timestampString = "539531648.446148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "objects(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS-Ext/ServiceSectionController.swift"
+            timestampString = "539531648.446371"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "authRequest(adress:homepageLink:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eduid_iOS_Ext.ServiceSectionController.authRequest(adress: Foundation.URL, homepageLink: Swift.String) -&gt; ()"
+                  moduleName = "eduid-iOS-Ext"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/blc/Documents/GitHub/Eduid-iOS/eduid-iOS-Ext/ServiceSectionController.swift"
+                  timestampString = "539528994.105342"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1772">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "eduid_iOS_Ext.ServiceSectionController.authRequest(adress: Foundation.URL, homepageLink: Swift.String) -&gt; ()"
+                  moduleName = "eduid-iOS-Ext"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/blc/Documents/GitHub/Eduid-iOS/eduid-iOS-Ext/ServiceSectionController.swift"
+                  timestampString = "539528994.1075701"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "4800">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS/ModelController/AuthorizationTokenModel.swift"
+            timestampString = "539531648.446422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetch(address:assertionBody:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

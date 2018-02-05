@@ -10,20 +10,25 @@ import UIKit
 import JWTswift
 import MobileCoreServices
 import IGListKit
+import NVActivityIndicatorView
 
 class ServiceViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    private var indicator : NVActivityIndicatorView!
+    
     lazy var adapter : ListAdapter = {
        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
     
     var token : TokenModel?
     var protocols : ProtocolsModel?
+    var authToken = AuthorizationTokenModel()
     var fetchedSuccess : Bool = false
     var exContext : NSExtensionContext?
     var apString: String?
+    
     
     private var sessionKey : [String : Key]?
     private var authprotocols : [String]?
@@ -43,6 +48,33 @@ class ServiceViewController: UIViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+        
+        self.authToken.downloadSuccess.bind { (dlbool) in
+            DispatchQueue.main.async{
+                self.removeLoadUI()
+                if dlbool == nil {
+                    self.showAlertUILogin()
+                }
+                else if dlbool == false {
+                    self.requestUnsuccessful()
+                } else {
+                    self.done(self)
+                }
+            }
+        }
+        
+        self.setUIelements()
+        
+    }
+    
+    func setUIelements() {
+        indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
+                                                          y: self.view.center.y,
+                                                          width: self.view.bounds.width / 5, height: self.view.bounds.height / 7))
+        indicator!.color = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
+        indicator!.type = .lineScaleParty
+        indicator.isHidden = false
+        indicator.center = self.view.center
     }
     
     func checkSessionKey() -> Bool {
@@ -56,6 +88,27 @@ class ServiceViewController: UIViewController {
             return false
         }
     }
+    
+    func requestUnsuccessful(){
+        
+        let alert = UIAlertController(title: "Request rejected", message: "Please contact the administrator", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func showAlertUILogin(){
+        
+        let alert = UIAlertController(title: "Timeout: no connection to the server", message: "Please check your internet connection", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close App", style: .default, handler: { (alertAction) in
+            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 
     
     @IBAction func cancel(_ sender: Any) {
@@ -64,7 +117,8 @@ class ServiceViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        let item = token?.giveTokenIDasJSON()
+        self.authToken.downloadSuccess.listener = nil
+        let item = authToken.giveJsonResponse()
         let returnProvider = NSItemProvider(item: item! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
         
         let returnItem = NSExtensionItem()
@@ -152,17 +206,21 @@ class ServiceViewController: UIViewController {
         adapter.performUpdates(animated: true)
     }
     
-    func authRequest(adress : URL , homepageLink : String){
+    func showLoadUI(){
+        let tmpFrame = self.view.frame
+        let view = UIView(frame: tmpFrame)
+        view.tag = 1
+        view.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         
-        let authToken = AuthorizationTokenModel()
-        print(self.token?.giveAccessToken()! as Any)
-        let idToken = self.token?.giveTokenID()?.last
-        print(self.token?.giveTokenID()?.first! as Any)
-        print(self.token?.giveTokenID()?.last! as Any)
-        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.apString! , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKey!["public"]?.getKid())! , keyToSign: self.sessionKey!["private"]!)
-        print("ASSERT : \(assert!)")
-        
-        authToken.fetch(address: adress, assertionBody: assert!)
+        indicator.startAnimating()
+        view.addSubview(indicator)
+        self.view.addSubview(view)
+    }
+    
+    func removeLoadUI(){
+        indicator.stopAnimating()
+        let view  = self.view.viewWithTag(1)
+        view?.removeFromSuperview()
     }
     
 }
@@ -177,7 +235,8 @@ extension ServiceViewController : ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return ServiceSectionController(entry: object as! Service, token: self.token!, aud: self.apString!, sessionKeys: self.sessionKey! )
+        
+        return ServiceSectionController(entry: object as! Service, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!)
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {

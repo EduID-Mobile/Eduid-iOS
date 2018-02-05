@@ -68,6 +68,15 @@ class AuthorizationTokenModel : NSObject {
     }
     
     
+    func giveJsonResponse() -> Data? {
+        do{
+            let json = try JSONSerialization.data(withJSONObject: self.jsonResponse!, options: [])
+            return json
+        }catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
     
     private func extractJson(){
         
@@ -116,6 +125,7 @@ extension AuthorizationTokenModel : URLSessionDataDelegate {
             let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
             print("Response : \(jsonResponse)")
             self.jsonResponse = jsonResponse
+            self.downloadSuccess.value = true
         } catch {
             print(error.localizedDescription)
         }
