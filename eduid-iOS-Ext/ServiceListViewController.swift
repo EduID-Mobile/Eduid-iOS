@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 import JWTswift
-//DONT USED THIS CLASS ANYMORE
+// !! DONT USED THIS CLASS ANYMORE!!
 class ServiceListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -196,7 +196,7 @@ extension ServiceListViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellExt")
-        cell?.textLabel?.text = self.protocols?.getEngines(entryNumber: indexPath.row)
+//        cell?.textLabel?.text = self.protocols?.getEngines(entryNumber: indexPath.row)
         
         return cell!
     }
@@ -204,11 +204,11 @@ extension ServiceListViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("TAPPED row : \(indexPath.row)")
         
-        let apiLink = self.protocols?.getApislink(entryNumber: indexPath.row)
-        if apiLink == nil {
-            return
-        }
-        self.authRequest(adress: apiLink!, homepageLink: (self.protocols?.getHomepageLink(entryNumber: indexPath.row))!)
+//        let apiLink = self.protocols?.getApislink(entryNumber: indexPath.row)
+//        if apiLink == nil {
+//            return
+//        }
+//        self.authRequest(adress: apiLink!, homepageLink: (self.protocols?.getHomepageLink(entryNumber: indexPath.row))!)
     }
     
 }

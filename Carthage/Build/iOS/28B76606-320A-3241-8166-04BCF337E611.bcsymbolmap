@@ -4,13 +4,13 @@ BCSymbolMap Version: 2.0
 l_OBJC_PROTOCOL_$_IGListDiffable
 l_OBJC_LABEL_PROTOCOL_$_IGListDiffable
 Apple LLVM version 9.0.0 (clang-900.0.39.2)
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/NSString+IGListDiffable.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/NSString+IGListDiffable.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit
 -[UICollectionView(DebugDescription) debugDescriptionLines]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/UICollectionView+DebugDescription.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/UICollectionView+DebugDescription.m
 -[IGListAdapter(DebugDescription) debugDescription]
 -[IGListAdapter(DebugDescription) debugDescriptionLines]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapter+DebugDescription.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapter+DebugDescription.m
 -[IGListAdapterUpdater init]
 -[IGListAdapterUpdater hasChanges]
 -[IGListAdapterUpdater performReloadDataWithCollectionView:]
@@ -138,9 +138,9 @@ l_OBJC_PROTOCOL_$_NSObject
 l_OBJC_LABEL_PROTOCOL_$_NSObject
 l_OBJC_PROTOCOL_$_IGListUpdatingDelegate
 l_OBJC_LABEL_PROTOCOL_$_IGListUpdatingDelegate
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapterUpdater.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterUpdaterInternal.h
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapterUpdater.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapterUpdater.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterUpdaterInternal.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapterUpdater.h
 IGListIsEqual
 IGListIdentifierHash
 __destroy_helper_block_
@@ -155,7 +155,7 @@ __62-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]_block_invoke.
 __62-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]_block_invoke_2
 __62-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]_block_invoke.97
 IGListExperimentEnabled
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListExperiments.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListExperiments.h
 __62-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]_block_invoke.87
 __62-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]_block_invoke.80
 __62-[IGListAdapterUpdater performBatchUpdatesWithCollectionView:]_block_invoke.75
@@ -167,10 +167,10 @@ objectsWithDuplicateIdentifiersRemoved
 -[IGListGenericSectionController object]
 -[IGListGenericSectionController .cxx_destruct]
 _OBJC_IVAR_$_IGListGenericSectionController._object
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListGenericSectionController.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListGenericSectionController.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListGenericSectionController.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListGenericSectionController.h
 -[IGListSectionMap(DebugDescription) debugDescriptionLines]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListSectionMap+DebugDescription.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListSectionMap+DebugDescription.m
 -[IGListIndexSetResult initWithInserts:deletes:updates:moves:oldIndexMap:newIndexMap:]
 -[IGListIndexSetResult hasChanges]
 -[IGListIndexSetResult changeCount]
@@ -189,8 +189,8 @@ _OBJC_IVAR_$_IGListIndexSetResult._updates
 _OBJC_IVAR_$_IGListIndexSetResult._moves
 _OBJC_IVAR_$_IGListIndexSetResult._oldIndexMap
 _OBJC_IVAR_$_IGListIndexSetResult._newIndexMap
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexSetResult.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexSetResult.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexSetResult.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexSetResult.h
 -[IGListWorkingRangeHandler initWithWorkingRangeSize:]
 -[IGListWorkingRangeHandler willDisplayItemAtIndexPath:forListAdapter:]
 -[IGListWorkingRangeHandler didEndDisplayingItemAtIndexPath:forListAdapter:]
@@ -202,7 +202,7 @@ ___clang_call_terminate
 _OBJC_IVAR_$_IGListWorkingRangeHandler._workingRangeSize
 _OBJC_IVAR_$_IGListWorkingRangeHandler._visibleSectionIndices
 _OBJC_IVAR_$_IGListWorkingRangeHandler._workingRangeSectionControllers
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListWorkingRangeHandler.mm
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListWorkingRangeHandler.mm
 __construct_node<const _IGListWorkingRangeHandlerSectionControllerWrapper &>
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__hash_table
 ~unique_ptr
@@ -321,7 +321,7 @@ construct<_IGListWorkingRangeHandlerIndexPath, _IGListWorkingRangeHandlerIndexPa
 __construct<_IGListWorkingRangeHandlerIndexPath, _IGListWorkingRangeHandlerIndexPath>
 -[NSNumber(IGListDiffable) diffIdentifier]
 -[NSNumber(IGListDiffable) isEqualToDiffableObject:]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/NSNumber+IGListDiffable.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/NSNumber+IGListDiffable.m
 -[IGListCollectionViewLayoutInvalidationContext ig_invalidateSupplementaryAttributes]
 -[IGListCollectionViewLayoutInvalidationContext setIg_invalidateSupplementaryAttributes:]
 -[IGListCollectionViewLayoutInvalidationContext ig_invalidateAllAttributes]
@@ -362,7 +362,7 @@ _OBJC_IVAR_$_IGListCollectionViewLayout._headerAttributesCache
 _OBJC_IVAR_$_IGListCollectionViewLayout._cachedLayoutInvalid
 _OBJC_IVAR_$_IGListCollectionViewLayout._sectionData
 _OBJC_IVAR_$_IGListCollectionViewLayout._stickyHeaderYOffset
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListCollectionViewLayout.mm
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListCollectionViewLayout.mm
 assign<CGRect *>
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector
 __construct_at_end<CGRect *>
@@ -402,7 +402,7 @@ __vector_base
 construct<IGListSectionEntry>
 __construct<IGListSectionEntry>
 ~__vector_base
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListCollectionViewLayout.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListCollectionViewLayout.h
 isValid
 __CGSizeEqualToSize
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
@@ -413,7 +413,7 @@ UIEdgeInsetsTrailingInsetInDirection
 CGRectMake
 UIEdgeInsetsLeadingInsetInDirection
 IGListRectIntegralScaled
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListCollectionViewLayoutInternal.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListCollectionViewLayoutInternal.h
 CGSizeGetLengthInDirection
 UIEdgeInsetsInsetRect
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h
@@ -435,7 +435,7 @@ _isInterceptedSelector
 _OBJC_IVAR_$_IGListAdapterProxy._collectionViewTarget
 _OBJC_IVAR_$_IGListAdapterProxy._scrollViewTarget
 _OBJC_IVAR_$_IGListAdapterProxy._interceptor
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterProxy.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterProxy.m
 isInterceptedSelector
 __ZL13IGListDiffingaiiP7NSArrayIPU25objcproto14IGListDiffable11objc_objectES3_16IGListDiffOptioni
 ____ZL13IGListDiffingaiiP7NSArrayIPU25objcproto14IGListDiffable11objc_objectES3_16IGListDiffOptioni_block_invoke
@@ -443,7 +443,7 @@ ____ZL13IGListDiffingaiiP7NSArrayIPU25objcproto14IGListDiffable11objc_objectES3_
 __ZNK13IGListEqualIDclEP11objc_objectS1_
 __ZL10NSNotFound
 ___block_descriptor_tmp.27
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListDiff.mm
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListDiff.mm
 destroy<std::__1::pair<const id<NSObject>, IGListEntry> >
 __destroy<std::__1::pair<const id<NSObject>, IGListEntry> >
 ~pair
@@ -512,9 +512,9 @@ unordered_map
 IGListDiff
 -[IGListBindingSectionController(DebugDescription) debugDescription]
 -[IGListBindingSectionController(DebugDescription) debugDescriptionLines]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBindingSectionController+DebugDescription.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBindingSectionController+DebugDescription.m
 -[IGListAdapterUpdater(DebugDescription) debugDescriptionLines]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterUpdater+DebugDescription.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterUpdater+DebugDescription.m
 -[IGListBatchUpdates init]
 -[IGListBatchUpdates hasChanges]
 -[IGListBatchUpdates sectionReloads]
@@ -532,9 +532,9 @@ _OBJC_IVAR_$_IGListBatchUpdates._itemDeletes
 _OBJC_IVAR_$_IGListBatchUpdates._itemReloads
 _OBJC_IVAR_$_IGListBatchUpdates._itemUpdateBlocks
 _OBJC_IVAR_$_IGListBatchUpdates._itemCompletionBlocks
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBatchUpdates.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBatchUpdates.h
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListDebuggingUtilities.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBatchUpdates.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBatchUpdates.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListDebuggingUtilities.m
 IGListDebugIndentedLines
 IGListDebugBOOL
 -[IGListSingleSectionController initWithCellClass:configureBlock:sizeBlock:]
@@ -564,16 +564,16 @@ _OBJC_IVAR_$_IGListSingleSectionController._bundle
 _OBJC_IVAR_$_IGListSingleSectionController._identifier
 _OBJC_IVAR_$_IGListSingleSectionController._selectionDelegate
 _OBJC_IVAR_$_IGListSingleSectionController._item
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSingleSectionController.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSingleSectionController.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSingleSectionController.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSingleSectionController.h
 -[IGListReloadIndexPath initWithFromIndexPath:toIndexPath:]
 -[IGListReloadIndexPath fromIndexPath]
 -[IGListReloadIndexPath toIndexPath]
 -[IGListReloadIndexPath .cxx_destruct]
 _OBJC_IVAR_$_IGListReloadIndexPath._fromIndexPath
 _OBJC_IVAR_$_IGListReloadIndexPath._toIndexPath
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListReloadIndexPath.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListReloadIndexPath.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListReloadIndexPath.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListReloadIndexPath.h
 -[IGListIndexPathResult initWithInserts:deletes:updates:moves:oldIndexPathMap:newIndexPathMap:]
 -[IGListIndexPathResult hasChanges]
 -[IGListIndexPathResult changeCount]
@@ -592,8 +592,8 @@ _OBJC_IVAR_$_IGListIndexPathResult._updates
 _OBJC_IVAR_$_IGListIndexPathResult._moves
 _OBJC_IVAR_$_IGListIndexPathResult._oldIndexPathMap
 _OBJC_IVAR_$_IGListIndexPathResult._newIndexPathMap
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexPathResult.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexPathResult.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexPathResult.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListIndexPathResult.h
 -[IGListDisplayHandler init]
 -[IGListDisplayHandler pluckObjectForView:]
 -[IGListDisplayHandler willDisplayReusableView:forListAdapter:sectionController:object:indexPath:]
@@ -609,7 +609,7 @@ _OBJC_IVAR_$_IGListIndexPathResult._newIndexPathMap
 -[IGListDisplayHandler .cxx_destruct]
 _OBJC_IVAR_$_IGListDisplayHandler._visibleListSections
 _OBJC_IVAR_$_IGListDisplayHandler._visibleViewObjectMap
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListDisplayHandler.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListDisplayHandler.m
 -[IGListMoveIndex initWithFrom:to:]
 -[IGListMoveIndex hash]
 -[IGListMoveIndex isEqual:]
@@ -619,14 +619,14 @@ _OBJC_IVAR_$_IGListDisplayHandler._visibleViewObjectMap
 -[IGListMoveIndex to]
 _OBJC_IVAR_$_IGListMoveIndex._from
 _OBJC_IVAR_$_IGListMoveIndex._to
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndex.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndex.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndex.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndex.h
 -[UICollectionView(IGListBatchUpdateData) ig_applyBatchUpdateData:]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/UICollectionView+IGListBatchUpdateData.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/UICollectionView+IGListBatchUpdateData.m
 +[IGListDebugger trackAdapter:]
 +[IGListDebugger adapterDescriptions]
 +[IGListDebugger dump]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListDebugger.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListDebugger.m
 -[IGListMoveIndexPath initWithFrom:to:]
 -[IGListMoveIndexPath hash]
 -[IGListMoveIndexPath isEqual:]
@@ -637,8 +637,8 @@ _OBJC_IVAR_$_IGListMoveIndex._to
 -[IGListMoveIndexPath .cxx_destruct]
 _OBJC_IVAR_$_IGListMoveIndexPath._from
 _OBJC_IVAR_$_IGListMoveIndexPath._to
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndexPath.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndexPath.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndexPath.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListMoveIndexPath.h
 -[IGListAdapter(UICollectionView) numberOfSectionsInCollectionView:]
 -[IGListAdapter(UICollectionView) collectionView:numberOfItemsInSection:]
 -[IGListAdapter(UICollectionView) collectionView:cellForItemAtIndexPath:]
@@ -665,7 +665,7 @@ l_OBJC_PROTOCOL_$_UICollectionViewDelegate
 l_OBJC_LABEL_PROTOCOL_$_UICollectionViewDelegate
 l_OBJC_PROTOCOL_$_UICollectionViewDelegateFlowLayout
 l_OBJC_LABEL_PROTOCOL_$_UICollectionViewDelegateFlowLayout
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapter+UICollectionView.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapter+UICollectionView.m
 -[IGListSectionMap initWithMapTable:]
 -[IGListSectionMap objects]
 -[IGListSectionMap sectionForSectionController:]
@@ -692,7 +692,7 @@ ___block_descriptor_tmp.54
 ___block_literal_global
 l_OBJC_PROTOCOL_$_NSCopying
 l_OBJC_LABEL_PROTOCOL_$_NSCopying
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListSectionMap.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListSectionMap.m
 __25-[IGListSectionMap reset]_block_invoke
 __57-[IGListSectionMap updateWithObjects:sectionControllers:]_block_invoke
 -[IGListAdapter dealloc]
@@ -853,9 +853,9 @@ l_OBJC_PROTOCOL_$_IGListCollectionContext
 l_OBJC_LABEL_PROTOCOL_$_IGListCollectionContext
 l_OBJC_PROTOCOL_$_IGListBatchContext
 l_OBJC_LABEL_PROTOCOL_$_IGListBatchContext
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapter.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterInternal.h
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapter.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapter.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListAdapterInternal.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListAdapter.h
 __53-[IGListAdapter reloadInSectionController:atIndexes:]_block_invoke
 __65-[IGListAdapter invalidateLayoutForSectionController:completion:]_block_invoke
 __57-[IGListAdapter performBatchAnimated:updates:completion:]_block_invoke.307
@@ -919,14 +919,14 @@ _OBJC_IVAR_$_IGListSectionController._supplementaryViewSource
 _OBJC_IVAR_$_IGListSectionController._displayDelegate
 _OBJC_IVAR_$_IGListSectionController._workingRangeDelegate
 _OBJC_IVAR_$_IGListSectionController._scrollDelegate
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSectionController.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSectionController.h
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListSectionControllerInternal.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSectionController.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListSectionController.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListSectionControllerInternal.h
 IGListSectionControllerPopThread
 threadContextStack
 IGListSectionControllerPushThread
 -[IGListBatchUpdateData(DebugDescription) debugDescriptionLines]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBatchUpdateData+DebugDescription.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListBatchUpdateData+DebugDescription.m
 -[IGListReloadDataUpdater objectLookupPointerFunctions]
 -[IGListReloadDataUpdater performUpdateWithCollectionView:fromObjects:toObjects:animated:objectTransitionBlock:completion:]
 -[IGListReloadDataUpdater performUpdateWithCollectionView:animated:itemUpdates:completion:]
@@ -938,7 +938,7 @@ IGListSectionControllerPushThread
 -[IGListReloadDataUpdater reloadDataWithCollectionView:reloadUpdateBlock:completion:]
 -[IGListReloadDataUpdater reloadCollectionView:sections:]
 -[IGListReloadDataUpdater synchronousReloadDataWithCollectionView:]
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListReloadDataUpdater.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListReloadDataUpdater.m
 -[UICollectionViewCell(IGListStackedSectionController) ig_setStackedSectionController:]
 -[UICollectionViewCell(IGListStackedSectionController) ig_stackedSectionController]
 -[UICollectionViewCell(IGListStackedSectionController) ig_setStackedSectionControllerIndex:]
@@ -1021,8 +1021,8 @@ l_OBJC_PROTOCOL_$_IGListScrollDelegate
 l_OBJC_LABEL_PROTOCOL_$_IGListScrollDelegate
 l_OBJC_PROTOCOL_$_IGListWorkingRangeDelegate
 l_OBJC_LABEL_PROTOCOL_$_IGListWorkingRangeDelegate
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListStackedSectionController.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListStackedSectionControllerInternal.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListStackedSectionController.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Internal/IGListStackedSectionControllerInternal.h
 __74-[IGListStackedSectionController performBatchAnimated:updates:completion:]_block_invoke.128
 __74-[IGListStackedSectionController performBatchAnimated:updates:completion:]_block_invoke
 __74-[IGListStackedSectionController itemIndexesForSectionController:indexes:]_block_invoke
@@ -1060,8 +1060,8 @@ _OBJC_IVAR_$_IGListBindingSectionController._selectionDelegate
 _OBJC_IVAR_$_IGListBindingSectionController._object
 _OBJC_IVAR_$_IGListBindingSectionController._viewModels
 _OBJC_IVAR_$_IGListBindingSectionController._state
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListBindingSectionController.m
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListBindingSectionController.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListBindingSectionController.m
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/IGListBindingSectionController.h
 __60-[IGListBindingSectionController updateAnimated:completion:]_block_invoke.51
 __60-[IGListBindingSectionController updateAnimated:completion:]_block_invoke_2
 __60-[IGListBindingSectionController updateAnimated:completion:]_block_invoke
@@ -1083,13 +1083,13 @@ _OBJC_IVAR_$_IGListBatchUpdateData._moveSections
 _OBJC_IVAR_$_IGListBatchUpdateData._deleteIndexPaths
 _OBJC_IVAR_$_IGListBatchUpdateData._insertIndexPaths
 _OBJC_IVAR_$_IGListBatchUpdateData._moveIndexPaths
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListBatchUpdateData.mm
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListBatchUpdateData.mm
 find<int>
 reset<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, IGListMoveIndex *>, void *> *> **>
 __hash_const_iterator
 destroy<std::__1::pair<const int, IGListMoveIndex *> >
 __destroy<std::__1::pair<const int, IGListMoveIndex *> >
-/Users/blc/Documents/GitHub/eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListBatchUpdateData.h
+/Users/blc/Documents/GitHub/Eduid-iOS/Carthage/Checkouts/IGListKit/Source/Common/IGListBatchUpdateData.h
 __emplace_unique_key_args<int, const std::__1::piecewise_construct_t &, std::__1::tuple<const int &>, std::__1::tuple<> >
 __construct_node_hash<const std::__1::piecewise_construct_t &, std::__1::tuple<const int &>, std::__1::tuple<> >
 construct<std::__1::pair<const int, IGListMoveIndex *>, const std::__1::piecewise_construct_t &, std::__1::tuple<const int &>, std::__1::tuple<> >

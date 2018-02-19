@@ -11,6 +11,15 @@ import JWTswift
 import TextFieldEffects
 import NVActivityIndicatorView
 
+/**
+ An intial view controller of the extension app.
+ This view controller is working with the EduidConfigModel, and TokenModel.
+ 
+ ## Functions:
+ - The configuration data will be fetched first from the server
+ - After the config data is successfully fetched, user could interact with the UI to enter the login data
+ - Manage the Login process, if the user hasn't logged in yet
+ */
 class ExtensionLoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTF: IsaoTextField! //UITextField!
@@ -46,9 +55,6 @@ class ExtensionLoginViewController: UIViewController {
             sessionKey = KeyStore.generateKeyPair(keyType: kSecAttrKeyTypeRSA as String)!
             let x = KeyChain.saveKeyPair(tagString: "sessionKey", keyPair: sessionKey!)
             print("Save new key : \(x)")
-//            let _ = KeyChain.saveKey(tagString: "sessionPublic", keyToSave: sessionKey!["public"]!)
-//            sessionKey!["private"] = KeyStore.createKIDfromKey(key: sessionKey!["private"]!)
-//            let _ = KeyChain.saveKey(tagString: "sessionPrivate", keyToSave: sessionKey!["private"]!)
         }
         
         self.checkConfig()
@@ -133,6 +139,7 @@ class ExtensionLoginViewController: UIViewController {
         
     }
     
+// Load some data from the Setting plist
     func loadPlist(){
         if let path = Bundle.main.path(forResource: "Setting", ofType: "plist") {
             if let dic = NSDictionary(contentsOfFile: path) as? [String : Any] {
@@ -159,6 +166,7 @@ class ExtensionLoginViewController: UIViewController {
         
     }
     
+    // A listener function to check if the fetching process of the config data successful or not
     func checkDownloadConfig(downloaded : Bool?) {
         
         print("checkDownloadConfig LoginExtension : \(String(describing: downloaded))")

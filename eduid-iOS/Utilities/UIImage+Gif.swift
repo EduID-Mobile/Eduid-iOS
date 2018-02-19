@@ -7,7 +7,9 @@
 //
 import UIKit
 import ImageIO
-
+/**
+ Some extension to load a gif data into a UIImageView
+ */
 extension UIImageView {
     
     public func loadGif(name: String) {

@@ -61,7 +61,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = ""
       selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
-      language = ""
+      language = "de"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -70,9 +70,9 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
       <RemoteRunnable
-         runnableDebuggingMode = "0"
-         BundleIdentifier = "ch.htwchur.Nail-app"
-         RemotePath = "/var/containers/Bundle/Application/E2D51AC4-B029-466F-A32A-0877E099D9DD/Nail-app.app">
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "ch.htwchur.appwithnail"
+         RemotePath = "/Users/blc/Library/Developer/CoreSimulator/Devices/1E0971F5-73A5-4E77-BCF7-95178CF03433/data/Containers/Bundle/Application/283210A7-2E3D-4D16-A5FC-4E289C7704BE/AppWithNail.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

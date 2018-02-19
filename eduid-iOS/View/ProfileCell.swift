@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+/**
+ Simple cell view class to hold the specific data to be shown on the List view (ProfileListViewController)
+ */
 class ProfileCell: UICollectionViewCell {
 
     @IBOutlet weak var keyLabel: UILabel!

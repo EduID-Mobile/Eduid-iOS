@@ -10,15 +10,25 @@ import Foundation
 import CoreData
 import JWTswift
 
+/**
+ A ViewModel Class who control all the process of authentication, based on transferring the login token to the Autorization Provider, in this case Edu-ID Service
+ 
+ ## Main functions :
+ - Sending the login data in a signed JWT format
+ - Extract the response from the AP/ Edu-ID service
+ - Saving the response data into the shared data container
+ - Fetch the saved data from the shared data container into the object variables
+ */
 class TokenModel : NSObject {
-    
+    //Some essential variable that are required to access the shared data container
     private lazy var entities : [NSManagedObject] = []
     private var persistentContainer : NSPersistentContainer? = nil
     private var managedContext : NSManagedObjectContext? = nil
     
-    
+    //an URI endpoint of the authentication server, this class would communicate only with this server for the whole process
     private var tokenURI : URL?
     
+    //Essential data, which usually received from the server as a successful response
     private var accesToken : String?
     private var refreshToken : String?
     private var expired : Int?
@@ -28,11 +38,12 @@ class TokenModel : NSObject {
     
     private var jsonResponse : [String : Any]?
     private var id_tokenParsed : [[String : Any]]?
-//    public let issuer =
+
+    //some constants
     private let client_assertion_type = "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
-    //    private var grant_type = "urn%3Aietf%3Aparamsurn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer"
-    let grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer"
+    private let grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer"
     
+    //A boolean to check if the login successful or not, could be attached with a listener
     var downloadSuccess : BoxBinding<Bool?> = BoxBinding(nil)
     
     init( tokenURI : URL? = nil ) {
@@ -47,12 +58,10 @@ class TokenModel : NSObject {
             print("TokenModel is being deinitialized")
     }
     
-    
+    // TODO : This function is currently not being used
     func createClientAssertion (receiver : String, keyToSign : Key) -> String {
         
         var payload = [String : String]()
-//        payload["iss"] = self.issuer
-//        payload["sub"] = self.issuer
         payload["aud"] = receiver
         payload["jti"] = UUID().uuidString
         //3 years timestamp from now
@@ -70,6 +79,7 @@ class TokenModel : NSObject {
         return jwt.sign(key: keyToSign, alg: .RS256)!
     }
     
+    //creating a specific user assertion in a signed JWS format, based on the user credentials
     func createUserAssert(userSub : String, password : String ,issuer: String, audience : String , keyToSend: Key , keyToSign: Key) -> String? {
         
         let jwk = KeyStore.keyToJwk(key: keyToSend)
@@ -97,6 +107,8 @@ class TokenModel : NSObject {
         return jwt.sign(key: keyToSign, alg: .RS256)
     }
     
+    //Delete all relevant data of this class from variables and also from the shared data container,
+    //This function is usually called after the user logout.
     func deleteAll() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>.init(entityName: "Tokens")
         let req = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -121,6 +133,7 @@ class TokenModel : NSObject {
         self.downloadSuccess.value = nil
     }
     
+    //Extract the credentials data of the registered user from the database
     func extractDatabaseData(savedData : NSManagedObject){
         self.accesToken = savedData.value(forKey: "accessToken") as? String
         //        self.refreshToken = savedData.value(forKey: "refreshToken") as? String
@@ -131,6 +144,7 @@ class TokenModel : NSObject {
         parseTokenID()
     }
     
+    //extract the data from the response, and assign them into the object variables
     func extractJson() {
         if jsonResponse == nil {
             print("JSON RESPONSE is empty!")
@@ -145,6 +159,7 @@ class TokenModel : NSObject {
         
     }
     
+    ///Fetch the credentials data of the registered user from the database
     func fetchDatabase()-> Bool{
         let fetchRequest = NSFetchRequest<NSManagedObject>.init(entityName: "Tokens")
         do{
@@ -162,7 +177,13 @@ class TokenModel : NSObject {
         }
         
     }
-    
+    /**
+     Main function to send the credentials data from the app into the authentication server
+     
+     - parameter username : Username on this case is the app's username, which is registered already inside the server, !!NOT user's data!!
+     - parameter password : Password on this case is the app's password, !!NOT user's data'
+     - Throws : throw ns error if there isn't any url found on the class variable
+ */
     func fetchServer(username : String , password : String, assertionBody : String) throws {
         
         if self.tokenURI == nil {
@@ -212,6 +233,7 @@ class TokenModel : NSObject {
         
     }
     
+    //Additional function to ease the combining process of the Http body data, which are wanted to be sent
     private func httpBodyBuilder(dict : [String: Any]) -> String {
         var resultArray = [String]()
         
@@ -225,6 +247,7 @@ class TokenModel : NSObject {
         print("HTTP BODY : " ,resultArray.joined(separator: "&"))
         return resultArray.joined(separator: "&")
     }
+    
     
     func giveIdTokenJWS() -> [String : Any]?{
         /*
@@ -248,7 +271,8 @@ class TokenModel : NSObject {
         id_tokenParsed?.append(JWS.parseJWSpayload(stringJWS: self.id_token!)!)
     }
     
-    //TODO : why save "expired" in database model as Integer 64 result a crash
+    // FIXME: why save "expired" in database model as Integer 64 result a crash
+    // Save the current token variables into the shared data store, for the next usage of the app.
     func save() {
         let entity = NSEntityDescription.entity(forEntityName: "Tokens", in: self.managedContext!) as NSEntityDescription!
         let tokenData = NSManagedObject(entity: entity!, insertInto: managedContext)
@@ -267,10 +291,12 @@ class TokenModel : NSObject {
         }
     }
     
+    //Set the destination uri, which the credential data will be sent to
     func setURI(uri : URL) {
         self.tokenURI = uri
     }
     
+    // TODO: Optional, validate the access token, which the app received from the server
     func validateAccessToken () -> Bool {
         if self.id_tokenParsed == nil &&  id_tokenParsed?.first!["alg"] as! String != "RS256" {
             return false
@@ -301,6 +327,7 @@ class TokenModel : NSObject {
         }
     }
     
+    //Verify the JWS from the server, with the help of JWTswift library
     func verifyIDToken() -> Bool {
         self.parseTokenID()
         let ks = KeyStore.init()
@@ -314,6 +341,8 @@ class TokenModel : NSObject {
     
 }
 
+// MARK: EXTENSION
+// Extension to deal with the response from the server
 extension TokenModel : URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

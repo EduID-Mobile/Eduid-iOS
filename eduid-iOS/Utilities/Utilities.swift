@@ -9,6 +9,7 @@
 //import Foundation
 import UIKit
 
+//Extension to make a circle UIImage
 extension UIImage {
     
     func roundedImageWithBorder (width : CGFloat , color: UIColor) -> UIImage? {
@@ -38,6 +39,22 @@ extension NSString{
         let contraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
         let boundingBox = self.boundingRect(with: contraintRect, options: .usesLineFragmentOrigin, attributes: [.font : font], context: nil)
         return ceil(boundingBox.height)
+    }
+    
+}
+
+extension String {
+    
+    func toBool() -> Bool? {
+        let lowSelf = self.lowercased()
+        switch lowSelf{
+        case "true", "yes", "1" :
+            return true
+        case "false", "no", "0" :
+            return false
+        default:
+            return nil
+        }
     }
     
 }

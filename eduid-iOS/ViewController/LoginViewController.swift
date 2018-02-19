@@ -11,6 +11,16 @@ import JWTswift
 import TextFieldEffects
 import NVActivityIndicatorView
 
+/**
+ The login view controller, where the user could insert her/his login data.
+ This view controller mostly working with the TokenModel for its main function
+ 
+ ## Functions :
+  - The view, where the main login process happened
+  - Handling the response from the authentication server, if success => perform a segue
+ 
+ */
+
 class LoginViewController: UIViewController {
     
     private var configModel = EduidConfigModel()
@@ -83,8 +93,8 @@ class LoginViewController: UIViewController {
         usernameTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
         passwordTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0) //UIColor.red
         
-        usernameTF.placeholder = "Username"
-        passwordTF.placeholder = "Password"
+//        usernameTF.placeholder = NSLocalizedString("Username", comment: "Username") //"Username"
+//        passwordTF.placeholder = NSLocalizedString("Password", comment: "Password") //"Password"
         
         usernameTF.delegate = self
         passwordTF.delegate = self
@@ -98,13 +108,14 @@ class LoginViewController: UIViewController {
         indicator.isHidden = false
         indicator.center = self.view.center
         
-        
     }
     
+    // Move the view 150 to the top so the keyboard won't cover any important UI components
     @objc func keyboardWillShow(){
         self.view.frame.origin.y = -150 //move upward 150
     }
     
+    // Move the view back to its original place, after keyboard is not longer used
     @objc func keyboardWillHide(){
         self.view.frame.origin.y = 0
     }
@@ -162,12 +173,12 @@ class LoginViewController: UIViewController {
         }
         showLoadUI()
         
+        // Bind the boolean var into a listener, so this VC know exactly the current status of the login process.
         tokenModel?.downloadSuccess.bind (listener: { (dlBool) in
             DispatchQueue.main.async {
                 self.checkDownload(downloaded: dlBool)
             }
         })
-        //        tokenModel = TokenModel(tokenURI: self.tokenEnd!)
         
         let userAssert = tokenModel?.createUserAssert(userSub: userSub , password: pass, issuer: userDev! , audience: configModel.getIssuer()!, keyToSend: sessionKey!["public"]!, keyToSign: signingKey!) //use signing key
         do{
@@ -177,7 +188,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        /*
+        /* BASIC APPROACH WITHOUT LISTENER, USING TIMER MANUALLY
          var timeoutCounter : Double = 0
          let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timerTmp in
          timeoutCounter += timerTmp.timeInterval
@@ -212,12 +223,6 @@ class LoginViewController: UIViewController {
         if segue.identifier  != "toProfileList" {
             return
         }
-        /*
-         guard let profileVC = segue.destination as? ProfileViewController else{
-         return
-         }
-         profileVC.token = self.tokenModel
-         */
         guard let profileListVC = segue.destination as? ProfileListViewController else {return}
         profileListVC.token = self.tokenModel
     }
@@ -264,6 +269,7 @@ class LoginViewController: UIViewController {
         view?.removeFromSuperview()
     }
     
+    //remove the keyboard from the view with a swipe down gesture
     @IBAction func gestureDidSwipeDown(_ sender: UISwipeGestureRecognizer) {
         
         if self.usernameTF.isFirstResponder || self.passwordTF.isFirstResponder {

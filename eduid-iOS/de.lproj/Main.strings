@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Logging out means also that all app authorizations will be rejected"; ObjectID = "4iY-ep-dDv"; */
+"4iY-ep-dDv.text" = "Achtung : Abmeldung löscht alle Authorisierung von der App";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "6yc-3V-ZBN"; */
+"6yc-3V-ZBN.normalTitle" = "Abmelden";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Dbc-T0-u76"; */
+"Dbc-T0-u76.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MHe-Xs-jd9"; */
+"MHe-Xs-jd9.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MRn-go-T3y"; */
+"MRn-go-T3y.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "MfS-ev-ynQ"; */
+"MfS-ev-ynQ.placeholder" = "Passwort";
+
+/* Class = "UIButton"; normalTitle = "Confirm Logout"; ObjectID = "MhY-Xr-UzT"; */
+"MhY-Xr-UzT.normalTitle" = "Abmelden bestätigen";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Mv8-4a-MKx"; */
+"Mv8-4a-MKx.normalTitle" = "Abbrechen";
+
+/* Class = "UILabel"; text = "Edu-ID"; ObjectID = "Sln-3Q-mnX"; */
+"Sln-3Q-mnX.text" = "Edu-ID";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "d6d-Ql-seu"; */
+"d6d-Ql-seu.normalTitle" = "Anmelden";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "lfQ-aj-iJA"; */
+"lfQ-aj-iJA.placeholder" = "Benutzername";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nuC-ks-VDb"; */
+"nuC-ks-VDb.text" = "Label";
+
+/* Class = "UILabel"; text = "EduID-iOS"; ObjectID = "pT4-mM-ARF"; */
+"pT4-mM-ARF.text" = "EduID-iOS";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "zza-35-BDV"; */
+"zza-35-BDV.normalTitle" = "Abmelden";

@@ -8,7 +8,9 @@
 
 import Foundation
 import IGListKit
-
+/**
+ Section Controller, which manages the cell distribution for the iglistkit
+ */
 final class ProfileSectionController : ListSectionController {
     
     private var entry : ProfileEntry!

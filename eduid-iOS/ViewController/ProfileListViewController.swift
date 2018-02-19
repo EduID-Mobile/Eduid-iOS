@@ -8,7 +8,14 @@
 
 import UIKit
 import IGListKit
-
+/**
+ This ViewController would be called directly if the login process is successfull.
+ Used to show the user her/his personal data, that are registered on the server
+ Mostly this view just show the response data from the server, which is contained inside the TokenModel instance.
+ ## Functions :
+ - Show the personal data from the server.
+ 
+ */
 class ProfileListViewController: UIViewController {
     
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -42,9 +49,11 @@ class ProfileListViewController: UIViewController {
     
     func loadEntries() {
         guard let jws = token!.giveIdTokenJWS() else {return}
-        
-        self.profileNameLabel.text = "Hello " + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
-        
+        if (jws["given_name"] == nil) && (jws["family_name"] == nil) {
+            self.profileNameLabel.text = "Hello"
+        } else {
+            self.profileNameLabel.text = "Hello " + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
+        }
         for key in (jws.keys) {
             let profile = ProfileEntry(entryKey: key, entryValue: jws[key]!)
             self.id_token.append(profile)
@@ -52,11 +61,13 @@ class ProfileListViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-//        self.performSegue(withIdentifier: "toLogout1", sender: self)
+        // Perform segue if the logout button is tapped,
+        // This has been set up already inside the storyboard.
     }
     
 }
 
+// Handle the adapter delegate for the ig list kit
 extension ProfileListViewController : ListAdapterDataSource{
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         return self.id_token as [ListDiffable]

@@ -12,7 +12,7 @@ import JWTswift
 
 class ServiceSectionController: ListSectionController {
 
-    private var entry : Service!
+    private weak var entry : Service!
     private weak var token : TokenModel!
     private weak var protocolsModel : ProtocolsModel!
     private weak var authToken : AuthorizationTokenModel!
@@ -30,6 +30,9 @@ class ServiceSectionController: ListSectionController {
     }
     
     override func numberOfItems() -> Int {
+        if entry == nil {
+            return 0
+        }
         return entry.serviceName.count
     }
     
@@ -55,7 +58,7 @@ class ServiceSectionController: ListSectionController {
     
     override func didSelectItem(at index: Int) {
         print("did select item : \(index)")
-        guard let adress = self.protocolsModel.getApislink(entryNumber: index), let homeLink = self.protocolsModel.getHomepageLink(entryNumber: index) else {
+        guard let adress = self.protocolsModel.getApisLink(serviceName: self.entry.serviceName[index]), let homeLink = self.protocolsModel.getHomepageLink(serviceName: self.entry.serviceName[index]) else {
             print("no apis found")
             return
         }

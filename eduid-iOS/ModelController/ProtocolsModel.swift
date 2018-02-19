@@ -9,28 +9,45 @@
 import Foundation
 import CoreData
 
+/**
+ A ViewModel Class who control all the process especially fetching the available services,
+ based on the protocols of the third party app
+ 
+ ## Main function :
+ - Fetching the available services from a specific URI end point
+ 
+ */
 class ProtocolsModel : NSObject {
-    
+    //Some essential variable that are required to access the shared data container
     private lazy var entities : [NSManagedObject] = []
     private lazy var persistentContainer: NSPersistentContainer? = nil
     private lazy var managedContext : NSManagedObjectContext? = nil
     
     private var jsonResponse : [Any]?
+    private var singleton : Bool
     
+    //Variables to contain the essential data for the available services
     private var engineName : [String]?
     private var homePageLink : [String]?
     private var apisLink : [String]?
     
+    //boolean to check the download status, could be attached with a listener
     var downloadSuccess : BoxBinding<Bool?> = BoxBinding(nil)
     
-    override init() {
+    init(singleton : Bool) {
+        self.singleton = singleton
         super.init()
+    }
+    ///default = set as singleton
+    convenience override init(){
+        self.init(singleton: true)
     }
     
     deinit {
         print("ProtocolsModel is being deinitialized")
     }
     
+    //main function to fetch the service data from a specific URI adress
     func fetchProtocols ( address : URL , protocolList : [String]){
         
         let request = NSMutableURLRequest(url: address)
@@ -51,6 +68,7 @@ class ProtocolsModel : NSObject {
         dataTask.resume()
     }
     
+    //extract the json response and assign them into the object variables
     private func extractJson(){
         
         if self.jsonResponse == nil {
@@ -72,11 +90,30 @@ class ProtocolsModel : NSObject {
         }
     }
     
+    //return the number of the available services for the specific protocol, used to generate the cells number for the view
     func getCount() -> Int{
         return (self.engineName?.count)!
     }
     
-    func getApislink(entryNumber : Int) -> URL? {
+    func getApisLink(serviceName: String)-> URL?{
+        if engineName == nil{
+            return nil
+        }
+        
+        let index = engineName!.index(of: serviceName)
+        let strUrl = getHomepageLink(entryNumber: index!)! + self.apisLink![index!]
+        return URL(string: strUrl)
+    }
+    
+    func getHomepageLink(serviceName: String) -> String?{
+        if engineName == nil{
+            return nil
+        }
+        let index = engineName?.index(of: serviceName)
+        return self.homePageLink?[index!]
+    }
+    
+    private func getApislink(entryNumber : Int) -> URL? {
         
         let strurl = getHomepageLink(entryNumber: entryNumber)! + self.apisLink![entryNumber]
         let resultUrl = URL(string: strurl)
@@ -84,7 +121,7 @@ class ProtocolsModel : NSObject {
         return resultUrl
     }
     
-    func getHomepageLink(entryNumber : Int) -> String? {
+    private func getHomepageLink(entryNumber : Int) -> String? {
         return self.homePageLink?[entryNumber] ?? nil
     }
     
@@ -95,6 +132,8 @@ class ProtocolsModel : NSObject {
     
 }
 
+// MARK: EXTENSION
+//Extension to deal with the response from the server
 extension ProtocolsModel : URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

@@ -7,7 +7,10 @@
 //
 
 import IGListKit
-
+/**
+ A simple model which is required to generate a cell for the table view (IGListKit).
+ This class simply holds the required data to be shown on the cell view.
+ */
 final class ProfileEntry : NSObject {
     
     var entryKey : String!
@@ -22,7 +25,7 @@ final class ProfileEntry : NSObject {
 }
 
 
-
+//Model object should be a subclass from ListDiffable (IGListKit requirement)
 extension ProfileEntry : ListDiffable {
     func diffIdentifier() -> NSObjectProtocol {
         

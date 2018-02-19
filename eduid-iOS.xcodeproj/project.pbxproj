@@ -59,6 +59,7 @@
 		687917182024CA4900E529C2 /* ServiceSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687917172024CA4900E529C2 /* ServiceSectionController.swift */; };
 		6879171B2024CF3A00E529C2 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687917192024CF3A00E529C2 /* ServiceCell.swift */; };
 		6879171C2024CF3A00E529C2 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6879171A2024CF3A00E529C2 /* ServiceCell.xib */; };
+		687E660F202C5C5900B20E4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 687E6611202C5C5900B20E4A /* Localizable.strings */; };
 		68ADAD012023378B006491C2 /* ProfileEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADAD002023378B006491C2 /* ProfileEntry.swift */; };
 		68ADAD0220233792006491C2 /* ProfileEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADAD002023378B006491C2 /* ProfileEntry.swift */; };
 		68ADAD04202340C1006491C2 /* ProfileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADAD03202340C1006491C2 /* ProfileListViewController.swift */; };
@@ -78,6 +79,11 @@
 		68CD9A472012250E000A2407 /* appicontest.png in Resources */ = {isa = PBXBuildFile; fileRef = 68CD9A462012250E000A2407 /* appicontest.png */; };
 		68DA97AC2006208700CA96B6 /* ios_priv.jwks in Resources */ = {isa = PBXBuildFile; fileRef = 68DA97AB2006208700CA96B6 /* ios_priv.jwks */; };
 		68DFE7D1200F74AD006D548A /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFE7D0200F74AD006D548A /* LogoutViewController.swift */; };
+		68FA8E78203AB4EB0020CA38 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */; };
+		68FA8E7A203B01AF0020CA38 /* SearchSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */; };
+		68FA8E7B203B01AF0020CA38 /* SearchSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */; };
+		68FA8E7D203B040A0020CA38 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E7C203B040A0020CA38 /* SearchCell.swift */; };
+		68FA8E7E203B040A0020CA38 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E7C203B040A0020CA38 /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +180,10 @@
 		687917172024CA4900E529C2 /* ServiceSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSectionController.swift; sourceTree = "<group>"; };
 		687917192024CF3A00E529C2 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		6879171A2024CF3A00E529C2 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		687E660C202C5B9A00B20E4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		687E660D202C5B9A00B20E4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		687E6610202C5C5900B20E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		687E6612202C5C5E00B20E4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68980B78200388D60099AA7B /* eduid-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eduid-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		68ADAD002023378B006491C2 /* ProfileEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEntry.swift; sourceTree = "<group>"; };
 		68ADAD03202340C1006491C2 /* ProfileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +200,10 @@
 		68CD9A462012250E000A2407 /* appicontest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicontest.png; sourceTree = "<group>"; };
 		68DA97AB2006208700CA96B6 /* ios_priv.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_priv.jwks; sourceTree = "<group>"; };
 		68DFE7D0200F74AD006D548A /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
+		68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionController.swift; sourceTree = "<group>"; };
+		68FA8E7C203B040A0020CA38 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		68FA8E81203B1DB30020CA38 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainInterface.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +275,7 @@
 				686BF8781FD033CA00751B08 /* eduid-iOS.entitlements */,
 				68199B331FCD8A8B001AE0D0 /* AppDelegate.swift */,
 				68980B78200388D60099AA7B /* eduid-iOS-Bridging-Header.h */,
+				687E6611202C5C5900B20E4A /* Localizable.strings */,
 				68DD337720232EDB00F824EE /* ViewController */,
 				68DD33832023316400F824EE /* SectionController */,
 				68DD337920232F2800F824EE /* View */,
@@ -341,6 +356,9 @@
 				6810E97920171CFA00E020E6 /* ExtensionLoginViewController.swift */,
 				687917132024BEDB00E529C2 /* ServiceViewController.swift */,
 				687917172024CA4900E529C2 /* ServiceSectionController.swift */,
+				68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */,
+				68FA8E7C203B040A0020CA38 /* SearchCell.swift */,
+				68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */,
 				687917152024BF2900E529C2 /* Service.swift */,
 				687917192024CF3A00E529C2 /* ServiceCell.swift */,
 				6879171A2024CF3A00E529C2 /* ServiceCell.xib */,
@@ -357,9 +375,9 @@
 			children = (
 				68C6347820075B0900D3914F /* SplashViewController.swift */,
 				68199B351FCD8A8B001AE0D0 /* LoginViewController.swift */,
-				68C6347E2007958300D3914F /* ProfileViewController.swift */,
-				68DFE7D0200F74AD006D548A /* LogoutViewController.swift */,
 				68ADAD03202340C1006491C2 /* ProfileListViewController.swift */,
+				68DFE7D0200F74AD006D548A /* LogoutViewController.swift */,
+				68C6347E2007958300D3914F /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -545,6 +563,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 68199B271FCD8A8B001AE0D0;
 			productRefGroup = 68199B311FCD8A8B001AE0D0 /* Products */;
@@ -565,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6806A0171FD6E4DB00DDBDFB /* ios_priv.p12 in Resources */,
+				687E660F202C5C5900B20E4A /* Localizable.strings in Resources */,
 				68199B411FCD8A8B001AE0D0 /* LaunchScreen.storyboard in Resources */,
 				6810E97E2017541900E020E6 /* Setting.plist in Resources */,
 				68199B391FCD8A8B001AE0D0 /* Main.storyboard in Resources */,
@@ -657,6 +677,7 @@
 				68531ED22021F5AF008E79CE /* UIImage+Gif.swift in Sources */,
 				68BF6C032008BCE300BC6E5B /* ExpandTableViewCell.swift in Sources */,
 				68ADAD0620234766006491C2 /* ProfileSectionController.swift in Sources */,
+				68FA8E7A203B01AF0020CA38 /* SearchSectionController.swift in Sources */,
 				68199B701FCD8C13001AE0D0 /* ProtocolsModel.swift in Sources */,
 				68ADAD012023378B006491C2 /* ProfileEntry.swift in Sources */,
 				68ADAD0920234F5D006491C2 /* ProfileCell.swift in Sources */,
@@ -675,6 +696,7 @@
 				68DFE7D1200F74AD006D548A /* LogoutViewController.swift in Sources */,
 				68237BD3201B7F8D001E2EFB /* AuthorizationTokenModel.swift in Sources */,
 				68199B3C1FCD8A8B001AE0D0 /* eduid_iOS.xcdatamodeld in Sources */,
+				68FA8E7D203B040A0020CA38 /* SearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,16 +724,19 @@
 				6810E97A20171CFA00E020E6 /* ExtensionLoginViewController.swift in Sources */,
 				687917182024CA4900E529C2 /* ServiceSectionController.swift in Sources */,
 				686BF86A1FD02DF000751B08 /* ServiceListViewController.swift in Sources */,
+				68FA8E7E203B040A0020CA38 /* SearchCell.swift in Sources */,
 				687917162024BF2900E529C2 /* Service.swift in Sources */,
 				68531ED32021F5AF008E79CE /* UIImage+Gif.swift in Sources */,
 				6866979F2004AF5D00B224B2 /* TokenModel.swift in Sources */,
 				686BF87D1FD058E000751B08 /* EduidConfigModel.swift in Sources */,
 				686697A02004AF6200B224B2 /* SharedDataStore.swift in Sources */,
 				6810E980201A03F000E020E6 /* ProtocolsModel.swift in Sources */,
+				68FA8E78203AB4EB0020CA38 /* DropDownButton.swift in Sources */,
 				686BF8761FD02DFA00751B08 /* eduid_iOS.xcdatamodeld in Sources */,
 				687917142024BEDB00E529C2 /* ServiceViewController.swift in Sources */,
 				68ADAD0220233792006491C2 /* ProfileEntry.swift in Sources */,
 				6879171B2024CF3A00E529C2 /* ServiceCell.swift in Sources */,
+				68FA8E7B203B01AF0020CA38 /* SearchSectionController.swift in Sources */,
 				68C6CB772021C617000BB409 /* Utilities.swift in Sources */,
 				6860AC0E201A3C8E004F4F98 /* BoxBinding.swift in Sources */,
 			);
@@ -742,6 +767,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				68199B381FCD8A8B001AE0D0 /* Base */,
+				687E660C202C5B9A00B20E4A /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -750,6 +776,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				68199B401FCD8A8B001AE0D0 /* Base */,
+				687E660D202C5B9A00B20E4A /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -758,8 +785,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				686BF86C1FD02DF000751B08 /* Base */,
+				68FA8E81203B1DB30020CA38 /* de */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		687E6611202C5C5900B20E4A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				687E6610202C5C5900B20E4A /* en */,
+				687E6612202C5C5E00B20E4A /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -769,6 +806,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -826,6 +864,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

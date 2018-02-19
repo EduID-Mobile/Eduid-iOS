@@ -9,6 +9,13 @@
 import UIKit
 import NVActivityIndicatorView
 
+/**
+ The first screen of the app.
+ EduidConfigModel would be used as the core function of this view.
+ 
+ ## Functions:
+ - The configuration data will be fetched on this screen and if successful this screen would call the LoginViewController automatically
+*/
 class SplashViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!

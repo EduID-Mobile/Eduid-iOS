@@ -10,37 +10,43 @@ import Foundation
 import CoreData
 import UIKit
 
+/**
+ A ViewModel Class who control all the processes around configuration data. This config data are essential, to let the app know where should this app send its data to.
+ 
+ ## Main functions  :
+ - Fetching the configuration data from a specific URI or Database
+ - Saving the fetched data into the shared data container
+ */
 class EduidConfigModel : NSObject {
-    
+    //Some essential variable that are required to access the shared data container
     private var entities : [NSManagedObject] = []
-    //    private lazy var appDelegate: AppDelegate? = nil
     private lazy var persistentContainer : NSPersistentContainer? = nil
     private lazy var managedContext: NSManagedObjectContext? = nil
+    
     private var jsonDict: [String : Any]?
     
+    //Essential Data from URI/ data container
     private var issuer : String?
-    
-    //Endpoints
     private var auth : URL?
     private var endSession : URL?
     private var userInfo : URL?
     private var introspection : URL?
     private var token : URL?
     private var revocation : URL?
-    
-    //jwks URI
     private var jwksUri : URL?
+    
     //Additional Data
     private var claims : [String]?
-    //private var grantSupported : Bool?
     
+    //URI where the config data are stored
     var serverUrl : URL?
+    
     var downloadedSuccess : BoxBinding<Bool?> = BoxBinding(nil)
     var totalSize : String?
     
     init(serverUrl : URL? = nil) {
         super.init()
-        //        self.appDelegate = (UIApplication.shared.delegate as? AppDelegate)!
+    
         self.persistentContainer = SharedDataStore.getPersistentContainer()
         self.managedContext = persistentContainer?.viewContext
         
@@ -54,6 +60,9 @@ class EduidConfigModel : NSObject {
         print("EduidConfigModel is being deinitialized")
     }
     
+    /**
+     Delete a specific attribute(s) from the entities
+     */
     func delete(name : String) {
         let indexHelper = searchData(name: name)
         if indexHelper.count <= 0{
@@ -71,6 +80,9 @@ class EduidConfigModel : NSObject {
         }
     }
     
+    /**
+     Delete/clear all the config data from the class variable, and also from the shared data container.
+ */
     func deleteAll() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EduidConfiguration")
         let req = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -94,7 +106,8 @@ class EduidConfigModel : NSObject {
         self.downloadedSuccess.value = nil
     }
     
-    func extractJson (){
+    //Extract the json response from the server and assign them into the object variables
+    private func extractJson (){
         
         self.issuer = jsonDict?["issuer"] as? String
         self.auth = URL(string: jsonDict?["authorization_endpoint"] as! String)
@@ -107,7 +120,8 @@ class EduidConfigModel : NSObject {
         
     }
     
-    func extractDatabaseData(savedData : NSManagedObject){
+    //Extract the saved data from data container and assign them into the object varuiables
+    private func extractDatabaseData(savedData : NSManagedObject){
         self.issuer = savedData.value(forKey: "issuer") as? String
         self.auth = URL(string: savedData.value(forKey: "auth") as! String)
         self.endSession = URL(string: savedData.value(forKey:"endSession") as! String)
@@ -129,7 +143,7 @@ class EduidConfigModel : NSObject {
         
     }
     
-    //Fetch data from core data, usually used at the begining
+    //Fetch data from share data container, usually used at the begining
     func fetchDatabase(){
         let fetchRequest = NSFetchRequest<NSManagedObject>.init(entityName: "EduidConfiguration")
         do{
@@ -138,6 +152,7 @@ class EduidConfigModel : NSObject {
             print("Couldn't fetch the data. \(error), \(error.userInfo)")
         }
         print("FETCHED (fetchDatabase) : " , self.entities.count )
+        
         //assuming there is just one config data in core data
         if(entities.count > 0) {
             let entity = entities.first
@@ -146,7 +161,7 @@ class EduidConfigModel : NSObject {
         
     }
     
-    //Fetch some specific data from core data
+    //Fetch some specific data from the shared data container
     func fetchDatabase(withFilter name: String ){
         let fetchRequest = NSFetchRequest<NSManagedObject>.init(entityName: "EduidConfiguration")
         fetchRequest.predicate = NSPredicate(format: "cfg_name == %@", name)
@@ -158,6 +173,7 @@ class EduidConfigModel : NSObject {
         
     }
     
+    //get the data in NSDictionary format
     func getAll() -> [NSDictionary] {
         if entities.count == 0 {return []}
         //print("in get all : ", eduidConfigData.count)
@@ -185,7 +201,8 @@ class EduidConfigModel : NSObject {
         return configArray
         
     }
-    
+
+    //getting the token Endpoint (for the login)
     func getTokenEndpoint () -> URL? {
         if(self.token == nil){
             return nil
@@ -193,6 +210,7 @@ class EduidConfigModel : NSObject {
         return self.token!
     }
     
+    //get the issuer info
     func getIssuer () -> String? {
         if self.issuer == nil {
             return nil
@@ -212,7 +230,8 @@ class EduidConfigModel : NSObject {
         }
     }
     
-    func save(){ //(data : [String : String] ){
+    //Save the current object variables into the shared data container
+    func save(){
         
         let entity = NSEntityDescription.entity(forEntityName: "EduidConfiguration", in: managedContext!) as NSEntityDescription!
         let configData = NSManagedObject(entity: entity!, insertInto: managedContext)
@@ -234,7 +253,7 @@ class EduidConfigModel : NSObject {
         }
     }
     
-    
+    //Function to search a specific entry inside the shared data container
     func searchData(name : String) -> [Int] {
         var result : [Int] = []
         
@@ -253,45 +272,9 @@ class EduidConfigModel : NSObject {
     
 }
 
-extension EduidConfigModel : URLSessionDownloadDelegate {
-    
-    
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("FINISHED")
-    }
-    
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        if self.serverUrl != downloadTask.originalRequest?.url {
-            return
-        }
-        
-//        self.progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
-//        print(self.progress)
-        self.totalSize = ByteCountFormatter.string(fromByteCount: totalBytesExpectedToWrite, countStyle: .file)
-    }
-    
-}
 
-
-extension URLSession{
-    
-    
-    
-    func sendSynchronousRequest(url : URL, completionHandler : @escaping (NSData?, URLResponse?, Error?) -> Void ) {
-        
-        let semaphore = DispatchSemaphore.init(value: 0)
-        let task = self.dataTask(with: url) { (data, response, error) in
-            completionHandler(data! as NSData, response, error)
-            semaphore.signal()
-        }
-        task.resume()
-        let _ = semaphore.wait(timeout: DispatchTime.init(uptimeNanoseconds: 5000000000)) //5 seconds (in nanosec)
-    }
-    
-}
-
+// MARK: EXTENSION
+// Extension to manage the response data from the server
 extension EduidConfigModel : URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+//A Wrapper class to implement reactive programming into a variable with the help of a listener.
 class BoxBinding<T> {
     typealias Listener = (T) -> Void
     var listener : Listener?

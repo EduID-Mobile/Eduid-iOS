@@ -10,28 +10,40 @@ import Foundation
 import CoreData
 import JWTswift
 
+/**
+ A ViewModel Class who control all the authorization process, this class would send a get request to the Resource Provider.
+ Resource provider then would be verify the data, and return an access token as a reply, if the user has a right to access the data from RP (Resource Provider)
+ This view model would be used only on the app extension.
+ 
+ ## Main functions :
+ - Request the access token from the resource provider
+ - Extract the access token from the RP, if available
+ */
 class AuthorizationTokenModel : NSObject {
-    
+    //Some essential variable that are required to access the shared data container
     private lazy var entities : [NSManagedObject] = []
     private lazy var persistentContainer : NSPersistentContainer? = nil
     private lazy var managedContext : NSManagedObjectContext? = nil
     
+    //contains the whole raw response from the resource provider
     private var jsonResponse : [String : Any]?
     
 //    private let client_assertion_type = "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
     private let grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer"
+    
+    //boolean to check the download status, could be attached with a listener
     var downloadSuccess : BoxBinding<Bool?> = BoxBinding(nil)
     
     override init() {
         super.init()
-        
-//        self.
+
     }
     
     deinit {
         print("AuthorizationTokenModel is being deinitialized")
     }
     
+    //Create the assert in from of JWS to be sent into the resource provider
     func createAssert(addressToSend : String, subject : String , audience : String, accessToken : String ,kidToSend : String , keyToSign : Key) -> String? {
         var payload = [String : Any]()
         payload["azp"] = addressToSend
@@ -50,6 +62,7 @@ class AuthorizationTokenModel : NSObject {
         return jwt.sign(key: keyToSign, alg: .RS256)
     }
     
+    //Main function to request the token from the resource provider(RP)
     func fetch (address : URL, assertionBody : String ){
         
         let body = [ "assertion" : assertionBody,
@@ -67,7 +80,7 @@ class AuthorizationTokenModel : NSObject {
         dataTask.resume()
     }
     
-    
+    //This function return the raw response from the server in a Data format
     func giveJsonResponse() -> Data? {
         do{
             let json = try JSONSerialization.data(withJSONObject: self.jsonResponse!, options: [])
@@ -82,6 +95,7 @@ class AuthorizationTokenModel : NSObject {
         
     }
     
+    //Additional function to ease the combining process of the Http body data, which are wanted to be sent
     private func httpBodyBuilder(dict : [String: Any]) -> String {
         var resultArray = [String]()
         
@@ -99,6 +113,8 @@ class AuthorizationTokenModel : NSObject {
     
 }
 
+// MARK: EXTENSION
+// Extension to deal with the response from the server
 extension AuthorizationTokenModel : URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

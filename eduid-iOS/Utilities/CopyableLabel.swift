@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Some subclass for the UI label, with the extra function to be able to copy the content of the UILabel
 class CopyableLabel: UILabel {
     
     override init(frame: CGRect) {
