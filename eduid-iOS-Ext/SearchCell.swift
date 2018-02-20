@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SearchCell: UICollectionViewCell {
+final class SearchCell: UICollectionViewCell, UISearchBarDelegate {
     
     lazy var searchBar : UISearchBar = {
         let view = UISearchBar()
@@ -19,6 +19,16 @@ final class SearchCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         searchBar.frame = contentView.bounds
+        
+        let gesture = UISwipeGestureRecognizer(target: self, action: #selector(gestureSwipedDown(_:)))
+        gesture.direction = .down
+        self.superview?.addGestureRecognizer(gesture)
+        
     }
     
+    @IBAction func gestureSwipedDown(_ sender: UISwipeGestureRecognizer){
+        if self.searchBar.isFirstResponder{
+            self.endEditing(true)
+        }
+    }
 }

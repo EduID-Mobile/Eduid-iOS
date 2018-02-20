@@ -17,13 +17,13 @@ import NVActivityIndicatorView
  This class uses ProtocolsModel and AuthorizationTokenModel for its main functionality
  
  ## Functions:
-  - Show the availables services for the specified third party app (ProtocolsModel)
-  - Control the Authorization process (AuthorizationTokenModel)
-  - Returning the extension into the third party app.
+ - Show the availables services for the specified third party app (ProtocolsModel)
+ - Control the Authorization process (AuthorizationTokenModel)
+ - Returning the extension into the third party app.
  */
 
 class ServiceViewController: UIViewController {
-
+    
     @IBOutlet weak var midLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var doneButton: UIButton!
@@ -34,7 +34,7 @@ class ServiceViewController: UIViewController {
     private var indicator : NVActivityIndicatorView!
     
     lazy var adapter : ListAdapter = {
-       return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
     
     var token : TokenModel?
@@ -44,6 +44,8 @@ class ServiceViewController: UIViewController {
     var fetchedSuccess : Bool = false
     var exContext : NSExtensionContext?
     var apString: String?
+    var selectedServices : [String]?
+    var response : [String: Any]?
     
     private var filterString = ""
     
@@ -66,24 +68,11 @@ class ServiceViewController: UIViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
-        
-        self.authToken.downloadSuccess.bind { (dlbool) in
-            DispatchQueue.main.async{
-                self.removeLoadUI()
-                if dlbool == nil {
-                    self.showAlertUILogin()
-                }
-                else if dlbool == false {
-                    self.requestUnsuccessful()
-                } else {
-                    self.done(self)
-                }
-            }
-        }
+    
         serviceButton.tag = 0
         institutionButton.tag = 1
-//        filterButton = DropDownButton(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
-//        self.view.addSubview(filterButton)
+        //        filterButton = DropDownButton(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+        //        self.view.addSubview(filterButton)
         self.setUIelements()
         
     }
@@ -105,21 +94,27 @@ class ServiceViewController: UIViewController {
     
     @IBAction func done(_ sender: Any) {
         self.authToken.downloadSuccess.listener = nil
-        let item = authToken.giveJsonResponse()
-        let returnProvider = NSItemProvider(item: item! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
-        
-        let returnItem = NSExtensionItem()
-        /*
-        if !self.fetchedSuccess {
-            //            self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-            self.exContext?.completeRequest(returningItems: [], completionHandler: nil)
-        }*/
-        
-        returnItem.attachments = [returnProvider]
-        
-        //        self.extensionContext!.completeRequest(returningItems: [returnItem], completionHandler: nil)
-        self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
-        self.navigationController?.popToRootViewController(animated: true)
+        if singleton! {
+            let item = authToken.giveJsonResponse()
+            let returnProvider = NSItemProvider(item: item! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
+            let returnItem = NSExtensionItem()
+  
+            returnItem.attachments = [returnProvider]
+            self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
+            self.navigationController?.popToRootViewController(animated: true)
+        } else{
+            do{
+                let json = try JSONSerialization.data(withJSONObject: self.response!, options: [])
+                let returnProvider = NSItemProvider(item: json as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
+                let returnItem = NSExtensionItem()
+                returnItem.attachments = [returnProvider]
+                self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
+                self.navigationController?.popToRootViewController(animated: true)
+            }catch {
+                print("ERROR: problem on creating json data")
+                return
+            }
+        }
     }
     
     // MARK: -- UI Functions
@@ -136,16 +131,16 @@ class ServiceViewController: UIViewController {
         indicator.center = self.view.center
         
         /*
-        filterButton.translatesAutoresizingMaskIntoConstraints = false
-        filterButton.dropView.dropdownOptions = ["My Federation", "My Institution", "Last Services"]
-        filterButton.setImage(UIImage(named: "filter"), for: UIControlState.normal)
-        filterButton.setImage(UIImage(named: "filterActive"), for: [UIControlState.selected , UIControlState.highlighted])
-        
-        filterButton.trailingAnchor.constraint(equalTo: self.midLabel.trailingAnchor, constant: -10).isActive = true
-        filterButton.centerYAnchor.constraint(equalTo: self.midLabel.centerYAnchor).isActive = true
-        filterButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        filterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        self.view.bringSubview(toFront: filterButton)
+         filterButton.translatesAutoresizingMaskIntoConstraints = false
+         filterButton.dropView.dropdownOptions = ["My Federation", "My Institution", "Last Services"]
+         filterButton.setImage(UIImage(named: "filter"), for: UIControlState.normal)
+         filterButton.setImage(UIImage(named: "filterActive"), for: [UIControlState.selected , UIControlState.highlighted])
+         
+         filterButton.trailingAnchor.constraint(equalTo: self.midLabel.trailingAnchor, constant: -10).isActive = true
+         filterButton.centerYAnchor.constraint(equalTo: self.midLabel.centerYAnchor).isActive = true
+         filterButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+         filterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+         self.view.bringSubview(toFront: filterButton)
          */
         
     }
@@ -165,7 +160,7 @@ class ServiceViewController: UIViewController {
     func showLoadUI(){
         let tmpFrame = self.view.frame
         let view = UIView(frame: tmpFrame)
-        view.tag = 77
+        view.tag = 7777
         view.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         
         indicator.startAnimating()
@@ -175,7 +170,7 @@ class ServiceViewController: UIViewController {
     
     func removeLoadUI(){
         indicator.stopAnimating()
-        let view  = self.view.viewWithTag(77)
+        let view  = self.view.viewWithTag(7777)
         view?.removeFromSuperview()
     }
     
@@ -184,7 +179,7 @@ class ServiceViewController: UIViewController {
      Check if the fetching data of available services is successfull or not.
      */
     func checkDownload(downloaded : Bool?){
-        print("checkDownload in ServiceListViewController : \(String(describing: downloaded))")
+        print("checkDownload in ServiceViewController : \(String(describing: downloaded))")
         if downloaded == nil || !downloaded! {
             return
         }
@@ -200,10 +195,10 @@ class ServiceViewController: UIViewController {
         adapter.performUpdates(animated: true)
     }
     
-/**
+    /**
      Check the availability of the session key in the keychain, without session key, app coudln't sign and send the data to the resource provider.
      - returns : Boolean, 'True' if session key are existed, otherwise 'False'
- */
+     */
     func checkSessionKey() -> Bool {
         
         sessionKey = KeyChain.loadKeyPair(tagString: "sessionKey")
@@ -271,16 +266,21 @@ class ServiceViewController: UIViewController {
                     if(i != textItem.attachments!.count - 1){
                         self.authprotocols?.append(text)
                     }else{
-                        self.singleton = text.toBool()
+                        if let b = text.toBool() {
+                            self.singleton = b
+                        }else { self.singleton = true }
+                        self.selectedServices = self.singleton! ? nil : [String]()
+                        self.response = self.singleton! ? nil : [String:Any]()
                     }
                     group.leave()
                 })
             }
-        }
-        self.fetchedSuccess = true
-        
-        group.notify(queue: .main) {
-            self.showProtocols()
+            
+            self.fetchedSuccess = true
+            
+            group.notify(queue: .main) {
+                self.showProtocols()
+            }
         }
     }
     
@@ -295,7 +295,7 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
         if self.services == nil {
             return []
         }else {
-//            self.services?.serviceName.append("Search Bar")
+            //            self.services?.serviceName.append("Search Bar")
             if filterString == "" {
                 return ["Search Bar" , self.services!] as! [ListDiffable]
             }else{
@@ -319,8 +319,25 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
             guard let serviceTmp : Service = (object as? Service) else {
                 fatalError()
             }
-            
-            return ServiceSectionController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!)
+            if !singleton! {
+                return ServiceSectionController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!)
+            }else {
+                
+                self.authToken.downloadSuccess.bind { (dlbool) in
+                    DispatchQueue.main.async{
+                        self.removeLoadUI()
+                        if dlbool == nil {
+                            self.showAlertUILogin()
+                        }
+                        else if dlbool == false {
+                            self.requestUnsuccessful()
+                        } else {
+                            self.done(self)
+                        }
+                    }
+                }
+                return ServiceSectionSingletonController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!)
+            }
         }
     }
     
@@ -329,7 +346,7 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
         
     }
     
-// MARK: SearchSection Delegate
+    // MARK: SearchSection Delegate
     func searchSectionController(_ sectionController: SearchSectionController, didChangeText text: String) {
         filterString = text
         adapter.performUpdates(animated: true, completion: nil)

@@ -73,6 +73,7 @@ class AuthorizationTokenModel : NSObject {
         
         let request = NSMutableURLRequest(url: URL(string: strUrl)!)
         request.httpMethod = "GET"
+        request.timeoutInterval = 4
         print("FETCH : " , request.url as Any)
         
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
@@ -89,6 +90,10 @@ class AuthorizationTokenModel : NSObject {
             print(error.localizedDescription)
             return nil
         }
+    }
+    
+    func giveResponseAsDict() -> [String: Any]? {
+        return jsonResponse
     }
     
     private func extractJson(){
@@ -119,7 +124,9 @@ extension AuthorizationTokenModel : URLSessionDataDelegate {
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         print("Did complete with Error : \(error.debugDescription)")
-        self.downloadSuccess.value = nil
+        if(error != nil){
+            self.downloadSuccess.value = nil
+        }
     }
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {

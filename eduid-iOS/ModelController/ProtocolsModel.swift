@@ -92,7 +92,7 @@ class ProtocolsModel : NSObject {
     
     //return the number of the available services for the specific protocol, used to generate the cells number for the view
     func getCount() -> Int{
-        return (self.engineName?.count)!
+        return (self.engineName?.count) ?? 0
     }
     
     func getApisLink(serviceName: String)-> URL?{
@@ -165,7 +165,7 @@ extension ProtocolsModel : URLSessionDataDelegate {
             print("Response : \(jsonResponse)")
             self.jsonResponse =  jsonResponse
             self.extractJson()
-            downloadSuccess.value = true
+            self.downloadSuccess.value = true
         }catch {
             print(error.localizedDescription)
         }

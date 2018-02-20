@@ -42,6 +42,12 @@ class SearchSectionController : ListSectionController, UISearchBarDelegate, List
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         delegate?.searchSectionController(self, didChangeText: searchBar.text!)
+        searchBar.superview?.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        delegate?.searchSectionController(self, didChangeText: searchBar.text!)
+        searchBar.superview?.endEditing(true)
     }
     
     //    MARK:  LIST SCROLL DELEGATE

@@ -223,8 +223,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-ks-VDb">
+                                <rect key="frame" x="16" y="75" width="343" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="x6j-x4-MSS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yc-3V-ZBN">
+                                <rect key="frame" x="0.0" y="570" width="375" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="UFI-jh-vZ1"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="HTe-IX-g0A" eventType="touchUpInside" id="jK7-Os-AMu"/>
+                                    <segue destination="yGN-BO-1xe" kind="show" identifier="toLogOut" id="iLz-LH-PRP"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-Gv-BqK">
-                                <rect key="frame" x="0.0" y="148" width="375" height="414"/>
+                                <rect key="frame" x="0.0" y="148" width="375" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="w8e-ch-eRy" customClass="ExpandTableViewCell" customModule="eduid_iOS" customModuleProvider="target">
@@ -271,39 +293,17 @@
                                     <outlet property="delegate" destination="HTe-IX-g0A" id="GPT-m6-Kd4"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-ks-VDb">
-                                <rect key="frame" x="16" y="75" width="343" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="x6j-x4-MSS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yc-3V-ZBN">
-                                <rect key="frame" x="0.0" y="570" width="375" height="59"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="59" id="UFI-jh-vZ1"/>
-                                </constraints>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logout:" destination="HTe-IX-g0A" eventType="touchUpInside" id="jK7-Os-AMu"/>
-                                    <segue destination="yGN-BO-1xe" kind="show" identifier="toLogOut" id="iLz-LH-PRP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nuC-ks-VDb" firstAttribute="leading" secondItem="rxk-0v-jQW" secondAttribute="leadingMargin" id="951-cx-SLI"/>
                             <constraint firstItem="qqX-Gv-BqK" firstAttribute="leading" secondItem="rxk-0v-jQW" secondAttribute="leading" id="D2i-7X-zkD"/>
                             <constraint firstAttribute="trailing" secondItem="qqX-Gv-BqK" secondAttribute="trailing" id="HeR-kM-yCL"/>
-                            <constraint firstItem="6yc-3V-ZBN" firstAttribute="top" secondItem="qqX-Gv-BqK" secondAttribute="bottom" constant="8" symbolic="YES" id="P92-wV-2Od"/>
                             <constraint firstItem="qqX-Gv-BqK" firstAttribute="leading" secondItem="6yc-3V-ZBN" secondAttribute="leading" id="PwU-70-Yvp"/>
                             <constraint firstItem="qqX-Gv-BqK" firstAttribute="trailing" secondItem="6yc-3V-ZBN" secondAttribute="trailing" id="YeY-An-J1U"/>
                             <constraint firstItem="48D-z4-Hx9" firstAttribute="bottom" secondItem="6yc-3V-ZBN" secondAttribute="bottom" constant="38" id="i6H-Iv-M4G"/>
                             <constraint firstItem="nuC-ks-VDb" firstAttribute="centerX" secondItem="qqX-Gv-BqK" secondAttribute="centerX" id="iO5-Mc-Ydc"/>
+                            <constraint firstItem="6yc-3V-ZBN" firstAttribute="top" secondItem="qqX-Gv-BqK" secondAttribute="bottom" constant="20" id="pR0-tj-C5f"/>
                             <constraint firstItem="qqX-Gv-BqK" firstAttribute="top" secondItem="nuC-ks-VDb" secondAttribute="bottom" constant="17" id="qwL-qS-IJ5"/>
                             <constraint firstItem="nuC-ks-VDb" firstAttribute="top" secondItem="48D-z4-Hx9" secondAttribute="top" constant="11" id="r0e-ta-Geh"/>
                         </constraints>
