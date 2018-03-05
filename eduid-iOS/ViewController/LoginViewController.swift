@@ -72,8 +72,11 @@ class LoginViewController: UIViewController {
             self.loginSuccessful()
             return
         }
-        
-        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        imageView.layer.cornerRadius = imageView.layer.bounds.height / 2
+        imageView.clipsToBounds = true
     }
     
     func setUIelements(){
@@ -83,10 +86,8 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "appicon400.png")//?.roundedImageWithBorder(width: 10, color: UIColor.black)
-        imageView.layer.cornerRadius = imageView.layer.frame.width / 2
-        
+        let image = UIImage(named: "appicon400.png")
+        imageView.image = image
         
         usernameTF.inactiveColor = UIColor.gray
         passwordTF.inactiveColor = UIColor.gray

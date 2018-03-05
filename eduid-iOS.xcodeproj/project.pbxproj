@@ -30,6 +30,8 @@
 		68199B6E1FCD8BEC001AE0D0 /* EduidConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68199B6D1FCD8BEC001AE0D0 /* EduidConfigModel.swift */; };
 		68199B701FCD8C13001AE0D0 /* ProtocolsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68199B6F1FCD8C13001AE0D0 /* ProtocolsModel.swift */; };
 		68199B721FCD8C2F001AE0D0 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68199B711FCD8C2F001AE0D0 /* TokenModel.swift */; };
+		681E9E6E20485C86002D557D /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6CB6E2021B5AF000BB409 /* TextFieldEffects.framework */; };
+		681E9E6F20493E1E002D557D /* BEMCheckBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68771FB42045492C0010AD8A /* BEMCheckBox.framework */; };
 		68237BD3201B7F8D001E2EFB /* AuthorizationTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68237BD2201B7F8D001E2EFB /* AuthorizationTokenModel.swift */; };
 		68237BD4201B7F8D001E2EFB /* AuthorizationTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68237BD2201B7F8D001E2EFB /* AuthorizationTokenModel.swift */; };
 		68531ED22021F5AF008E79CE /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68531ED12021F5AF008E79CE /* UIImage+Gif.swift */; };
@@ -53,6 +55,7 @@
 		686BF8711FD02DF000751B08 /* eduid-iOS-Ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 686BF8671FD02DF000751B08 /* eduid-iOS-Ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		686BF8761FD02DFA00751B08 /* eduid_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68199B3A1FCD8A8B001AE0D0 /* eduid_iOS.xcdatamodeld */; };
 		686BF87D1FD058E000751B08 /* EduidConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68199B6D1FCD8BEC001AE0D0 /* EduidConfigModel.swift */; };
+		68771FB52045492C0010AD8A /* BEMCheckBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68771FB42045492C0010AD8A /* BEMCheckBox.framework */; };
 		6879170F202473C900E529C2 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6879170E202473C900E529C2 /* NVActivityIndicatorView.framework */; };
 		68791710202473DC00E529C2 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6879170E202473C900E529C2 /* NVActivityIndicatorView.framework */; };
 		687917122024B83F00E529C2 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687917112024B83F00E529C2 /* CopyableLabel.swift */; };
@@ -61,7 +64,6 @@
 		687917182024CA4900E529C2 /* ServiceSectionSingletonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687917172024CA4900E529C2 /* ServiceSectionSingletonController.swift */; };
 		6879171B2024CF3A00E529C2 /* ServiceSingletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687917192024CF3A00E529C2 /* ServiceSingletonCell.swift */; };
 		6879171C2024CF3A00E529C2 /* ServiceSingletonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6879171A2024CF3A00E529C2 /* ServiceSingletonCell.xib */; };
-		687E660F202C5C5900B20E4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 687E6611202C5C5900B20E4A /* Localizable.strings */; };
 		68ADAD012023378B006491C2 /* ProfileEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADAD002023378B006491C2 /* ProfileEntry.swift */; };
 		68ADAD0220233792006491C2 /* ProfileEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADAD002023378B006491C2 /* ProfileEntry.swift */; };
 		68ADAD04202340C1006491C2 /* ProfileListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADAD03202340C1006491C2 /* ProfileListViewController.swift */; };
@@ -72,9 +74,7 @@
 		68C6347920075B0900D3914F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6347820075B0900D3914F /* SplashViewController.swift */; };
 		68C6347B200769E600D3914F /* BoxBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6347A200769E600D3914F /* BoxBinding.swift */; };
 		68C6347F2007958300D3914F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6347E2007958300D3914F /* ProfileViewController.swift */; };
-		68C6CB6F2021B5AF000BB409 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6CB6E2021B5AF000BB409 /* TextFieldEffects.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		68C6CB712021BB3F000BB409 /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6CB6E2021B5AF000BB409 /* TextFieldEffects.framework */; };
-		68C6CB732021BB92000BB409 /* TextFieldEffects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6CB6E2021B5AF000BB409 /* TextFieldEffects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68C6CB762021C3E0000BB409 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6CB752021C3E0000BB409 /* Utilities.swift */; };
 		68C6CB772021C617000BB409 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6CB752021C3E0000BB409 /* Utilities.swift */; };
 		68C6CB832021D185000BB409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C6CB822021D185000BB409 /* Assets.xcassets */; };
@@ -125,17 +125,6 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68C6CB742021BB92000BB409 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				68C6CB732021BB92000BB409 /* TextFieldEffects.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -169,7 +158,6 @@
 		68531EF6202219C0008E79CE /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		6856C3421FDE902600470246 /* eduid_pub.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eduid_pub.jwks; sourceTree = "<group>"; };
 		6857BD5B1FFE49920002A72B /* JWTswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTswift.framework; path = Carthage/Build/iOS/JWTswift.framework; sourceTree = "<group>"; };
-		6857BD5C1FFE49920002A72B /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
 		686630BB203C0CE600A812F3 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		686630BC203C0CE600A812F3 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		686BF8671FD02DF000751B08 /* eduid-iOS-Ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "eduid-iOS-Ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +166,7 @@
 		686BF86E1FD02DF000751B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		686BF8771FD02FFF00751B08 /* eduid-iOS-Ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eduid-iOS-Ext.entitlements"; sourceTree = "<group>"; };
 		686BF8781FD033CA00751B08 /* eduid-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eduid-iOS.entitlements"; sourceTree = "<group>"; };
+		68771FB42045492C0010AD8A /* BEMCheckBox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMCheckBox.framework; path = Carthage/Build/iOS/BEMCheckBox.framework; sourceTree = "<group>"; };
 		6879170E202473C900E529C2 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		687917112024B83F00E529C2 /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		687917132024BEDB00E529C2 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
@@ -187,8 +176,9 @@
 		6879171A2024CF3A00E529C2 /* ServiceSingletonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceSingletonCell.xib; sourceTree = "<group>"; };
 		687E660C202C5B9A00B20E4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		687E660D202C5B9A00B20E4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		687E6610202C5C5900B20E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		687E6612202C5C5E00B20E4A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		688FBAED204D324900DF5FD4 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/Main.strings"; sourceTree = "<group>"; };
+		688FBAEE204D324900DF5FD4 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		688FBAEF204D324A00DF5FD4 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/MainInterface.strings"; sourceTree = "<group>"; };
 		68980B78200388D60099AA7B /* eduid-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eduid-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		68ADAD002023378B006491C2 /* ProfileEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEntry.swift; sourceTree = "<group>"; };
 		68ADAD03202340C1006491C2 /* ProfileListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListViewController.swift; sourceTree = "<group>"; };
@@ -217,9 +207,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				681E9E6E20485C86002D557D /* TextFieldEffects.framework in Frameworks */,
 				6857BD5D1FFE49920002A72B /* JWTswift.framework in Frameworks */,
-				68C6CB6F2021B5AF000BB409 /* TextFieldEffects.framework in Frameworks */,
 				68531EF7202219C0008E79CE /* IGListKit.framework in Frameworks */,
+				681E9E6F20493E1E002D557D /* BEMCheckBox.framework in Frameworks */,
 				6879170F202473C900E529C2 /* NVActivityIndicatorView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +237,7 @@
 				68C6CB712021BB3F000BB409 /* TextFieldEffects.framework in Frameworks */,
 				68531EF8202219E0008E79CE /* IGListKit.framework in Frameworks */,
 				68791710202473DC00E529C2 /* NVActivityIndicatorView.framework in Frameworks */,
+				68771FB52045492C0010AD8A /* BEMCheckBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +273,6 @@
 				686BF8781FD033CA00751B08 /* eduid-iOS.entitlements */,
 				68199B331FCD8A8B001AE0D0 /* AppDelegate.swift */,
 				68980B78200388D60099AA7B /* eduid-iOS-Bridging-Header.h */,
-				687E6611202C5C5900B20E4A /* Localizable.strings */,
 				68DD337720232EDB00F824EE /* ViewController */,
 				68DD33832023316400F824EE /* SectionController */,
 				68DD337920232F2800F824EE /* View */,
@@ -345,10 +336,10 @@
 		6857BD5A1FFE49910002A72B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68771FB42045492C0010AD8A /* BEMCheckBox.framework */,
 				6879170E202473C900E529C2 /* NVActivityIndicatorView.framework */,
 				68531EF6202219C0008E79CE /* IGListKit.framework */,
 				68C6CB6E2021B5AF000BB409 /* TextFieldEffects.framework */,
-				6857BD5C1FFE49920002A72B /* CommonCrypto.framework */,
 				6857BD5B1FFE49920002A72B /* JWTswift.framework */,
 			);
 			name = Frameworks;
@@ -449,7 +440,6 @@
 				68199B2E1FCD8A8B001AE0D0 /* Resources */,
 				686BF8751FD02DF000751B08 /* Embed App Extensions */,
 				6857BD5F1FFE49D30002A72B /* ShellScript */,
-				68C6CB742021BB92000BB409 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -504,7 +494,6 @@
 				686BF8631FD02DF000751B08 /* Sources */,
 				686BF8641FD02DF000751B08 /* Frameworks */,
 				686BF8651FD02DF000751B08 /* Resources */,
-				68ED26BB2020C4F600B9215F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -573,6 +562,7 @@
 				en,
 				Base,
 				de,
+				"en-US",
 			);
 			mainGroup = 68199B271FCD8A8B001AE0D0;
 			productRefGroup = 68199B311FCD8A8B001AE0D0 /* Products */;
@@ -593,7 +583,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6806A0171FD6E4DB00DDBDFB /* ios_priv.p12 in Resources */,
-				687E660F202C5C5900B20E4A /* Localizable.strings in Resources */,
 				68199B411FCD8A8B001AE0D0 /* LaunchScreen.storyboard in Resources */,
 				6810E97E2017541900E020E6 /* Setting.plist in Resources */,
 				68199B391FCD8A8B001AE0D0 /* Main.storyboard in Resources */,
@@ -645,7 +634,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		6857BD5F1FFE49D30002A72B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -653,25 +642,14 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BEMCheckBox.framework",
 			);
 			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		68ED26BB2020C4F600B9215F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/JWTswift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/TextFieldEffects.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
-			);
-			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/JWTswift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/TextFieldEffects.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IGListKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BEMCheckBox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -780,6 +758,7 @@
 			children = (
 				68199B381FCD8A8B001AE0D0 /* Base */,
 				687E660C202C5B9A00B20E4A /* de */,
+				688FBAED204D324900DF5FD4 /* en-US */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -789,6 +768,7 @@
 			children = (
 				68199B401FCD8A8B001AE0D0 /* Base */,
 				687E660D202C5B9A00B20E4A /* de */,
+				688FBAEE204D324900DF5FD4 /* en-US */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -798,17 +778,9 @@
 			children = (
 				686BF86C1FD02DF000751B08 /* Base */,
 				68FA8E81203B1DB30020CA38 /* de */,
+				688FBAEF204D324A00DF5FD4 /* en-US */,
 			);
 			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		687E6611202C5C5900B20E4A /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				687E6610202C5C5900B20E4A /* en */,
-				687E6612202C5C5E00B20E4A /* de */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -817,6 +789,7 @@
 		68199B591FCD8A8B001AE0D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -875,6 +848,7 @@
 		68199B5A1FCD8A8B001AE0D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -931,6 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "eduid-iOS/eduid-iOS.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q8U997468;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -940,8 +915,9 @@
 				INFOPLIST_FILE = "eduid-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.htwchur.eduid-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.eduidios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "eduid-iOS/eduid-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -958,6 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "eduid-iOS/eduid-iOS.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q8U997468;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -968,8 +945,9 @@
 				INFOPLIST_FILE = "eduid-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.htwchur.eduid-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.eduidios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "eduid-iOS/eduid-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1047,12 +1025,14 @@
 		686BF8721FD02DF000751B08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconExtension;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "eduid-iOS-Ext/eduid-iOS-Ext.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q8U997468;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1061,7 +1041,7 @@
 				INFOPLIST_FILE = "eduid-iOS-Ext/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.htwchur.eduid-iOS.eduid-iOS-Ext";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.eduidios.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1073,12 +1053,14 @@
 		686BF8731FD02DF000751B08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconExtension;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "eduid-iOS-Ext/eduid-iOS-Ext.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q8U997468;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1087,7 +1069,7 @@
 				INFOPLIST_FILE = "eduid-iOS-Ext/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ch.htwchur.eduid-iOS.eduid-iOS-Ext";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.eduidios.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

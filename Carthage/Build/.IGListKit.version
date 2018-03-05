@@ -1,9 +1,24 @@
 {
-  "commitish" : "3.1.1",
+  "Mac" : [
+    {
+      "name" : "IGListKit",
+      "hash" : "df01a6f83b059ecd1b0d5822dd4033e249d412b1cb10e205e90963976d21d612"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+    {
+      "name" : "IGListKit",
+      "hash" : "7d58eebe2968a944959b73ef13a87a178c06d22a10254da9eac5b2ed4a630cf0"
+    }
+  ],
+  "commitish" : "3.2.0",
   "iOS" : [
     {
       "name" : "IGListKit",
-      "hash" : "8f6744cb5314cfafcd875310245809adbaba2d4360c2c93bb41fe34f95d8758a"
+      "hash" : "5bdff88fe55ad704d038295dec614ad90c1f2419da4ff38745fe53b1ec024967"
     }
   ]
 }

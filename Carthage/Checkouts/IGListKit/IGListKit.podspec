@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'IGListKit'
-  s.version = '3.1.1'
+  s.version = '3.2.0'
   s.summary = 'A data-driven UICollectionView framework.'
   s.homepage = 'https://github.com/Instagram/IGListKit'
   s.documentation_url = 'https://instagram.github.io/IGListKit'
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
-  s.osx.deployment_target = '10.10'
+  s.osx.deployment_target = '10.11'
 
   s.ios.frameworks = 'UIKit'
   s.tvos.frameworks = 'UIKit'

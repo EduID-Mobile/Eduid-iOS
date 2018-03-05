@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,26 +27,31 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZb-bu-wK8">
-                        <rect key="frame" x="285" y="9.5" width="51" height="31"/>
-                    </switch>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVx-WX-cTW" customClass="BEMCheckBox">
+                        <rect key="frame" x="294" y="5" width="40" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="qVx-WX-cTW" secondAttribute="height" multiplier="1:1" id="MjU-rd-Lh8"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="dZb-bu-wK8" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="3ZA-O0-Sj7"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="qVx-WX-cTW" secondAttribute="trailing" constant="5" id="3eP-fo-aLq"/>
                 <constraint firstItem="7IW-Xz-1Ov" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="536-Ot-BKO"/>
+                <constraint firstItem="qVx-WX-cTW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="9rV-y7-IRI"/>
                 <constraint firstAttribute="bottom" secondItem="7IW-Xz-1Ov" secondAttribute="bottom" id="Cor-Ii-CNk"/>
+                <constraint firstAttribute="bottom" secondItem="qVx-WX-cTW" secondAttribute="bottom" constant="5" id="Cxl-Z8-Tj9"/>
                 <constraint firstItem="7IW-Xz-1Ov" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Qky-rO-kak"/>
-                <constraint firstAttribute="trailing" secondItem="dZb-bu-wK8" secondAttribute="trailing" constant="5" id="chq-se-4RX"/>
                 <constraint firstItem="7IW-Xz-1Ov" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.8" id="rac-3K-dyi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="143" height="37"/>
             <connections>
                 <outlet property="serviceLabel" destination="7IW-Xz-1Ov" id="dTa-CB-cQe"/>
-                <outlet property="switchButton" destination="dZb-bu-wK8" id="orv-5f-1pr"/>
+                <outlet property="switchButton" destination="qVx-WX-cTW" id="ZLl-QO-Xyn"/>
             </connections>
-            <point key="canvasLocation" x="173.5" y="47.5"/>
+            <point key="canvasLocation" x="173.5" y="47"/>
         </collectionViewCell>
     </objects>
 </document>

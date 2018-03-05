@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class ServiceCell: UICollectionViewCell {
 
     @IBOutlet weak var serviceLabel: UILabel!
-    @IBOutlet weak var switchButton: UISwitch!
+    @IBOutlet weak var switchButton: BEMCheckBox!
     
     override func awakeFromNib() {
-        switchButton.isEnabled = true
+        switchButton.onAnimationType = .oneStroke
     }
     
 }

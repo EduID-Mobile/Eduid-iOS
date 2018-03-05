@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.4.1",
+  "iOS" : [
+    {
+      "name" : "BEMCheckBox",
+      "hash" : "b8f61431fa40f2360349b4d581abfbf3b16c9936f066df1e7f6238033d97a6de"
+    }
+  ]
+}

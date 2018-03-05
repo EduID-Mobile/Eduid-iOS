@@ -10,12 +10,12 @@
 #import <XCTest/XCTest.h>
 
 #import <IGListKit/IGListKit.h>
+#import "IGListMoveIndexInternal.h"
+#import "IGListMoveIndexPathInternal.h"
 
 #import "IGListDebugger.h"
 #import "IGListAdapterUpdaterInternal.h"
 #import "IGListTestAdapterDataSource.h"
-#import "IGListMoveIndexInternal.h"
-#import "IGListMoveIndexPathInternal.h"
 
 @interface IGListDebuggerTests : XCTestCase
 
@@ -24,6 +24,9 @@
 @implementation IGListDebuggerTests
 
 - (void)test_whenSearchingAdapterInstances_thatCorrectCountReturned {
+    // purge any leftover tracking
+    [IGListDebugger clear];
+
     UIViewController *controller = [UIViewController new];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[UICollectionViewFlowLayout new]];
     IGListAdapterUpdater *updater = [IGListAdapterUpdater new];
@@ -45,7 +48,7 @@
     adapter3.collectionView = collectionView;
 
     NSArray *descriptions = [IGListDebugger adapterDescriptions];
-    XCTAssertEqual(descriptions.count, 4);
+    XCTAssertEqual(descriptions.count, 3);
 }
 
 @end

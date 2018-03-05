@@ -18,10 +18,10 @@
 "SXH-v1-53R.normalTitle" = "Abbrechen";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "T0a-fA-h31"; */
-"T0a-fA-h31.normalTitle" = "Fertig";
+"T0a-fA-h31.normalTitle" = "Annehmen";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "aUO-49-80f"; */
 "aUO-49-80f.placeholder" = "Passwort";
 
-/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "tFQ-1P-mkz"; */
-"tFQ-1P-mkz.normalTitle" = "Fertig";
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "tFQ-1P-mkz"; */
+"tFQ-1P-mkz.normalTitle" = "Annehmen";
