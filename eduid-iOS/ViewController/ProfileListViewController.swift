@@ -63,6 +63,15 @@ class ProfileListViewController: UIViewController {
     @IBAction func logout(_ sender: Any) {
         // Perform segue if the logout button is tapped,
         // This has been set up already inside the storyboard.
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "toLogout"  {
+            return
+        }
+        guard let logoutVC = segue.destination as? LogoutViewController else {return}
+        logoutVC.tokenModel = self.token
     }
     
 }

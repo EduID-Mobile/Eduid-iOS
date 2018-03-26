@@ -64,10 +64,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83b-8k-VkZ">
-                                <rect key="frame" x="0.0" y="423" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="423" width="375" height="53.5"/>
                                 <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.27843137254901962" green="0.41176470588235292" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="4jO-Y6-PE2" eventType="touchUpInside" id="hta-T4-WvL"/>
@@ -86,6 +86,7 @@
                             <constraint firstItem="41g-Xq-TQ0" firstAttribute="top" secondItem="I1a-jw-0O9" secondAttribute="top" id="Kma-5U-7wg"/>
                             <constraint firstItem="lHl-uv-jNG" firstAttribute="centerY" secondItem="7rq-4g-eEt" secondAttribute="centerY" id="OA6-3J-Ziv"/>
                             <constraint firstItem="7rq-4g-eEt" firstAttribute="leading" secondItem="I1a-jw-0O9" secondAttribute="leading" id="WYN-FN-cbA"/>
+                            <constraint firstItem="83b-8k-VkZ" firstAttribute="height" secondItem="T0g-GI-las" secondAttribute="height" multiplier="0.08" id="ZDh-G3-X12"/>
                             <constraint firstItem="I1a-jw-0O9" firstAttribute="trailing" secondItem="83b-8k-VkZ" secondAttribute="trailing" id="eM3-do-n9S"/>
                             <constraint firstItem="aUO-49-80f" firstAttribute="leading" secondItem="I1a-jw-0O9" secondAttribute="leading" constant="16" id="egu-8J-P14"/>
                             <constraint firstItem="I1a-jw-0O9" firstAttribute="trailing" secondItem="41g-Xq-TQ0" secondAttribute="trailing" id="fxs-jY-AFB"/>
@@ -248,15 +249,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhV-Nl-mjb">
-                                <rect key="frame" x="10" y="82" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhV-Nl-mjb">
+                                <rect key="frame" x="10" y="82" width="75" height="30"/>
                                 <state key="normal" title="Institution"/>
                                 <connections>
                                     <action selector="filter:" destination="bn6-2i-aix" eventType="touchUpInside" id="Hn9-Ei-Fh6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUl-Es-aar">
-                                <rect key="frame" x="285" y="82" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUl-Es-aar">
+                                <rect key="frame" x="290" y="82" width="75" height="30"/>
                                 <state key="normal" title="Services"/>
                                 <connections>
                                     <action selector="filter:" destination="bn6-2i-aix" eventType="touchUpInside" id="vIa-qu-jfo"/>
@@ -269,6 +270,7 @@
                             <constraint firstItem="9Wu-KI-q7m" firstAttribute="trailing" secondItem="rUl-Es-aar" secondAttribute="trailing" constant="10" id="9cj-sP-574"/>
                             <constraint firstItem="dUf-gn-ZiO" firstAttribute="centerX" secondItem="9Wu-KI-q7m" secondAttribute="centerX" id="FjO-f7-Sdr"/>
                             <constraint firstItem="tFQ-1P-mkz" firstAttribute="centerY" secondItem="P3Q-yp-auO" secondAttribute="centerY" id="H1F-xg-Qos"/>
+                            <constraint firstItem="NhV-Nl-mjb" firstAttribute="width" secondItem="WPJ-P9-ndj" secondAttribute="width" multiplier="0.2" id="HOT-uq-ygP"/>
                             <constraint firstItem="9Wu-KI-q7m" firstAttribute="trailing" secondItem="dUf-gn-ZiO" secondAttribute="trailing" id="MVO-jM-XrU"/>
                             <constraint firstItem="9Wu-KI-q7m" firstAttribute="trailing" secondItem="WPJ-P9-ndj" secondAttribute="trailing" id="T7E-jc-e4c"/>
                             <constraint firstItem="dUf-gn-ZiO" firstAttribute="leading" secondItem="9Wu-KI-q7m" secondAttribute="leading" id="Wln-1l-iHV"/>

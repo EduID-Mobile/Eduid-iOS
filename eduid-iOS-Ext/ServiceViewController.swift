@@ -74,8 +74,8 @@ class ServiceViewController: UIViewController {
         //        filterButton = DropDownButton(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
         //        self.view.addSubview(filterButton)
         self.setUIelements()
-//        self.showLoadUI()
-//        self.removeLoadUI()
+        //        self.showLoadUI()
+        //        self.removeLoadUI()
     }
     //   MARK: -- BUTTON ACTIONS
     
@@ -89,24 +89,28 @@ class ServiceViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-//        self.exContext?.completeRequest(returningItems: [], completionHandler: nil)
-//        self.navigationController?.popToRootViewController(animated: true)
-        showLoadUI()
+        self.exContext?.completeRequest(returningItems: [], completionHandler: nil)
+        //        self.navigationController?.popToRootViewController(animated: true)
+        //        showLoadUI()
     }
     
     @IBAction func done(_ sender: Any) {
         showLoadUI()
         if singleton! {
             self.authToken.downloadSuccess.listener = nil
-            let item = authToken.giveJsonResponse()
-            let returnProvider = NSItemProvider(item: item! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
+            let item = authToken.giveResponseAsDict()
+            var singleDict = [String : Any]()
+            singleDict[(selectedServices!.first)!] = item
+            let completedRSD = protocols?.applyAuthorization(authorization: singleDict)
+            
+            let returnProvider = NSItemProvider(item: completedRSD! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
             let returnItem = NSExtensionItem()
             
             returnItem.attachments = [returnProvider]
             self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
             self.navigationController?.popToRootViewController(animated: true)
         } else{
-//            put the getAllRequest in background thread so the main thread can update the loadUI
+            //            put the getAllRequest in background thread so the main thread can update the loadUI
             self.performSelector(inBackground: #selector(getAllRequests), with: nil)
         }
     }
@@ -114,22 +118,19 @@ class ServiceViewController: UIViewController {
     func sendExtensionPacket(){
         DispatchQueue.main.async {
             self.removeLoadUI()
+            self.navigationController?.popToRootViewController(animated: true)
         }
         if self.response?.count == 0 {
             self.exContext?.completeRequest(returningItems: nil, completionHandler: nil)
-//            self.navigationController?.popToRootViewController(animated: true)
+            //            self.navigationController?.popToRootViewController(animated: true)
         }else{
-            do{
-                let json = try JSONSerialization.data(withJSONObject: self.response!, options: [])
-                let returnProvider = NSItemProvider(item: json as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
-                let returnItem = NSExtensionItem()
-                returnItem.attachments = [returnProvider]
-                self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
-                self.navigationController?.popToRootViewController(animated: true)
-            }catch {
-                print("ERROR: problem on creating json data")
-                return
-            }
+            
+            let completedRSD = protocols?.applyAuthorization(authorization: response!)
+            
+            let returnProvider = NSItemProvider(item: completedRSD! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
+            let returnItem = NSExtensionItem()
+            returnItem.attachments = [returnProvider]
+            self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
         }
         
     }
@@ -288,7 +289,7 @@ class ServiceViewController: UIViewController {
                         if let b = text.toBool() {
                             self.singleton = b
                         }else { self.singleton = true }
-                        self.selectedServices = self.singleton! ? nil : [String]()
+                        self.selectedServices = [String]()
                         self.response = self.singleton! ? nil : [String:Any]()
                         group.leave()
                     }
@@ -311,6 +312,7 @@ class ServiceViewController: UIViewController {
         let group = DispatchGroup()
         
         for service in selectedServices! {
+            print("SERVICE: \(service), from selectedServices")
             group.enter()
             guard let adress = self.protocols?.getApisLink(serviceName: service),
                 let homelink = self.protocols?.getHomepageLink(serviceName: service) else {

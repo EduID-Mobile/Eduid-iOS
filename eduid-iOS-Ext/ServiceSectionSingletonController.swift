@@ -64,6 +64,13 @@ class ServiceSectionSingletonController: ListSectionController {
             return
         }
         
+        guard let vc = self.viewController as? ServiceViewController else{
+            print("error getting view controller on request method")
+            return
+        }
+        vc.showLoadUI()
+        vc.selectedServices?.append(entry.serviceName[index])
+        
         authRequest(adress: adress, homepageLink: homeLink)
     }
     
@@ -77,11 +84,6 @@ class ServiceSectionSingletonController: ListSectionController {
         let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.audience , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKeys!["public"]?.getKid())! , keyToSign: self.sessionKeys!["private"]!)
         print("ASSERT : \(assert!)")
         
-        guard let vc = self.viewController as? ServiceViewController else{
-            print("error getting view controller on request method")
-            return
-        }
-        vc.showLoadUI()
         authToken.fetch(address: adress, assertionBody: assert!)
     }
     

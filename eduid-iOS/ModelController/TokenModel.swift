@@ -160,7 +160,7 @@ class TokenModel : NSObject {
     }
     
     ///Fetch the credentials data of the registered user from the database
-    func fetchDatabase()-> Bool{
+    func fetchDatabase() -> Bool{
         let fetchRequest = NSFetchRequest<NSManagedObject>.init(entityName: "Tokens")
         do{
             entities = (try managedContext?.fetch(fetchRequest))!
@@ -304,14 +304,6 @@ class TokenModel : NSObject {
         print(id_tokenParsed?.first! as Any)
         print(id_tokenParsed?.last! as Any)
         print("at hash count : " , (id_tokenParsed?.last!["at_hash"] as! String).count )
-        
-//        let midIndex = accesToken?.index((accesToken?.startIndex)!, offsetBy: ((accesToken?.count)!/2) )
-//        let resultstr = String(accesToken![ ..<midIndex!]).base64ToBase64Url()
-//        let data = resultstr.data(using: .ascii)
-//
-//        let hash = data?.hashSHA256()
-//        let hashString = hash?.base64EncodedString()
-        
         
         let data = accesToken?.data(using: .utf8)
         let hash = data?.hashSHA256()

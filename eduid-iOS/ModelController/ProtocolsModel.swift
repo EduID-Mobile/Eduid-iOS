@@ -1,4 +1,4 @@
-//
+ //
 //  ProtocolsModel.swift
 //  eduid-iOS
 //
@@ -23,13 +23,15 @@ class ProtocolsModel : NSObject {
     private lazy var persistentContainer: NSPersistentContainer? = nil
     private lazy var managedContext : NSManagedObjectContext? = nil
     
-    private var jsonResponse : [Any]?
+    private var rsdResponse : [Any]?
     private var singleton : Bool
+    private var protocolList : [String]?
     
     //Variables to contain the essential data for the available services
     private var engineName : [String]?
     private var homePageLink : [String]?
     private var apisLink : [String]?
+    
     
     //boolean to check the download status, could be attached with a listener
     var downloadSuccess : BoxBinding<Bool?> = BoxBinding(nil)
@@ -49,6 +51,7 @@ class ProtocolsModel : NSObject {
     
     //main function to fetch the service data from a specific URI adress
     func fetchProtocols ( address : URL , protocolList : [String]){
+        self.protocolList = protocolList
         
         let request = NSMutableURLRequest(url: address)
         request.httpMethod = "POST"
@@ -71,14 +74,14 @@ class ProtocolsModel : NSObject {
     //extract the json response and assign them into the object variables
     private func extractJson(){
         
-        if self.jsonResponse == nil {
+        if self.rsdResponse == nil {
             return
         }
         self.engineName = [String]()
         self.homePageLink = [String]()
         self.apisLink = [String]()
         
-        for entity in jsonResponse! {
+        for entity in rsdResponse! {
             let jsonDict = entity as! [String : Any]
             self.engineName?.append( jsonDict["engineName"] as! String )
             self.homePageLink?.append( jsonDict["homePageLink"] as! String)
@@ -130,6 +133,83 @@ class ProtocolsModel : NSObject {
         return self.engineName?[entryNumber] ?? nil
     }
     
+    func applyAuthorization( authorization: [String:Any] ) -> Data? {
+        var arrayTmp : [Any] = [Any]()
+        
+        for serviceName in authorization.keys {
+            
+            for index in 0..<rsdResponse!.count{
+                
+                let discoveredService = rsdResponse![index]
+                
+                guard var discoveredTmp = discoveredService as? [String: Any] else { continue }
+                if discoveredTmp["engineName"] as! String == serviceName {
+                    print("Put AUTH tag here!")
+                    
+                    discoveredTmp["authorization"] = authorization[serviceName]
+                    
+                    arrayTmp.append(discoveredTmp)
+                } /*else {
+                    arrayTmp.append(discoveredService)
+                }*/
+                
+            }
+            
+        }
+        
+        print("COMPLETED RSD : " , arrayTmp)
+        arrayTmp = apisFiltern(completedRSD: arrayTmp)
+        do{
+            let json = try JSONSerialization.data(withJSONObject: arrayTmp, options: [])
+            return json
+        } catch {
+            print("Error: problem on creating json Data")
+            return nil
+        }
+    }
+    
+    func apisFiltern(completedRSD : [Any]) -> [Any]{
+        print("BEFORE FILTER ::  ", completedRSD)
+        let protocols  = self.protocolList!
+        var result = [Any]()
+        
+        for index in 0..<completedRSD.count {
+            
+            guard var rsdEntry = completedRSD[index] as? [String: Any] else {
+                continue
+            }
+            
+            var filteredRSD = rsdEntry
+            var filteredApis = [String : Any]()
+            
+            guard let apis  = rsdEntry["apis"] as? [String : Any] else {
+                continue
+            }
+            print(apis.description)
+            
+            for api in apis.keys{
+                
+                for protocolTmp in protocols {
+                    
+                    if protocolTmp == api {
+                        print("FOUND : \(protocolTmp)")
+                        filteredApis[api] = apis[api]
+                    }
+                    
+                }
+            
+            }
+            
+            filteredRSD["apis"] = filteredApis
+            result.append(filteredRSD)
+        }
+        print("AFTER FILTER :: " , result)
+        return result
+        
+    }
+    
+    
+    
 }
 
 // MARK: EXTENSION
@@ -163,7 +243,7 @@ extension ProtocolsModel : URLSessionDataDelegate {
         do{
             let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as! [Any]
             print("Response : \(jsonResponse)")
-            self.jsonResponse =  jsonResponse
+            self.rsdResponse =  jsonResponse
             self.extractJson()
             self.downloadSuccess.value = true
         }catch {

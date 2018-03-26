@@ -15,7 +15,7 @@ import NVActivityIndicatorView
  
  ## Functions:
  - The configuration data will be fetched on this screen and if successful this screen would call the LoginViewController automatically
-*/
+ */
 class SplashViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -124,11 +124,21 @@ class SplashViewController: UIViewController {
     // MARK: - Navigation
     
     func downloadFinished () {
+        
+        let tokenEndpoint = configModel?.getTokenEndpoint()
+        let tokenModel = TokenModel(tokenURI: tokenEndpoint!)
+        
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
         let navController = UINavigationController.init(rootViewController: loginVC!)
         navController.navigationBar.isHidden = true
-        self.present(navController, animated: true, completion: nil)
         
+        if tokenModel.fetchDatabase() {
+            guard let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileListViewController else{return }
+            profileVC.token = tokenModel
+            navController.pushViewController(profileVC, animated: true)
+        }
+        
+        self.present(navController, animated: true, completion: nil)
     }
     
     func showBusyUI() {

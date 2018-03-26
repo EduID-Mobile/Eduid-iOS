@@ -144,7 +144,6 @@
                         <outlet property="loginButton" destination="d6d-Ql-seu" id="me9-qd-5ue"/>
                         <outlet property="passwordTF" destination="MfS-ev-ynQ" id="3AS-FJ-eF2"/>
                         <outlet property="usernameTF" destination="lfQ-aj-iJA" id="A3d-he-jrO"/>
-                        <segue destination="HTe-IX-g0A" kind="show" identifier="toProfile" id="G2x-ZX-zlD"/>
                         <segue destination="xBC-jP-W3s" kind="show" identifier="toProfileList" id="HQu-Fr-fEf"/>
                     </connections>
                 </viewController>
@@ -160,7 +159,7 @@
         <!--Profile List View Controller-->
         <scene sceneID="bL0-IF-xux">
             <objects>
-                <viewController id="xBC-jP-W3s" customClass="ProfileListViewController" customModule="eduid_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="xBC-jP-W3s" customClass="ProfileListViewController" customModule="eduid_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mvt-ce-QBU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +171,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="xBC-jP-W3s" eventType="touchUpInside" id="Swo-W3-pAJ"/>
-                                    <segue destination="yGN-BO-1xe" kind="show" identifier="toLogout1" id="FjE-hW-Yh9"/>
+                                    <segue destination="yGN-BO-1xe" kind="show" identifier="toLogout" id="FjE-hW-Yh9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-T0-u76">
@@ -225,7 +224,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-ks-VDb">
-                                <rect key="frame" x="16" y="75" width="343" height="56"/>
+                                <rect key="frame" x="16" y="31" width="343" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="x6j-x4-MSS"/>
                                 </constraints>
@@ -243,11 +242,10 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="HTe-IX-g0A" eventType="touchUpInside" id="jK7-Os-AMu"/>
-                                    <segue destination="yGN-BO-1xe" kind="show" identifier="toLogOut" id="iLz-LH-PRP"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qqX-Gv-BqK">
-                                <rect key="frame" x="0.0" y="148" width="375" height="402"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="w8e-ch-eRy" customClass="ExpandTableViewCell" customModule="eduid_iOS" customModuleProvider="target">
@@ -257,7 +255,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRn-go-T3y">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRn-go-T3y">
                                                     <rect key="frame" x="15" y="11" width="83" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="83" id="J7c-pe-nMG"/>
@@ -266,7 +264,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHe-Xs-jd9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHe-Xs-jd9">
                                                     <rect key="frame" x="157" y="0.0" width="212" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -274,9 +272,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MRn-go-T3y" firstAttribute="leading" secondItem="ihd-ba-b8F" secondAttribute="leadingMargin" constant="-1" id="17j-Y8-rsn"/>
+                                                <constraint firstItem="MRn-go-T3y" firstAttribute="leading" secondItem="ihd-ba-b8F" secondAttribute="leadingMargin" id="17j-Y8-rsn"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="MRn-go-T3y" secondAttribute="bottom" constant="5" id="Jib-Uc-v99"/>
-                                                <constraint firstItem="MRn-go-T3y" firstAttribute="top" secondItem="ihd-ba-b8F" secondAttribute="topMargin" constant="-9" id="RUA-me-sn2"/>
+                                                <constraint firstItem="MRn-go-T3y" firstAttribute="top" secondItem="ihd-ba-b8F" secondAttribute="topMargin" id="RUA-me-sn2"/>
                                                 <constraint firstItem="MHe-Xs-jd9" firstAttribute="top" secondItem="ihd-ba-b8F" secondAttribute="top" id="XS3-G8-2s8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MHe-Xs-jd9" secondAttribute="trailing" constant="-9" id="bkP-uh-a3c"/>
                                                 <constraint firstItem="MRn-go-T3y" firstAttribute="centerY" secondItem="MHe-Xs-jd9" secondAttribute="centerY" id="nia-Gp-men"/>
@@ -401,7 +399,4 @@
             <point key="canvasLocation" x="-9" y="43"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="iLz-LH-PRP"/>
-    </inferredMetricsTieBreakers>
 </document>

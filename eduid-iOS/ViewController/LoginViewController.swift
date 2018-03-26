@@ -16,8 +16,8 @@ import NVActivityIndicatorView
  This view controller mostly working with the TokenModel for its main function
  
  ## Functions :
-  - The view, where the main login process happened
-  - Handling the response from the authentication server, if success => perform a segue
+ - The view, where the main login process happened
+ - Handling the response from the authentication server, if success => perform a segue
  
  */
 
@@ -42,20 +42,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Did load")
-        
-        setUIelements()
         
         loadPlist()
         tokenEnd = configModel.getTokenEndpoint()
         print("Issuer = \(String(describing: configModel.getIssuer()))")
         print("TOKEN ENDPOINT = \(tokenEnd?.absoluteString ?? "error")" )
         
+        self.tokenModel = TokenModel(tokenURI: self.tokenEnd!)
+        
         let keystore = KeyStore()
+        
         if !self.loadKey() {
             sessionKey = KeyStore.generateKeyPair(keyType: kSecAttrKeyTypeRSA as String)!
             self.saveKey()
         }
+        
         var urlPathKey = Bundle.main.url(forResource: "ios_priv", withExtension: "jwks")
         let keyID = keystore.getPrivateKeyIDFromJWKSinBundle(resourcePath: (urlPathKey?.relativePath)!)
         urlPathKey = Bundle.main.url(forResource: "ios_priv", withExtension: "pem")
@@ -67,10 +68,18 @@ class LoginViewController: UIViewController {
         //key object always save the kid in base64url
         signingKey = keystore.getKey(withKid: privateKeyID)!
         
-        tokenModel = TokenModel(tokenURI: self.tokenEnd!)
-        if (tokenModel?.fetchDatabase())! {
-            self.loginSuccessful()
-            return
+        setUIelements()
+        
+        //        tokenModel = TokenModel(tokenURI: self.tokenEnd!)
+        //        if (tokenModel?.fetchDatabase())! {
+        //            self.loginSuccessful()
+        //            return
+        //        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.view.isHidden {
+            self.view.isHidden = false
         }
     }
     
@@ -79,10 +88,14 @@ class LoginViewController: UIViewController {
         imageView.clipsToBounds = true
     }
     
+    /**
+     Setting the UI elements for the user login process
+     */
     func setUIelements(){
         
         backgroundView.loadGif(name: "testGif")
         
+        //Set the observer for the keyboard events, so that the keyboard wouldn't cover the text fields
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
@@ -93,9 +106,7 @@ class LoginViewController: UIViewController {
         passwordTF.inactiveColor = UIColor.gray
         usernameTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
         passwordTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0) //UIColor.red
-        
-//        usernameTF.placeholder = NSLocalizedString("Username", comment: "Username") //"Username"
-//        passwordTF.placeholder = NSLocalizedString("Password", comment: "Password") //"Password"
+       
         
         usernameTF.delegate = self
         passwordTF.delegate = self
@@ -111,16 +122,21 @@ class LoginViewController: UIViewController {
         
     }
     
-    // Move the view 150 to the top so the keyboard won't cover any important UI components
+    /** Move the view 150 to the top so the keyboard won't cover any important UI components
+     */
     @objc func keyboardWillShow(){
         self.view.frame.origin.y = -150 //move upward 150
     }
     
-    // Move the view back to its original place, after keyboard is not longer used
+    /** Move the view back to its original place, after keyboard is not longer used
+     */
     @objc func keyboardWillHide(){
         self.view.frame.origin.y = 0
     }
     
+    /**
+     Listener function to the download status of the TokenModel Controller
+     */
     func checkDownload(downloaded : Bool?) {
         print("checkDownload LoginVC : \(String(describing: downloaded))")
         
@@ -136,7 +152,9 @@ class LoginViewController: UIViewController {
         
     }
     
-    
+    /**
+     Load app credentials, which is required to communicate with the AP(ex. edu-ID service)
+     */
     func loadPlist(){
         if let path = Bundle.main.path(forResource: "Setting", ofType: "plist") {
             if let dic = NSDictionary(contentsOfFile: path) as? [String : Any] {
@@ -146,7 +164,9 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
+    /**
+     Check if session keys are already created before, if yes, the user wouldn't be required to login anymore
+    */
     func loadKey() -> Bool {
         sessionKey = [String : Key]()
         sessionKey = KeyChain.loadKeyPair(tagString: "sessionKey")
@@ -161,6 +181,9 @@ class LoginViewController: UIViewController {
         }
     }
     
+    /**
+     Save a new generated session key pair, which is created after user log in
+    */
     func saveKey() {
         let a = KeyChain.saveKeyPair(tagString: "sessionKey", keyPair: sessionKey!)
         
@@ -230,7 +253,10 @@ class LoginViewController: UIViewController {
     
     func loginSuccessful(){ 
         self.tokenModel?.downloadSuccess.listener = nil
-        self.performSegue(withIdentifier: "toProfileList", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "toProfileList", sender: self)
+        }
+        
     }
     
     func loginUnsuccessful(){
@@ -258,7 +284,7 @@ class LoginViewController: UIViewController {
         let view = UIView(frame: tmpFrame!)
         view.tag = 1
         view.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
-
+        
         indicator.startAnimating()
         view.addSubview(indicator)
         self.view.addSubview(view)
@@ -270,7 +296,8 @@ class LoginViewController: UIViewController {
         view?.removeFromSuperview()
     }
     
-    //remove the keyboard from the view with a swipe down gesture
+    /** Remove the keyboard from the view with a swipe down gesture
+     */
     @IBAction func gestureDidSwipeDown(_ sender: UISwipeGestureRecognizer) {
         
         if self.usernameTF.isFirstResponder || self.passwordTF.isFirstResponder {
