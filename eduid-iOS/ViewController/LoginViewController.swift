@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
      */
     func setUIelements(){
         
-        backgroundView.loadGif(name: "testGif")
+        //backgroundView.loadGif(name: "testGif")
         
         //Set the observer for the keyboard events, so that the keyboard wouldn't cover the text fields
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

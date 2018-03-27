@@ -55,6 +55,9 @@ class ProfileListViewController: UIViewController {
             self.profileNameLabel.text = "Hello " + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
         }
         for key in (jws.keys) {
+            if key == "given_name" || key == "family_name" {
+                continue
+            }
             let profile = ProfileEntry(entryKey: key, entryValue: jws[key]!)
             self.id_token.append(profile)
         }

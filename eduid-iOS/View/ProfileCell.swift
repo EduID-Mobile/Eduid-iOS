@@ -15,6 +15,12 @@ class ProfileCell: UICollectionViewCell {
     @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
+    override func awakeFromNib() {
+        //print("CELL AWAKE FROM NIB")
+        valueLabel.adjustsFontSizeToFitWidth = true
+        keyLabel.adjustsFontSizeToFitWidth = true
+    }
+    
     private var keyStr : String?{
         get{
             return keyLabel.text
