@@ -70,9 +70,9 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
       <RemoteRunnable
-         runnableDebuggingMode = "0"
+         runnableDebuggingMode = "1"
          BundleIdentifier = "ch.htwchur.appwithnail"
-         RemotePath = "/var/containers/Bundle/Application/76B70FC0-E9B5-454C-A1AC-2EB39002BD73/AppWithNail.app">
+         RemotePath = "/var/containers/Bundle/Application/5F3F67D1-B0FB-4EB8-ACE9-7D273E38A48F/AppWithNail.app">
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference

@@ -8,7 +8,7 @@
 
 import UIKit
 import JWTswift
-// !!! THIS CLASS IS NO LONGER USED !!!
+//DEPRECATED :: !!! THIS CLASS IS NO LONGER USED !!!
 
 class ProfileViewController: UIViewController {
     

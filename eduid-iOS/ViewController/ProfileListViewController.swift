@@ -8,6 +8,7 @@
 
 import UIKit
 import IGListKit
+
 /**
  This ViewController would be called directly if the login process is successfull.
  Used to show the user her/his personal data, that are registered on the server
@@ -47,28 +48,6 @@ class ProfileListViewController: UIViewController {
         logoutBtn.titleLabel!.textColor = UIColor.white
     }
     
-    func loadEntries() {
-        guard let jws = token!.giveIdTokenJWS() else {return}
-        if (jws["given_name"] == nil) && (jws["family_name"] == nil) {
-            self.profileNameLabel.text = "Hello"
-        } else {
-            self.profileNameLabel.text = "Hello " + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
-        }
-        for key in (jws.keys) {
-            if key == "given_name" || key == "family_name" {
-                continue
-            }
-            let profile = ProfileEntry(entryKey: key, entryValue: jws[key]!)
-            self.id_token.append(profile)
-        }
-    }
-    
-    @IBAction func logout(_ sender: Any) {
-        // Perform segue if the logout button is tapped,
-        // This has been set up already inside the storyboard.
-        
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "toLogout"  {
             return
@@ -77,8 +56,34 @@ class ProfileListViewController: UIViewController {
         logoutVC.tokenModel = self.token
     }
     
+    @IBAction func logout(_ sender: Any) {
+        // Perform segue if the logout button is tapped,
+        // This has been set up already inside the storyboard.
+    }
+    
+    //MARK: -- Set Functions
+    func loadEntries() {
+        guard let jws = token!.giveIdTokenJWS() else {return}
+        if (jws["given_name"] == nil) && (jws["family_name"] == nil) {
+            self.profileNameLabel.text = "Hello"
+        } else {
+            self.profileNameLabel.text = "Hello " + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
+        }
+        for key in (jws.keys) {
+            /*
+             if key == "given_name" || key == "family_name" {
+             continue
+             }*/
+            if key == "email" || key == "iss" {
+                let profile = ProfileEntry(entryKey: key, entryValue: jws[key]!)
+                self.id_token.append(profile)
+            }
+        }
+    }
+    
 }
 
+//MARK: -- ListAdapterSource(Delegate)
 // Handle the adapter delegate for the ig list kit
 extension ProfileListViewController : ListAdapterDataSource{
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {

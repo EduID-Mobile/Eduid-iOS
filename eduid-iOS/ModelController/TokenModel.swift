@@ -58,6 +58,14 @@ class TokenModel : NSObject {
             print("TokenModel is being deinitialized")
     }
     
+    //    TODO: EXPIRED DATE CHECK
+    func checkTimestamp(timestamp : Int){
+        let timeInter = TimeInterval(timestamp)
+        let date = Date(timeIntervalSince1970: timeInter)
+        
+        print("time : \(date)")
+    }
+    
     // TODO : This function is currently not being used
     func createClientAssertion (receiver : String, keyToSign : Key) -> String {
         
@@ -214,7 +222,8 @@ class TokenModel : NSObject {
     func giveAccessToken() -> String? {
         return self.accesToken
     }
-    
+    //Token ID consist of an array with a length of two,
+    //First element is Header data as Dictionary, and the second is Payload data
     func giveTokenID() -> [[String : Any]]? {
         return self.id_tokenParsed
     }
@@ -261,6 +270,8 @@ class TokenModel : NSObject {
         guard let result : [String : Any] = JWS.parseJWSpayload(stringJWS: jwsToParse) else {
             return nil
         }
+        checkTimestamp(timestamp: result["iat"] as! Int)
+        checkTimestamp(timestamp: result["exp"] as! Int)
         
         return result
     }

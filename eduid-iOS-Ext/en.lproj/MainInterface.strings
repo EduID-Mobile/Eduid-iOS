@@ -3,7 +3,7 @@
 "23U-Kt-wqI.text" = "Title";
 
 /* Class = "UILabel"; text = "Edu-ID Extension"; ObjectID = "41g-Xq-TQ0"; */
-"41g-Xq-TQ0.text" = "Edu-ID Extension";
+"41g-Xq-TQ0.text" = "EduID Extension";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "83b-8k-VkZ"; */
 "83b-8k-VkZ.normalTitle" = "Login";
@@ -21,10 +21,10 @@
 "SXH-v1-53R.normalTitle" = "Cancel";
 
 /* Class = "UIButton"; normalTitle = "Done"; ObjectID = "T0a-fA-h31"; */
-"T0a-fA-h31.normalTitle" = "Done";
+"T0a-fA-h31.normalTitle" = "Accept";
 
 /* Class = "UILabel"; text = "Edu-ID"; ObjectID = "WPJ-P9-ndj"; */
-"WPJ-P9-ndj.text" = "Edu-ID";
+"WPJ-P9-ndj.text" = "EduID";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "aUO-49-80f"; */
 "aUO-49-80f.placeholder" = "Password";
@@ -32,5 +32,5 @@
 /* Class = "UIButton"; normalTitle = "Services"; ObjectID = "rUl-Es-aar"; */
 "rUl-Es-aar.normalTitle" = "Services";
 
-/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "tFQ-1P-mkz"; */
-"tFQ-1P-mkz.normalTitle" = "Done";
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "tFQ-1P-mkz"; */
+"tFQ-1P-mkz.normalTitle" = "Accept";

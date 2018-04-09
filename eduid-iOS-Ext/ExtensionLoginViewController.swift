@@ -90,8 +90,8 @@ class ExtensionLoginViewController: UIViewController {
         usernameTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
         passwordTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
         
-        usernameTF.placeholder = "Username"
-        passwordTF.placeholder = "Password"
+        //usernameTF.placeholder = "Username"
+        //passwordTF.placeholder = "Password"
         
         usernameTF.delegate = self
         passwordTF.delegate = self
@@ -264,35 +264,46 @@ class ExtensionLoginViewController: UIViewController {
     }
     
     func loginUnsuccessful(){
+        let rejectedTitle = NSLocalizedString("LoginRejectedTitle", comment: "Login rejected")
+        let rejectedMsg = NSLocalizedString("LoginRejectedMessage", comment: "Login rejected message")
+        let tryagainTxt = NSLocalizedString("TryAgain", comment: "try again text")
         
-        let alert = UIAlertController(title: "Login rejected", message: "Please check your login or username again", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: rejectedTitle, message: rejectedMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainTxt, style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
     
     func showAlertUI(){
+        let alertmessage = NSLocalizedString("TimeoutMessage", comment: "Message appears on the connection timeout")
+        let tryagainText = NSLocalizedString("TryAgain", comment: "Try again text")
+        let closeText = NSLocalizedString("Close", comment: "Close text")
         
-        let alert = UIAlertController(title: "Timeout: no connection to the server", message: "Please check your internet connection", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close App", style: .default, handler: { (alertAction) in
-            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: {
-            (alertActuin) in
+        let alert = UIAlertController(title: "Timeout", message: alertmessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: {
+            (alertAction) in
             self.checkConfig()
         }))
+        alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
+            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+        }))
+        
         
         self.present(alert, animated: true, completion: nil)
         
     }
     
     func showAlertUILogin(){
+        let alertmessage = NSLocalizedString("TimeoutMessage", comment: "Message appears on the connection timeout")
+        let tryagainText = NSLocalizedString("TryAgain", comment: "Try again text")
+        let closeText = NSLocalizedString("Close", comment: "Close text")
         
-        let alert = UIAlertController(title: "Timeout: no connection to the server", message: "Please check your internet connection", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close App", style: .default, handler: { (alertAction) in
+        let alert = UIAlertController(title: "Timeout", message: alertmessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
             UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
+        
         
         self.present(alert, animated: true, completion: nil)
         
@@ -336,12 +347,12 @@ extension ExtensionLoginViewController : UITextFieldDelegate {
         
         if textField == self.passwordTF {
             textField.isSecureTextEntry = true
-            if textField.text == "Password" {
+            if textField.text == NSLocalizedString("Password", comment: "") {
                 textField.text = ""
             }
         } else {
             
-            if textField.text == "Username" {
+            if textField.text == NSLocalizedString("Username", comment: "") {
                 textField.text = ""
             }
         }

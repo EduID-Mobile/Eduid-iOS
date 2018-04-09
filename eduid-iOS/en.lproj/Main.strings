@@ -24,7 +24,7 @@
 "Mv8-4a-MKx.normalTitle" = "Cancel";
 
 /* Class = "UILabel"; text = "Edu-ID"; ObjectID = "Sln-3Q-mnX"; */
-"Sln-3Q-mnX.text" = "Edu-ID";
+"Sln-3Q-mnX.text" = "EduID";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "d6d-Ql-seu"; */
 "d6d-Ql-seu.normalTitle" = "Login";
@@ -36,7 +36,7 @@
 "nuC-ks-VDb.text" = "Label";
 
 /* Class = "UILabel"; text = "EduID-iOS"; ObjectID = "pT4-mM-ARF"; */
-"pT4-mM-ARF.text" = "EduID-iOS";
+"pT4-mM-ARF.text" = "EduID";
 
 /* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "zza-35-BDV"; */
 "zza-35-BDV.normalTitle" = "Logout";

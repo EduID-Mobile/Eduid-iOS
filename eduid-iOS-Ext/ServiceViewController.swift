@@ -164,12 +164,16 @@ class ServiceViewController: UIViewController {
     }
     
     func showAlertUILogin(){
+        let alertmessage = NSLocalizedString("TimeoutMessage", comment: "Message appears on the connection timeout")
+        let tryagainText = NSLocalizedString("TryAgain", comment: "Try again text")
+        let closeText = NSLocalizedString("Close", comment: "Close text")
         
-        let alert = UIAlertController(title: "Timeout: no connection to the server", message: "Please check your internet connection", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close App", style: .default, handler: { (alertAction) in
+        let alert = UIAlertController(title: "Timeout", message: alertmessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
             UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
+       
         
         self.present(alert, animated: true, completion: nil)
         
@@ -242,9 +246,12 @@ class ServiceViewController: UIViewController {
     }
     
     func requestUnsuccessful(){
+        let alertTitle = NSLocalizedString("RequestAlertTitle", comment: "Title for the alert view when request is rejected")
+        let alertMessage = NSLocalizedString("RequestAlertMessage", comment: "Message for the alert view when request is rejected")
+        let tryagainTxt = NSLocalizedString("TryAgain", comment: "Try again text")
         
-        let alert = UIAlertController(title: "Request rejected", message: "Please contact the administrator", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainTxt, style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }

@@ -56,6 +56,7 @@ class EduidConfigModel : NSObject {
         defer{ self.fetchDatabase() }
     }
     
+    //Deinit for debugging purpose only
     deinit {
         print("EduidConfigModel is being deinitialized")
     }
@@ -273,7 +274,7 @@ class EduidConfigModel : NSObject {
 }
 
 
-// MARK: EXTENSION
+// MARK: -- EXTENSION URLSessionDataDelegate
 // Extension to manage the response data from the server
 extension EduidConfigModel : URLSessionDataDelegate {
     

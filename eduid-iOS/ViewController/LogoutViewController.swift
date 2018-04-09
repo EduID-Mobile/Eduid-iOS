@@ -52,12 +52,16 @@ class LogoutViewController: UIViewController {
     }
     
     func showAlertUI(){
+        let errorMsg = NSLocalizedString("ErrorLogout", comment: "error text for the log out")
+        let tryagainText = NSLocalizedString("TryAgain", comment: "Try again text")
+        let closeText = NSLocalizedString("Close", comment: "Close text")
         
-        let alert = UIAlertController(title: "Error", message: "Error occured on the logout process, please contact the support", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Close App", style: .default, handler: { (alertAction) in
+        let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
             UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
+        
         
         self.present(alert, animated: true, completion: nil)
         

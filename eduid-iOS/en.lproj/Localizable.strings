@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  eduid-iOS
+
+  Created by Blended Learning Center on 09.04.18.
+  Copyright © 2018 Blended Learning Center. All rights reserved.
+*/
+
+"TimeoutMessage" = "Please check your internet connection and reopen the app";
+"TryAgain" = "Try Again";
+"Close" = "Close";
+"Username" = "Username";
+"Password" = "Password";
+"ErrorLogout" = "Error occured on the logout process, please contact the support";
+"LoginRejectedTitle" = "Login Failed";
+"LoginRejectedMessage" = "Please check your login details again";
+"RequestAlertTitle" = "Request Rejected";
+"RequestAlertMessage" = "Please contact the administrator from your service provider";
