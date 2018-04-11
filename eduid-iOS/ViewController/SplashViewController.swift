@@ -19,6 +19,8 @@ import NVActivityIndicatorView
 class SplashViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
     private var indicator : NVActivityIndicatorView!
     
     var configModel : EduidConfigModel?
@@ -123,6 +125,7 @@ class SplashViewController: UIViewController {
     
     // MARK: - UI functions
     func setUI(){
+        /*
         indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
                                                           y: self.view.center.y,
                                                           width: self.view.bounds.width / 5, height: self.view.bounds.height / 7))
@@ -131,6 +134,7 @@ class SplashViewController: UIViewController {
         indicator.isHidden = false
         indicator.center = self.view.center
         self.view.insertSubview(indicator, belowSubview: titleLabel)
+         */
     }
     
     func showAlertUI(){
@@ -150,11 +154,18 @@ class SplashViewController: UIViewController {
     }
     
     func showBusyUI() {
-        self.indicator!.startAnimating()
+        //self.indicator!.startAnimating()
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.autoreverse, .repeat, .curveEaseInOut], animations: {
+            self.imageView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }, completion: { finished in
+            self.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+        
     }
     
     func hideBusyUI() {
-        self.indicator!.stopAnimating()
+        //self.indicator!.stopAnimating()
+        imageView.layer.removeAllAnimations()
     }
     
     

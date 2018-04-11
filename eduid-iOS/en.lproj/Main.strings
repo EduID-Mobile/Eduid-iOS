@@ -36,7 +36,7 @@
 "nuC-ks-VDb.text" = "Label";
 
 /* Class = "UILabel"; text = "EduID-iOS"; ObjectID = "pT4-mM-ARF"; */
-"pT4-mM-ARF.text" = "EduID";
+"pT4-mM-ARF.text" = "SWITCH EduID";
 
 /* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "zza-35-BDV"; */
 "zza-35-BDV.normalTitle" = "Logout";

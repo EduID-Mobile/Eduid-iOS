@@ -285,7 +285,8 @@ class ExtensionLoginViewController: UIViewController {
             self.checkConfig()
         }))
         alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
-            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+            //UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+            self.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
         }))
         
         
@@ -301,7 +302,8 @@ class ExtensionLoginViewController: UIViewController {
         let alert = UIAlertController(title: "Timeout", message: alertmessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
-            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+            //UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+            self.extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
         }))
         
         

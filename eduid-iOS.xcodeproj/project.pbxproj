@@ -13,6 +13,9 @@
 		6806A01A1FD6E4DB00DDBDFB /* rsaCert.der in Resources */ = {isa = PBXBuildFile; fileRef = 6806A0161FD6E4DB00DDBDFB /* rsaCert.der */; };
 		6806A01C1FD6E69500DDBDFB /* ios_priv.pem in Resources */ = {isa = PBXBuildFile; fileRef = 6806A01B1FD6E69500DDBDFB /* ios_priv.pem */; };
 		6806A01D1FD6E69500DDBDFB /* ios_priv.pem in Resources */ = {isa = PBXBuildFile; fileRef = 6806A01B1FD6E69500DDBDFB /* ios_priv.pem */; };
+		680A85D6207CE99B00BB006A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A85D5207CE99B00BB006A /* GradientView.swift */; };
+		680A85D8207CF8E600BB006A /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A85D7207CF8E600BB006A /* RoundCornerButton.swift */; };
+		680A85D9207CF8E600BB006A /* RoundCornerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A85D7207CF8E600BB006A /* RoundCornerButton.swift */; };
 		6810E978201633A500E020E6 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810E977201633A500E020E6 /* UserInfoModel.swift */; };
 		6810E97A20171CFA00E020E6 /* ExtensionLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810E97920171CFA00E020E6 /* ExtensionLoginViewController.swift */; };
 		6810E97B201732FE00E020E6 /* ios_priv.jwks in Resources */ = {isa = PBXBuildFile; fileRef = 68DA97AB2006208700CA96B6 /* ios_priv.jwks */; };
@@ -36,8 +39,6 @@
 		68237BD4201B7F8D001E2EFB /* AuthorizationTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68237BD2201B7F8D001E2EFB /* AuthorizationTokenModel.swift */; };
 		68531ED22021F5AF008E79CE /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68531ED12021F5AF008E79CE /* UIImage+Gif.swift */; };
 		68531ED32021F5AF008E79CE /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68531ED12021F5AF008E79CE /* UIImage+Gif.swift */; };
-		68531ED52021F635008E79CE /* testGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68531ED42021F635008E79CE /* testGif.gif */; };
-		68531ED62021F635008E79CE /* testGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68531ED42021F635008E79CE /* testGif.gif */; };
 		68531EEA20220EF8008E79CE /* ExtensionAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68531EE920220EF8008E79CE /* ExtensionAssets.xcassets */; };
 		68531EF7202219C0008E79CE /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68531EF6202219C0008E79CE /* IGListKit.framework */; };
 		68531EF8202219E0008E79CE /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68531EF6202219C0008E79CE /* IGListKit.framework */; };
@@ -133,6 +134,8 @@
 		6806A0151FD6E4DB00DDBDFB /* ios_priv.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_priv.p12; sourceTree = "<group>"; };
 		6806A0161FD6E4DB00DDBDFB /* rsaCert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsaCert.der; sourceTree = "<group>"; };
 		6806A01B1FD6E69500DDBDFB /* ios_priv.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_priv.pem; sourceTree = "<group>"; };
+		680A85D5207CE99B00BB006A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		680A85D7207CF8E600BB006A /* RoundCornerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerButton.swift; sourceTree = "<group>"; };
 		6810E977201633A500E020E6 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		6810E97920171CFA00E020E6 /* ExtensionLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLoginViewController.swift; sourceTree = "<group>"; };
 		6810E97D2017541900E020E6 /* Setting.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
@@ -155,7 +158,6 @@
 		68199B711FCD8C2F001AE0D0 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		68237BD2201B7F8D001E2EFB /* AuthorizationTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationTokenModel.swift; sourceTree = "<group>"; };
 		68531ED12021F5AF008E79CE /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
-		68531ED42021F635008E79CE /* testGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = testGif.gif; sourceTree = "<group>"; };
 		68531EE920220EF8008E79CE /* ExtensionAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ExtensionAssets.xcassets; sourceTree = "<group>"; };
 		68531EF6202219C0008E79CE /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		6856C3421FDE902600470246 /* eduid_pub.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eduid_pub.jwks; sourceTree = "<group>"; };
@@ -329,7 +331,6 @@
 		6835D4B51FD1986000166BBD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				68531ED42021F635008E79CE /* testGif.gif */,
 				68DA97AB2006208700CA96B6 /* ios_priv.jwks */,
 				6856C3421FDE902600470246 /* eduid_pub.jwks */,
 				6806A0151FD6E4DB00DDBDFB /* ios_priv.p12 */,
@@ -395,6 +396,8 @@
 				68C6347A200769E600D3914F /* BoxBinding.swift */,
 				68C6CB752021C3E0000BB409 /* Utilities.swift */,
 				687917112024B83F00E529C2 /* CopyableLabel.swift */,
+				680A85D5207CE99B00BB006A /* GradientView.swift */,
+				680A85D7207CF8E600BB006A /* RoundCornerButton.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -593,7 +596,6 @@
 				68199B411FCD8A8B001AE0D0 /* LaunchScreen.storyboard in Resources */,
 				6810E97E2017541900E020E6 /* Setting.plist in Resources */,
 				68199B391FCD8A8B001AE0D0 /* Main.storyboard in Resources */,
-				68531ED52021F635008E79CE /* testGif.gif in Resources */,
 				6806A0191FD6E4DB00DDBDFB /* rsaCert.der in Resources */,
 				68DA97AC2006208700CA96B6 /* ios_priv.jwks in Resources */,
 				6856C3431FDE902600470246 /* eduid_pub.jwks in Resources */,
@@ -625,7 +627,6 @@
 				6879171C2024CF3A00E529C2 /* ServiceSingletonCell.xib in Resources */,
 				686BF86D1FD02DF000751B08 /* MainInterface.storyboard in Resources */,
 				6806A01A1FD6E4DB00DDBDFB /* rsaCert.der in Resources */,
-				68531ED62021F635008E79CE /* testGif.gif in Resources */,
 				686630BE203C0CE600A812F3 /* ServiceCell.xib in Resources */,
 				68CD9A472012250E000A2407 /* appicontest.png in Resources */,
 				6810E97F2017541900E020E6 /* Setting.plist in Resources */,
@@ -684,10 +685,12 @@
 				68C6347920075B0900D3914F /* SplashViewController.swift in Sources */,
 				68ADAD04202340C1006491C2 /* ProfileListViewController.swift in Sources */,
 				6866979E2004AF0400B224B2 /* SharedDataStore.swift in Sources */,
+				680A85D6207CE99B00BB006A /* GradientView.swift in Sources */,
 				68199B6E1FCD8BEC001AE0D0 /* EduidConfigModel.swift in Sources */,
 				687917122024B83F00E529C2 /* CopyableLabel.swift in Sources */,
 				6810E978201633A500E020E6 /* UserInfoModel.swift in Sources */,
 				68199B361FCD8A8B001AE0D0 /* LoginViewController.swift in Sources */,
+				680A85D8207CF8E600BB006A /* RoundCornerButton.swift in Sources */,
 				68199B341FCD8A8B001AE0D0 /* AppDelegate.swift in Sources */,
 				68DFE7D1200F74AD006D548A /* LogoutViewController.swift in Sources */,
 				68237BD3201B7F8D001E2EFB /* AuthorizationTokenModel.swift in Sources */,
@@ -729,6 +732,7 @@
 				686BF87D1FD058E000751B08 /* EduidConfigModel.swift in Sources */,
 				686697A02004AF6200B224B2 /* SharedDataStore.swift in Sources */,
 				6810E980201A03F000E020E6 /* ProtocolsModel.swift in Sources */,
+				680A85D9207CF8E600BB006A /* RoundCornerButton.swift in Sources */,
 				68FA8E78203AB4EB0020CA38 /* DropDownButton.swift in Sources */,
 				686BF8761FD02DFA00751B08 /* eduid_iOS.xcdatamodeld in Sources */,
 				687917142024BEDB00E529C2 /* ServiceViewController.swift in Sources */,
