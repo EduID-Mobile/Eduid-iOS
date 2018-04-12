@@ -307,8 +307,8 @@ class ServiceViewController: UIViewController {
     }
     
     @objc func getAllRequests(){
-        
-        guard let secCon = self.adapter.sectionController(forSection: 1) as? ServiceSectionController else {
+        //Section 0 = Search Bar, Section 1 = Filter Section
+        guard let secCon = self.adapter.sectionController(forSection: 2) as? ServiceSectionController else {
             return
         }
         

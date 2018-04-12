@@ -16,3 +16,9 @@
 "LoginRejectedMessage" = "Please check your login details again";
 "RequestAlertTitle" = "Request Rejected";
 "RequestAlertMessage" = "Please contact the administrator from your service provider";
+"LogoutTitle" = "Warning";
+"LogoutText" = "Logging out means also that all app authorizations will be rejected";
+"CancelText" = "Cancel";
+"ConfirmText" = "Confirm";
+
+

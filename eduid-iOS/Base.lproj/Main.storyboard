@@ -24,7 +24,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT4-mM-ARF">
                                 <rect key="frame" x="34" y="358" width="307" height="29"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="EduID-iOS">
+                                    <fragment content="SWITCH EduID">
                                         <attributes>
                                             <color key="NSColor" red="0.12156862745098039" green="0.59607843137254901" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
@@ -332,7 +332,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zza-35-BDV" customClass="RoundCornerButton" customModule="eduid_iOS" customModuleProvider="target">
-                                <rect key="frame" x="40" y="576.5" width="295" height="50.5"/>
+                                <rect key="frame" x="37.5" y="576.5" width="300" height="50.5"/>
                                 <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -386,17 +386,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xh3-9q-bSl" firstAttribute="leading" secondItem="TG8-5q-9QD" secondAttribute="leading" id="4PZ-EV-97K"/>
+                            <constraint firstItem="zza-35-BDV" firstAttribute="centerX" secondItem="TG8-5q-9QD" secondAttribute="centerX" id="7KV-tc-RjH"/>
                             <constraint firstItem="zza-35-BDV" firstAttribute="top" secondItem="rbv-g4-Mlu" secondAttribute="bottom" constant="10" id="CL6-dh-eij"/>
                             <constraint firstItem="xh3-9q-bSl" firstAttribute="trailing" secondItem="TG8-5q-9QD" secondAttribute="trailing" id="DrT-N1-Hu3"/>
+                            <constraint firstItem="zza-35-BDV" firstAttribute="width" secondItem="mvt-ce-QBU" secondAttribute="width" multiplier="0.8" id="Lzd-No-1EM"/>
                             <constraint firstItem="xh3-9q-bSl" firstAttribute="top" secondItem="mvt-ce-QBU" secondAttribute="topMargin" id="MYe-zz-gB0"/>
                             <constraint firstItem="rbv-g4-Mlu" firstAttribute="trailing" secondItem="TG8-5q-9QD" secondAttribute="trailing" id="RH8-qX-sJa"/>
-                            <constraint firstAttribute="trailing" secondItem="zza-35-BDV" secondAttribute="trailing" constant="40" id="SbT-yX-n7A"/>
                             <constraint firstItem="rbv-g4-Mlu" firstAttribute="top" secondItem="xh3-9q-bSl" secondAttribute="bottom" id="Ufu-DK-TeC"/>
                             <constraint firstItem="xh3-9q-bSl" firstAttribute="height" secondItem="mvt-ce-QBU" secondAttribute="height" multiplier="0.19" id="Zny-T5-OIN"/>
                             <constraint firstItem="rbv-g4-Mlu" firstAttribute="height" secondItem="mvt-ce-QBU" secondAttribute="height" multiplier="0.63" id="eyT-Lb-yq5"/>
                             <constraint firstItem="rbv-g4-Mlu" firstAttribute="leading" secondItem="TG8-5q-9QD" secondAttribute="leading" id="gW1-0Z-AV8"/>
                             <constraint firstAttribute="bottom" secondItem="zza-35-BDV" secondAttribute="bottom" constant="40" id="ksQ-Ou-WUn"/>
-                            <constraint firstItem="zza-35-BDV" firstAttribute="leading" secondItem="mvt-ce-QBU" secondAttribute="leading" constant="40" id="zM4-AH-uyB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TG8-5q-9QD"/>
                     </view>

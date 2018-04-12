@@ -13,6 +13,10 @@
 "Password" = "Passwort";
 "ErrorLogout" = "Error beim Ausloggen, bitte kontaktieren Sie den Support";
 "LoginRejectedTitle" = "Anmeldung Fehlgeschlagen";
-"LoginRejectedMessage" = "Bitte prüfen Sie nochmal Ihre Anmeldedaten";
+"LoginRejectedMessage" = "Bitte überprüfen Sie nochmals Ihre Anmeldedaten";
 "RequestAlertTitle" = "Anfrage abgelehnt";
 "RequestAlertMessage" = "Bitte kontaktieren Sie Ihre Admin von dem ausgewählten Service";
+"LogoutTitle" = "Achtung";
+"LogoutText" = "Beim Ausloggen verlieren Sie ihre aktuelle Auhtorizierung zu allen Services";
+"CancelText" = "Abbrechen";
+"ConfirmText" = "Annehmen";

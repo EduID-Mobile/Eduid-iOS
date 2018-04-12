@@ -80,10 +80,10 @@ class ProfileListViewController: UIViewController {
     }
     
     func showAlertLogout(){
-        let logoutTitle = "Warning"
-        let logoutText = "Logging out means also that all app authorizations will be rejected"
-        let cancelText = "Cancel"
-        let confirmText = "Confirm"
+        let logoutTitle = NSLocalizedString("LogoutTitle", comment: "Alert title on logging out")
+        let logoutText = NSLocalizedString("LogoutText", comment: "Logout alert description")
+        let cancelText = NSLocalizedString("CancelText", comment: "Cancel text")
+        let confirmText = NSLocalizedString("ConfirmText", comment: "Confirm text")
         
         let alert = UIAlertController(title: logoutTitle, message: logoutText, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: cancelText, style: .cancel, handler: nil))
