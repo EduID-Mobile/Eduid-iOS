@@ -18,12 +18,17 @@ final class SearchCell: UICollectionViewCell, UISearchBarDelegate {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        searchBar.frame = contentView.bounds
-        
+        searchBar.frame = self.bounds
+        //searchBar.
+        searchBar.placeholder = "Search"
+        searchBar.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 0.82)
+//        searchBar.scopeBarBackgroundImage = UIImage.imageWithColor(color: .black)
+        searchBar.searchBarStyle = .minimal
+        searchBar.barStyle = .default
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(gestureSwipedDown(_:)))
         gesture.direction = .down
         self.superview?.addGestureRecognizer(gesture)
-        
+//        self.backgroundColor = .black //UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.8)
     }
     
     @IBAction func gestureSwipedDown(_ sender: UISwipeGestureRecognizer){

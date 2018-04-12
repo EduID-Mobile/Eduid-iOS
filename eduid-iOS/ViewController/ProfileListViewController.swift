@@ -8,6 +8,7 @@
 
 import UIKit
 import IGListKit
+import JWTswift
 
 /**
  This ViewController would be called directly if the login process is successfull.
@@ -44,8 +45,6 @@ class ProfileListViewController: UIViewController {
         adapter.collectionView =  collectionView
         adapter.dataSource = self
         
-        logoutBtn.backgroundColor = UIColor.black
-        logoutBtn.titleLabel!.textColor = UIColor.white
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,18 +55,13 @@ class ProfileListViewController: UIViewController {
         logoutVC.tokenModel = self.token
     }
     
-    @IBAction func logout(_ sender: Any) {
-        // Perform segue if the logout button is tapped,
-        // This has been set up already inside the storyboard.
-    }
-    
     //MARK: -- Set Functions
     func loadEntries() {
         guard let jws = token!.giveIdTokenJWS() else {return}
         if (jws["given_name"] == nil) && (jws["family_name"] == nil) {
             self.profileNameLabel.text = "Hello"
         } else {
-            self.profileNameLabel.text = "Hello " + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
+            self.profileNameLabel.text = "Hello \n" + String(describing: jws["given_name"]!) + " " + String(describing: jws["family_name"]!)
         }
         for key in (jws.keys) {
             /*
@@ -81,6 +75,62 @@ class ProfileListViewController: UIViewController {
         }
     }
     
+    @IBAction func logout(_ sender: Any) {
+        showAlertLogout()
+    }
+    
+    func showAlertLogout(){
+        let logoutTitle = "Warning"
+        let logoutText = "Logging out means also that all app authorizations will be rejected"
+        let cancelText = "Cancel"
+        let confirmText = "Confirm"
+        
+        let alert = UIAlertController(title: logoutTitle, message: logoutText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: cancelText, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: confirmText,
+                                      style: .default,
+                                      handler: {(alertaction) in
+                                        self.confirmLogout()}
+                                    )
+                        )
+        let viewGray = UIView(frame: self.view.frame)
+        viewGray.tag = 1
+        viewGray.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        self.view.addSubview(viewGray)
+        self.present(alert, animated: true, completion: {
+            viewGray.removeFromSuperview()
+        })
+    }
+    
+    func confirmLogout(){
+        self.token?.deleteAll()
+        let root = self.navigationController?.viewControllers.first as! LoginViewController
+        root.tokenModel?.deleteAll()
+        guard let keypair =  KeyChain.loadKeyPair(tagString: "sessionKey") else{
+            print("Key pair is not found")
+            return
+        }
+        
+        if KeyChain.deleteKeyPair(tagString: "sessionKey", keyPair: keypair) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    func showAlertUI(){
+        let errorMsg = NSLocalizedString("ErrorLogout", comment: "error text for the log out")
+        let tryagainText = NSLocalizedString("TryAgain", comment: "Try again text")
+        let closeText = NSLocalizedString("Close", comment: "Close text")
+        
+        let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
+            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+        }))
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
 
 //MARK: -- ListAdapterSource(Delegate)

@@ -27,9 +27,10 @@ class ServiceViewController: UIViewController {
     @IBOutlet weak var midLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var serviceButton: UIButton!
+    @IBOutlet weak var cancelButton: RoundCornerButton!
+    @IBOutlet weak var cancelButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var cancelButtonDoubleWidth: NSLayoutConstraint!
     @IBOutlet weak var institutionButton: UIButton!
-    //private var filterButton = DropDownButton()
     
     private var indicator : NVActivityIndicatorView!
     
@@ -69,8 +70,6 @@ class ServiceViewController: UIViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
         
-        serviceButton.tag = 0
-        institutionButton.tag = 1
         //        filterButton = DropDownButton(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
         //        self.view.addSubview(filterButton)
         self.setUIelements()
@@ -78,15 +77,6 @@ class ServiceViewController: UIViewController {
         //        self.removeLoadUI()
     }
     //   MARK: -- BUTTON ACTIONS
-    
-    @IBAction func filter(_ sender: UIButton) {
-        print("Filter function : " , sender.titleLabel?.text ?? "nil" , ", \(sender.tag)")
-        if !sender.isSelected{
-            sender.isSelected = true
-        } else {
-            sender.isSelected = false
-        }
-    }
     
     @IBAction func cancel(_ sender: Any) {
         self.exContext?.completeRequest(returningItems: [], completionHandler: nil)
@@ -263,6 +253,11 @@ class ServiceViewController: UIViewController {
         self.protocols = self.singleton != nil ? ProtocolsModel(singleton: singleton!) : ProtocolsModel()
         doneButton.isHidden = singleton ?? true
         
+        if doneButton.isHidden{
+            doneButton.removeFromSuperview()
+            cancelButtonWidth.isActive = false
+            cancelButtonDoubleWidth.isActive = true
+        }
         protocols!.downloadSuccess.bind {
             self.checkDownload(downloaded: $0 )
         }
@@ -356,13 +351,13 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
         }else {
             //            self.services?.serviceName.append("Search Bar")
             if filterString == "" {
-                return ["Search Bar" , self.services!] as! [ListDiffable]
+                return ["Search Bar", "Sort Cell" , self.services!] as! [ListDiffable]
             }else{
                 let filtered = self.services?.serviceName.filter{$0.lowercased().contains(filterString.lowercased()) }
                     .map{$0 as ListDiffable }
                 let filteredServices = Service.init(filtered! as! [String])
                 print("FILTERED  = " , filteredServices)
-                return ["Search Bar" , filteredServices] as! [ListDiffable]
+                return ["Search Bar", "Sort Cell" , filteredServices] as! [ListDiffable]
             }
         }
     }
@@ -374,6 +369,8 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
             let sectionCon = SearchSectionController()
             sectionCon.delegate = self
             return sectionCon
+        }else if let str = object as? String, str == "Sort Cell" {
+            return SortSectionController()
         }else {
             guard let serviceTmp : Service = (object as? Service) else {
                 fatalError()

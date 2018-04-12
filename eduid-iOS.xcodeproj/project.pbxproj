@@ -45,6 +45,11 @@
 		6856C3431FDE902600470246 /* eduid_pub.jwks in Resources */ = {isa = PBXBuildFile; fileRef = 6856C3421FDE902600470246 /* eduid_pub.jwks */; };
 		6857BD5D1FFE49920002A72B /* JWTswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6857BD5B1FFE49920002A72B /* JWTswift.framework */; };
 		6857BD601FFE57EC0002A72B /* JWTswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6857BD5B1FFE49920002A72B /* JWTswift.framework */; };
+		685F8A02207E68F100904433 /* SortingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8A00207E68F100904433 /* SortingCell.swift */; };
+		685F8A03207E68F100904433 /* SortingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685F8A01207E68F100904433 /* SortingCell.xib */; };
+		685F8A06207F5CDE00904433 /* SortSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8A05207F5CDE00904433 /* SortSectionController.swift */; };
+		685F8A08207F6A3700904433 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685F8A07207F6A3700904433 /* test.xib */; };
+		685F8A09207F6F4500904433 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A85D5207CE99B00BB006A /* GradientView.swift */; };
 		6860AC0E201A3C8E004F4F98 /* BoxBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6347A200769E600D3914F /* BoxBinding.swift */; };
 		686630BD203C0CE600A812F3 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686630BB203C0CE600A812F3 /* ServiceCell.swift */; };
 		686630BE203C0CE600A812F3 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 686630BC203C0CE600A812F3 /* ServiceCell.xib */; };
@@ -142,7 +147,6 @@
 		68199B301FCD8A8B001AE0D0 /* eduid-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eduid-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68199B331FCD8A8B001AE0D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68199B351FCD8A8B001AE0D0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		68199B381FCD8A8B001AE0D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68199B3B1FCD8A8B001AE0D0 /* eduid_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = eduid_iOS.xcdatamodel; sourceTree = "<group>"; };
 		68199B401FCD8A8B001AE0D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68199B421FCD8A8B001AE0D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +166,10 @@
 		68531EF6202219C0008E79CE /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		6856C3421FDE902600470246 /* eduid_pub.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eduid_pub.jwks; sourceTree = "<group>"; };
 		6857BD5B1FFE49920002A72B /* JWTswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTswift.framework; path = Carthage/Build/iOS/JWTswift.framework; sourceTree = "<group>"; };
+		685F8A00207E68F100904433 /* SortingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingCell.swift; sourceTree = "<group>"; };
+		685F8A01207E68F100904433 /* SortingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortingCell.xib; sourceTree = "<group>"; };
+		685F8A05207F5CDE00904433 /* SortSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortSectionController.swift; sourceTree = "<group>"; };
+		685F8A07207F6A3700904433 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
 		686630BB203C0CE600A812F3 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		686630BC203C0CE600A812F3 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		686BF8671FD02DF000751B08 /* eduid-iOS-Ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "eduid-iOS-Ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +179,8 @@
 		686BF8771FD02FFF00751B08 /* eduid-iOS-Ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eduid-iOS-Ext.entitlements"; sourceTree = "<group>"; };
 		686BF8781FD033CA00751B08 /* eduid-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "eduid-iOS.entitlements"; sourceTree = "<group>"; };
 		68771FB42045492C0010AD8A /* BEMCheckBox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMCheckBox.framework; path = Carthage/Build/iOS/BEMCheckBox.framework; sourceTree = "<group>"; };
+		6877B170207F805B00129EEC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6877B171207F805F00129EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6879170E202473C900E529C2 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		687917112024B83F00E529C2 /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		687917132024BEDB00E529C2 /* ServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
@@ -182,8 +192,6 @@
 		688FBAEE204D324900DF5FD4 /* en-US */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-US"; path = "en-US.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		68980B78200388D60099AA7B /* eduid-iOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "eduid-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		68AB96CE207BAE5500B55A44 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MainInterface.strings; sourceTree = "<group>"; };
-		68AB96D2207BAF3200B55A44 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		68AB96D6207BB07C00B55A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		68AB96D8207BB0A300B55A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		68AB96DD207BB5DE00B55A44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68AB96DF207BB5E200B55A44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -362,17 +370,21 @@
 				68FA8E83203B31DE0020CA38 /* ServiceSectionController.swift */,
 				687917172024CA4900E529C2 /* ServiceSectionSingletonController.swift */,
 				68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */,
-				68FA8E7C203B040A0020CA38 /* SearchCell.swift */,
-				68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */,
-				687917152024BF2900E529C2 /* Service.swift */,
+				685F8A05207F5CDE00904433 /* SortSectionController.swift */,
+				687917192024CF3A00E529C2 /* ServiceSingletonCell.swift */,
 				686630BB203C0CE600A812F3 /* ServiceCell.swift */,
 				686630BC203C0CE600A812F3 /* ServiceCell.xib */,
-				687917192024CF3A00E529C2 /* ServiceSingletonCell.swift */,
+				68FA8E7C203B040A0020CA38 /* SearchCell.swift */,
+				687917152024BF2900E529C2 /* Service.swift */,
+				685F8A00207E68F100904433 /* SortingCell.swift */,
+				685F8A01207E68F100904433 /* SortingCell.xib */,
+				68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */,
 				6879171A2024CF3A00E529C2 /* ServiceSingletonCell.xib */,
 				686BF86B1FD02DF000751B08 /* MainInterface.storyboard */,
 				686BF86E1FD02DF000751B08 /* Info.plist */,
 				68531EE920220EF8008E79CE /* ExtensionAssets.xcassets */,
 				686BF8691FD02DF000751B08 /* ServiceListViewController.swift */,
+				685F8A07207F6A3700904433 /* test.xib */,
 			);
 			path = "eduid-iOS-Ext";
 			sourceTree = "<group>";
@@ -628,6 +640,8 @@
 				686BF86D1FD02DF000751B08 /* MainInterface.storyboard in Resources */,
 				6806A01A1FD6E4DB00DDBDFB /* rsaCert.der in Resources */,
 				686630BE203C0CE600A812F3 /* ServiceCell.xib in Resources */,
+				685F8A08207F6A3700904433 /* test.xib in Resources */,
+				685F8A03207E68F100904433 /* SortingCell.xib in Resources */,
 				68CD9A472012250E000A2407 /* appicontest.png in Resources */,
 				6810E97F2017541900E020E6 /* Setting.plist in Resources */,
 				6810E97C2017473F00E020E6 /* eduid_pub.jwks in Resources */,
@@ -734,11 +748,14 @@
 				6810E980201A03F000E020E6 /* ProtocolsModel.swift in Sources */,
 				680A85D9207CF8E600BB006A /* RoundCornerButton.swift in Sources */,
 				68FA8E78203AB4EB0020CA38 /* DropDownButton.swift in Sources */,
+				685F8A06207F5CDE00904433 /* SortSectionController.swift in Sources */,
 				686BF8761FD02DFA00751B08 /* eduid_iOS.xcdatamodeld in Sources */,
+				685F8A02207E68F100904433 /* SortingCell.swift in Sources */,
 				687917142024BEDB00E529C2 /* ServiceViewController.swift in Sources */,
 				68ADAD0220233792006491C2 /* ProfileEntry.swift in Sources */,
 				6879171B2024CF3A00E529C2 /* ServiceSingletonCell.swift in Sources */,
 				68FA8E7B203B01AF0020CA38 /* SearchSectionController.swift in Sources */,
+				685F8A09207F6F4500904433 /* GradientView.swift in Sources */,
 				68C6CB772021C617000BB409 /* Utilities.swift in Sources */,
 				6860AC0E201A3C8E004F4F98 /* BoxBinding.swift in Sources */,
 			);
@@ -768,9 +785,8 @@
 		68199B371FCD8A8B001AE0D0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				68199B381FCD8A8B001AE0D0 /* Base */,
-				68AB96D2207BAF3200B55A44 /* de */,
-				68AB96D6207BB07C00B55A44 /* en */,
+				6877B170207F805B00129EEC /* en */,
+				6877B171207F805F00129EEC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

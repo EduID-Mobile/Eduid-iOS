@@ -78,20 +78,24 @@ class SplashViewController: UIViewController {
     
     func downloadFinished () {
         
-        let tokenEndpoint = configModel?.getTokenEndpoint()
-        let tokenModel = TokenModel(tokenURI: tokenEndpoint!)
-        
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
-        let navController = UINavigationController.init(rootViewController: loginVC!)
-        navController.navigationBar.isHidden = true
-        
-        if tokenModel.fetchDatabase() {
-            guard let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileListViewController else{return }
-            profileVC.token = tokenModel
-            navController.pushViewController(profileVC, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
+            
+            let tokenEndpoint = self.configModel?.getTokenEndpoint()
+            let tokenModel = TokenModel(tokenURI: tokenEndpoint!)
+            
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+            let navController = UINavigationController.init(rootViewController: loginVC!)
+            navController.navigationBar.isHidden = true
+            
+            if tokenModel.fetchDatabase() {
+                guard let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as? ProfileListViewController else{return }
+                profileVC.token = tokenModel
+                navController.pushViewController(profileVC, animated: true)
+            }
+            
+            self.present(navController, animated: true, completion: nil)
+            
         }
-        
-        self.present(navController, animated: true, completion: nil)
     }
     
     func loadPlist(){
@@ -126,14 +130,14 @@ class SplashViewController: UIViewController {
     // MARK: - UI functions
     func setUI(){
         /*
-        indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
-                                                          y: self.view.center.y,
-                                                          width: self.view.bounds.width / 5, height: self.view.bounds.height / 7))
-        indicator!.color = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
-        indicator!.type = .lineScaleParty
-        indicator.isHidden = false
-        indicator.center = self.view.center
-        self.view.insertSubview(indicator, belowSubview: titleLabel)
+         indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
+         y: self.view.center.y,
+         width: self.view.bounds.width / 5, height: self.view.bounds.height / 7))
+         indicator!.color = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
+         indicator!.type = .lineScaleParty
+         indicator.isHidden = false
+         indicator.center = self.view.center
+         self.view.insertSubview(indicator, belowSubview: titleLabel)
          */
     }
     

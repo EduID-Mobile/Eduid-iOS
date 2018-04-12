@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-Ql-seu" customClass="RoundCornerButton" customModule="eduid_iOS" customModuleProvider="target">
-                                <rect key="frame" x="38" y="573.5" width="300" height="53.5"/>
+                                <rect key="frame" x="40" y="573.5" width="295" height="53.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -232,8 +232,8 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGV-dD-RGx">
-                                <rect key="frame" x="251" y="388" width="114" height="14"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGV-dD-RGx">
+                                <rect key="frame" x="239" y="393" width="126" height="14"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot Password">
@@ -265,6 +265,7 @@
                             <constraint firstAttribute="trailing" secondItem="vzO-Xq-3Ph" secondAttribute="trailing" id="FtY-hS-dGX"/>
                             <constraint firstItem="A60-4r-UIe" firstAttribute="leading" secondItem="zc3-zB-hgy" secondAttribute="leading" id="GFI-v1-e92"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d6d-Ql-seu" secondAttribute="bottom" constant="40" id="HMB-4Q-c13"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d6d-Ql-seu" secondAttribute="trailing" constant="40" id="IKl-RQ-tG5"/>
                             <constraint firstItem="A60-4r-UIe" firstAttribute="top" secondItem="JOT-BF-Ljh" secondAttribute="bottom" constant="3" id="J8I-2X-Eu0"/>
                             <constraint firstItem="zc3-zB-hgy" firstAttribute="top" secondItem="QSs-Xd-fig" secondAttribute="bottom" constant="15" id="K25-SQ-sua"/>
                             <constraint firstItem="2zL-eW-e10" firstAttribute="centerY" secondItem="T1a-Ki-u7Y" secondAttribute="centerY" id="KY8-kw-yis"/>
@@ -279,10 +280,10 @@
                             <constraint firstItem="2zL-eW-e10" firstAttribute="leading" secondItem="T1a-Ki-u7Y" secondAttribute="trailing" id="dMb-rL-QJj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JOT-BF-Ljh" secondAttribute="trailing" constant="20" id="deo-IM-hmr"/>
                             <constraint firstItem="QSs-Xd-fig" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ds6-3C-aAw"/>
+                            <constraint firstItem="d6d-Ql-seu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="eR3-MK-HUN"/>
                             <constraint firstItem="T1a-Ki-u7Y" firstAttribute="centerY" secondItem="7kp-OL-70n" secondAttribute="centerY" id="fCU-Rg-WFc"/>
                             <constraint firstItem="Tkb-te-kFQ" firstAttribute="leading" secondItem="eOy-2Z-4kV" secondAttribute="trailing" constant="8" id="fUX-yX-Dcv"/>
                             <constraint firstItem="2zL-eW-e10" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="fkI-qN-AdI"/>
-                            <constraint firstItem="d6d-Ql-seu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="hsq-n3-TMS"/>
                             <constraint firstItem="eOy-2Z-4kV" firstAttribute="leading" secondItem="7kp-OL-70n" secondAttribute="leading" id="iiE-it-sJz"/>
                             <constraint firstItem="eOy-2Z-4kV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.05" id="laf-oA-mYY"/>
                             <constraint firstItem="vzO-Xq-3Ph" firstAttribute="leading" secondItem="7kp-OL-70n" secondAttribute="leading" id="mCi-92-lem"/>
@@ -292,7 +293,6 @@
                             <constraint firstItem="7kp-OL-70n" firstAttribute="top" secondItem="A60-4r-UIe" secondAttribute="bottom" constant="30" id="uPS-Kn-iIs"/>
                             <constraint firstItem="JOT-BF-Ljh" firstAttribute="centerY" secondItem="zc3-zB-hgy" secondAttribute="centerY" id="w81-Gr-2DC"/>
                             <constraint firstItem="LGV-dD-RGx" firstAttribute="height" secondItem="T1a-Ki-u7Y" secondAttribute="height" multiplier="0.3" id="yju-d4-JFL"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tkb-te-kFQ" secondAttribute="trailing" constant="20" symbolic="YES" id="z0b-K1-WL2"/>
                             <constraint firstItem="zc3-zB-hgy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="z13-bj-5sI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Security
 import CoreFoundation
+import BEMCheckBox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

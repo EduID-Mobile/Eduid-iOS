@@ -10,6 +10,7 @@ import UIKit
 import JWTswift
 import TextFieldEffects
 import NVActivityIndicatorView
+import BEMCheckBox
 
 /**
  The login view controller, where the user could insert her/his login data.
@@ -26,10 +27,16 @@ class LoginViewController: UIViewController {
     private var configModel = EduidConfigModel()
     //    private var requestData = RequestData()
     
-    @IBOutlet weak var usernameTF: IsaoTextField! //    UITextField!
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var backgroundView: UIImageView!
-    @IBOutlet weak var passwordTF: IsaoTextField! //UITextField!
+   
+    @IBOutlet weak var usernameTF: UITextField!
+    @IBOutlet weak var usernameLine: UIView!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var passwordLine: UIView!
+    @IBOutlet weak var showButton: UIButton!
+    @IBOutlet weak var checkBox: BEMCheckBox!
+    
     @IBOutlet weak var loginButton: UIButton!
     private var indicator : NVActivityIndicatorView!
     
@@ -75,11 +82,10 @@ class LoginViewController: UIViewController {
         if self.view.isHidden {
             self.view.isHidden = false
         }
-    }
-    
-    override func viewWillLayoutSubviews() {
-        imageView.layer.cornerRadius = imageView.layer.bounds.height / 2
-        imageView.clipsToBounds = true
+        if loadAccount() != "" {
+            usernameTF.text = loadAccount()
+            checkBox.setOn(true, animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -170,8 +176,28 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func saveAccount(){
+        if checkBox.on {
+            UserDefaults.standard.set(usernameTF.text, forKey: "username")
+        }
+    }
+    
+    func loadAccount()-> String {
+        guard let res = UserDefaults.standard.string(forKey: "username") else {
+            return ""
+        }
+        return res
+    }
+    
+    func clearAccount(){
+        UserDefaults.standard.removeObject(forKey: "username")
+    }
+    
     func loginSuccessful(){
         self.tokenModel?.downloadSuccess.listener = nil
+        //save the account if the "remember"Box is selected/ticked
+        saveAccount()
+        
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toProfileList", sender: self)
         }
@@ -202,28 +228,27 @@ class LoginViewController: UIViewController {
         self.view.frame.origin.y = -150 //move upward 150
     }
     
+    @IBAction func forgotPassword(_ sender: Any) {
+        if let url = URL(string: "https://google.com") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
     /** Setting the UI elements for the user login process
      */
     func setUIelements(){
-        
-        //backgroundView.loadGif(name: "testGif")
         
         //Set the observer for the keyboard events, so that the keyboard wouldn't cover the text fields
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-        let image = UIImage(named: "appicon400.png")
-        imageView.image = image
-        
-        usernameTF.inactiveColor = UIColor.gray
-        passwordTF.inactiveColor = UIColor.gray
-        usernameTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
-        passwordTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0) //UIColor.red
-       
-        
+
         usernameTF.delegate = self
+        usernameTF.keyboardType = .emailAddress
         passwordTF.delegate = self
-        
+        passwordTF.text = ""
+        let showImg = UIImage(named: "eyeShow")
+        showButton.setImage(showImg, for: .selected)
         
         indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
                                                           y: self.view.center.y,
@@ -233,6 +258,10 @@ class LoginViewController: UIViewController {
         indicator.isHidden = false
         indicator.center = self.view.center
         
+        checkBox.boxType = BEMBoxType.square
+        checkBox.onTintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+        checkBox.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+        checkBox.delegate = self
     }
     
     func showAlertUI(){
@@ -267,14 +296,25 @@ class LoginViewController: UIViewController {
         let view  = self.view.viewWithTag(1)
         view?.removeFromSuperview()
     }
+    @IBAction func showHidePass(_ sender: Any) {
+        showButton.isSelected = !showButton.isSelected
+        if showButton.isSelected {
+            passwordTF.isSecureTextEntry = false
+        }else {
+            passwordTF.isSecureTextEntry = true
+        }
+    }
     
     /** Remove the keyboard from the view with a swipe down gesture
      */
     @IBAction func gestureDidSwipeDown(_ sender: UISwipeGestureRecognizer) {
-        
-        if self.usernameTF.isFirstResponder || self.passwordTF.isFirstResponder {
-            self.view.endEditing(true)
+        let lineColor = UIColor(red: 205/255, green: 206/255, blue: 211/255, alpha: 1)
+        if self.usernameTF.isFirstResponder {
+            usernameLine.backgroundColor = lineColor
+        } else if self.passwordTF.isFirstResponder {
+                 self.passwordLine.backgroundColor = lineColor
         }
+        self.view.endEditing(true)
     }
     
 }
@@ -283,6 +323,13 @@ class LoginViewController: UIViewController {
 extension LoginViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let lineColor = UIColor(red: 205/255, green: 206/255, blue: 211/255, alpha: 1)
+        if textField == self.passwordTF{
+            passwordLine.backgroundColor = lineColor
+        }else if textField == self.usernameTF{
+            usernameLine.backgroundColor = lineColor
+        }
         return self.view.endEditing(true)
     }
     
@@ -290,13 +337,18 @@ extension LoginViewController : UITextFieldDelegate {
         textField.autocorrectionType = .no
         
         if textField == self.passwordTF {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.passwordLine.backgroundColor = UIColor(red: 31/255, green: 152/255, blue: 213/255, alpha: 1)
+            })
             textField.isSecureTextEntry = true
             if textField.text == NSLocalizedString("Password", comment:""){
                 textField.text = ""
             }
         } else {
-            
-            if textField.text == NSLocalizedString("Username", comment:"") {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.usernameLine.backgroundColor = UIColor(red: 31/255, green: 152/255, blue: 213/255, alpha: 1)
+            })
+            if textField.text == "example@uni-test.com"{//NSLocalizedString("Username", comment:"") {
                 textField.text = ""
             }
             
@@ -304,3 +356,15 @@ extension LoginViewController : UITextFieldDelegate {
     }
     
 }
+
+extension LoginViewController : BEMCheckBoxDelegate {
+    
+    func didTap(_ checkBox: BEMCheckBox) {
+        if !checkBox.on {
+            clearAccount()
+        }
+    }
+    
+}
+
+

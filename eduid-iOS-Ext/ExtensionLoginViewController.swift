@@ -10,6 +10,7 @@ import UIKit
 import JWTswift
 import TextFieldEffects
 import NVActivityIndicatorView
+import BEMCheckBox
 
 /**
  An intial view controller of the extension app.
@@ -22,11 +23,17 @@ import NVActivityIndicatorView
  */
 class ExtensionLoginViewController: UIViewController {
 
-    @IBOutlet weak var usernameTF: IsaoTextField! //UITextField!
-    @IBOutlet weak var passwordTF: IsaoTextField! //UITextField!
+    
     @IBOutlet weak var imageView : UIImageView!
-    @IBOutlet weak var backgroundView : UIImageView!
+
     private var indicator : NVActivityIndicatorView!
+    
+    @IBOutlet weak var usernameTF: UITextField!
+    @IBOutlet weak var usernameLine: UIView!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var passwordLine: UIView!
+    @IBOutlet weak var showButton: UIButton!
+    @IBOutlet weak var checkBox: BEMCheckBox!
     
     private var reqConfigUrl : URL?
     private var userDev : String?
@@ -73,46 +80,14 @@ class ExtensionLoginViewController: UIViewController {
         
     }
     
-    func setUIelements(){
-        
-//        backgroundView.loadGif(name: "testGif")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "appicontest")//?.roundedImageWithBorder(width: 10, color: UIColor.black)
-        imageView.layer.cornerRadius = imageView.layer.frame.width / 2
-        
-        
-        usernameTF.inactiveColor = UIColor.gray
-        passwordTF.inactiveColor = UIColor.gray
-        usernameTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
-        passwordTF.activeColor = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
-        
-        //usernameTF.placeholder = "Username"
-        //passwordTF.placeholder = "Password"
-        
-        usernameTF.delegate = self
-        passwordTF.delegate = self
-        
-        indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
-                                                          y: self.view.center.y,
-                                                          width: self.view.bounds.width / 5, height: self.view.bounds.height / 7))
-        indicator!.color = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
-        indicator!.type = .lineScaleParty
-        indicator.isHidden = false
-        indicator.center = self.view.center
-        
-    }
-
-    @objc func keyboardWillShow(){
-        self.view.frame.origin.y = -150 //move upward 150
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if loadAccount() != "" {
+            usernameTF.text = loadAccount()
+            checkBox.setOn(true, animated: true)
+        }
     }
     
-    @objc func keyboardWillHide(){
-        self.view.frame.origin.y = 0
-    }
 
     @IBAction func login(_ sender: Any) {
         guard let userSub : String = usernameTF.text , let pass : String  = passwordTF.text else{
@@ -244,6 +219,25 @@ class ExtensionLoginViewController: UIViewController {
         }
     }
     
+    func saveAccount(){
+        if checkBox.on{
+            UserDefaults.standard.set(usernameTF.text, forKey: "username")
+        }
+    }
+    
+    func loadAccount()-> String {
+        guard let res = UserDefaults.standard.string(forKey: "username") else {
+            return ""
+        }
+        return res
+    }
+    
+    func clearAccount(){
+        UserDefaults.standard.removeObject(forKey: "username")
+    }
+    
+    //    MARK: -- UI Functions
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier != "toProfileExtension"{
             return
@@ -255,9 +249,24 @@ class ExtensionLoginViewController: UIViewController {
             destinationVC.apString = self.configmodel?.getIssuer()
         }
     }
+    @IBAction func showHidePass(_ sender: Any) {
+        showButton.isSelected = !showButton.isSelected
+        if showButton.isSelected {
+            passwordTF.isSecureTextEntry = false
+        }else {
+            passwordTF.isSecureTextEntry = true
+        }
+    }
+    
+    @IBAction func forgotPassword(_ sender: Any) {
+        if let url = URL(string: "https://google.com") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
     func loginSuccessful(){
         self.tokenModel?.downloadSuccess.listener = nil
+        saveAccount()
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "toProfileExtension", sender: self)
         }
@@ -336,6 +345,40 @@ class ExtensionLoginViewController: UIViewController {
         
     }
     
+    func setUIelements(){
+        
+        //        backgroundView.loadGif(name: "testGif")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        usernameTF.delegate = self
+        usernameTF.keyboardType = .emailAddress
+        passwordTF.delegate = self
+        passwordTF.text = ""
+        showButton.setImage(UIImage(named: "eyeShowE"), for: .selected)
+        
+        indicator = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x,
+                                                          y: self.view.center.y,
+                                                          width: self.view.bounds.width / 5, height: self.view.bounds.height / 7))
+        indicator!.color = UIColor(red: 85/255, green: 146/255, blue: 193/255, alpha: 1.0)
+        indicator!.type = .lineScaleParty
+        indicator.isHidden = false
+        indicator.center = self.view.center
+        
+        checkBox.boxType = BEMBoxType.square
+        checkBox.onTintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+        checkBox.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+        checkBox.delegate = self
+    }
+    
+    @objc func keyboardWillShow(){
+        self.view.frame.origin.y = -150 //move upward 150
+    }
+    
+    @objc func keyboardWillHide(){
+        self.view.frame.origin.y = 0
+    }
 }
 
 extension ExtensionLoginViewController : UITextFieldDelegate {
@@ -354,10 +397,18 @@ extension ExtensionLoginViewController : UITextFieldDelegate {
             }
         } else {
             
-            if textField.text == NSLocalizedString("Username", comment: "") {
+            if textField.text == "example@uni-test.com"{//NSLocalizedString("Username", comment: "") {
                 textField.text = ""
             }
         }
     }
     
+}
+
+extension ExtensionLoginViewController : BEMCheckBoxDelegate {
+    func didTap(_ checkBox: BEMCheckBox) {
+        if !checkBox.on {
+            clearAccount()
+        }
+    }
 }
