@@ -55,10 +55,16 @@ final class DemosViewController: UIViewController, ListAdapterDataSource {
                  controllerClass: StackedViewController.self),
         DemoItem(name: "Objc Demo",
                  controllerClass: ObjcDemoViewController.self),
+        DemoItem(name: "Objc Generated Model Demo",
+                 controllerClass: ObjcGeneratedModelDemoViewController.self),
         DemoItem(name: "Calendar (auto diffing)",
                  controllerClass: CalendarViewController.self),
         DemoItem(name: "Dependency Injection",
-                 controllerClass: AnnouncingDepsViewController.self)
+                 controllerClass: AnnouncingDepsViewController.self),
+        DemoItem(name: "Reorder Cells",
+                 controllerClass: ReorderableViewController.self),
+        DemoItem(name: "Reorder Stacked Section Controllers",
+                 controllerClass: ReorderableStackedViewController.self)
     ]
 
     override func viewDidLoad() {

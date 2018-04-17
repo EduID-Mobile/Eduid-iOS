@@ -1,22 +1,13 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
   "commitish" : "af055afbf63728361ee932a9a4009ffed0df48bb",
   "iOS" : [
     {
       "name" : "NVActivityIndicatorViewAppExtension",
-      "hash" : "3411df290a38604d07025c4ce371817255ee44947f38213f5068efcaabaac424"
+      "hash" : "45395d9814f45e77b4c6d6d25aced1c1cbd5b6ad953da18c4751f3ea6f3caa1b"
     },
     {
       "name" : "NVActivityIndicatorView",
-      "hash" : "683377a1e17806c8c2fc93d089d9a71b51de50e639105f1b1dc6fa23f23530c4"
+      "hash" : "ce576ebca5b9e8bcbb45ee5254b79719fe15c745dea94adf8403d795f7a48e38"
     }
   ]
 }

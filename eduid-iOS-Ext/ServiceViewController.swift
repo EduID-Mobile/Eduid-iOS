@@ -87,22 +87,46 @@ class ServiceViewController: UIViewController {
     @IBAction func done(_ sender: Any) {
         showLoadUI()
         if singleton! {
-            self.authToken.downloadSuccess.listener = nil
-            let item = authToken.giveResponseAsDict()
-            var singleDict = [String : Any]()
-            singleDict[(selectedServices!.first)!] = item
-            let completedRSD = protocols?.applyAuthorization(authorization: singleDict)
+            //TODO :: download the access token from the service
+            authToken.downloadSuccess.bind(listener: { (dlBool) in
+                DispatchQueue.main.async {
+                    self.removeLoadUI()
+                }
+                if dlBool == nil {
+                    self.showAlertUI()
+                } else if !dlBool! {
+                    self.requestUnsuccessful()
+                }else {
+                    self.singletonSuccessful()
+                }
+            })
             
-            let returnProvider = NSItemProvider(item: completedRSD! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
-            let returnItem = NSExtensionItem()
-            
-            returnItem.attachments = [returnProvider]
-            self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
-            self.navigationController?.popToRootViewController(animated: true)
+            guard let sscontroller = adapter.sectionController(forSection: 2) as? ServiceSectionSingletonController,
+                let adress = protocols?.getApisLink(serviceName: (services?.serviceName[sscontroller.getSelectedIndex()!])! ),
+                let homelink = protocols?.getHomepageLink(serviceName: (services?.serviceName[sscontroller.getSelectedIndex()!])!) else {
+                    self.removeLoadUI()
+                    return
+            }
+            sscontroller.authRequest(adress: adress, homepageLink: homelink)
         } else{
             //            put the getAllRequest in background thread so the main thread can update the loadUI
             self.performSelector(inBackground: #selector(getAllRequests), with: nil)
         }
+    }
+    
+    func singletonSuccessful () {
+        self.authToken.downloadSuccess.listener = nil
+        let item = authToken.giveResponseAsDict()
+        var singleDict = [String : Any]()
+        singleDict[(selectedServices!.first)!] = item
+        let completedRSD = protocols?.applyAuthorization(authorization: singleDict)
+        
+        let returnProvider = NSItemProvider(item: completedRSD! as NSSecureCoding, typeIdentifier: kUTTypeJSON as String)
+        let returnItem = NSExtensionItem()
+        
+        returnItem.attachments = [returnProvider]
+        self.exContext?.completeRequest(returningItems: [returnItem], completionHandler: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func sendExtensionPacket(){
@@ -153,7 +177,7 @@ class ServiceViewController: UIViewController {
         
     }
     
-    func showAlertUILogin(){
+    func showAlertUI(){
         let alertmessage = NSLocalizedString("TimeoutMessage", comment: "Message appears on the connection timeout")
         let tryagainText = NSLocalizedString("TryAgain", comment: "Try again text")
         let closeText = NSLocalizedString("Close", comment: "Close text")
@@ -161,10 +185,10 @@ class ServiceViewController: UIViewController {
         let alert = UIAlertController(title: "Timeout", message: alertmessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: tryagainText, style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: closeText, style: .default, handler: { (alertAction) in
-//            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+            //            UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
             self.exContext?.completeRequest(returningItems: nil, completionHandler: nil)
         }))
-       
+        
         
         self.present(alert, animated: true, completion: nil)
         
@@ -251,7 +275,7 @@ class ServiceViewController: UIViewController {
         let addresss = URL.init(string: loadProtocolURLFromPlist()! )
         
         self.protocols = self.singleton != nil ? ProtocolsModel(singleton: singleton!) : ProtocolsModel()
-        doneButton.isHidden = singleton ?? true
+        //doneButton.isHidden = singleton ?? true
         
         if doneButton.isHidden{
             doneButton.removeFromSuperview()
@@ -383,12 +407,12 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
                     DispatchQueue.main.async{
                         self.removeLoadUI()
                         if dlbool == nil {
-                            self.showAlertUILogin()
+                            self.showAlertUI()
                         }
                         else if dlbool == false {
                             self.requestUnsuccessful()
                         } else {
-                            self.done(self)
+                            self.singletonSuccessful()
                         }
                     }
                 }

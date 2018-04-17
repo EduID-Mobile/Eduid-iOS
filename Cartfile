@@ -1,5 +1,5 @@
-github "BLC-HTWChur/JWTswift" ~> 1.0.0
+github "BLC-HTWChur/JWTswift" "master"
 github "raulriera/TextFieldEffects"
-github "Instagram/IGListKit" ~> 3.0
+github "Instagram/IGListKit" "master"
 github "ninjaprox/NVActivityIndicatorView" "carthage"
 github "Boris-Em/BEMCheckBox"

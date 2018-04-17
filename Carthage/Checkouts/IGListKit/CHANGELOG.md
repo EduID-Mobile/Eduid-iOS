@@ -2,7 +2,34 @@
 
 The changelog for `IGListKit`. Also see the [releases](https://github.com/instagram/IGListKit/releases) on GitHub.
 
-3.2.0 (upcoming release)
+3.3.0 (upcoming release)
+-----
+
+### Enhancements
+
+- Add support for UICollectionView's interactive reordering in iOS 9+.  Updates include `-[IGListSectionController canMoveItemAtIndex:]` to enable the behavior, `-[IGListSectionController moveObjectFromIndex:toIndex:]` called when items within a section controller were moved through reordering, `-[IGListAdapterDataSource listAdapter:moveObject:from:to]` called when section controllers themselves were reordered (only possible when all section controllers contain exactly 1 object), and `-[IGListUpdatingDelegate moveSectionInCollectionView:fromIndex:toIndex]` to enable custom updaters to conform to the reordering behavior. The update also includes two new examples `ReorderableSectionController` and `ReorderableStackedViewController` to demonstrate how to enable interactive reordering in your client app. [Jared Verdi](https://github.com/jverdi) [(#976)](https://github.com/Instagram/IGListKit/pull/976)
+
+- 5x improvement to diffing performance when result is only inserts or deletes. [Ryan Nystrom](https://github.com/rnystrom) [(tbd)](tbd)
+
+- Can always show sticky header although section data is empty.  [Marcus Wu](https://github.com/marcuswu0814) [(#1129)](https://github.com/Instagram/IGListKit/pull/1129)
+
+- Added `-[IGListCollectionContext dequeueReusableCellOfClass:withReuseIdentifier:forSectionController:atIndex:]` to allow for registering cells of the same class with different reuse identifiers. [Jeremy Lawrence](https://github.com/Ziewvater) (tbd)
+
+### Fixes
+
+- Fixed Xcode 9.3 build errors. [Sho Ikeda](https://github.com/ikesyo) [(#1143)](https://github.com/Instagram/IGListKit/pull/1143)
+
+- Copy objects when retrieving from datasource to prevent modification of models in binding section controller. [Kashish Goel](https://github.com/kashishgoel) [(#1109)](https://github.com/Instagram/IGListKit/pull/1109)
+
+- Fixed footer is sticky when `stickyHeader` is `true` [aelam](https://github.com/aelam) [(#1094)](https://github.com/Instagram/IGListKit/pull/1094)
+
+- Updated IGListCollectionViewLayout to rely on layoutAttributesClass instead of vanilla `UICollectionViewLayoutAttributes` [Cole Potrocky](https://github.com/SirensOfTitan) [#1135](https://github.com/instagram/IGListKit/pull/1135)
+
+- `-[IGListSectionController didSelectItemAtIndex:]` is now called when a `scrollViewDelegate` or `collectionViewDelegate` is set. [Ryan Nystrom](https://github.com/rnystrom) [(#1108)](https://github.com/Instagram/IGListKit/pull/1108)
+
+- Fixed binding section controllers failing to update their cells when the section controller's section changes. [Chrisna Aing](https://github.com/ccrazy88) [(#1144)](https://github.com/Instagram/IGListKit/pull/1144)
+
+3.2.0
 -----
 
 ### Enhancements

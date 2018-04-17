@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -33,32 +34,31 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-tX-pQu">
-                        <rect key="frame" x="305" y="0.0" width="34" height="50"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <state key="normal" title="&gt;">
-                            <color key="titleColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvW-Om-A2i" customClass="BEMCheckBox">
+                        <rect key="frame" x="294" y="5" width="40" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="wvW-Om-A2i" secondAttribute="height" multiplier="1:1" id="Ksm-aE-vzq"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="rLr-tX-pQu" secondAttribute="trailing" id="5fE-Wc-Oar"/>
-                <constraint firstAttribute="bottom" secondItem="rLr-tX-pQu" secondAttribute="bottom" id="LU6-TX-KqS"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" id="Piq-Q2-qrg"/>
-                <constraint firstItem="rLr-tX-pQu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="W2G-9F-Yi0"/>
+                <constraint firstItem="wvW-Om-A2i" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="5" id="bhc-EW-H51"/>
+                <constraint firstItem="wvW-Om-A2i" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" constant="-5" id="fOo-0s-cBB"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottomMargin" id="ky1-rm-XKm"/>
-                <constraint firstItem="rLr-tX-pQu" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" multiplier="0.1" id="mxg-cg-7UN"/>
+                <constraint firstItem="wvW-Om-A2i" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="-5" id="lEF-Ry-HUD"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="nPb-b6-Kqp"/>
                 <constraint firstItem="7pu-3p-Z41" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.8" id="y3D-De-v31"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="339" height="50"/>
             <connections>
-                <outlet property="button" destination="rLr-tX-pQu" id="llk-Pd-AYd"/>
                 <outlet property="serviceLabel" destination="7pu-3p-Z41" id="3sk-bd-9zR"/>
+                <outlet property="switchButton" destination="wvW-Om-A2i" id="4XM-YV-OpR"/>
             </connections>
-            <point key="canvasLocation" x="83" y="7"/>
+            <point key="canvasLocation" x="82.5" y="7"/>
         </collectionViewCell>
     </objects>
 </document>

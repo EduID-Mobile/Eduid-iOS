@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bij-SC-8ZL">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bij-SC-8ZL">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,20 +17,20 @@
             <objects>
                 <viewController id="4jO-Y6-PE2" customClass="ExtensionLoginViewController" customModule="eduid_iOS_Ext" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T0g-GI-las">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOs-MB-MaH" customClass="GradientView" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="284.33333333333331"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconGray" translatesAutoresizingMaskIntoConstraints="NO" id="lHl-uv-jNG">
-                                        <rect key="frame" x="140" y="81" width="94" height="70"/>
+                                        <rect key="frame" x="140.33333333333334" y="107" width="94.333333333333343" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lHl-uv-jNG" secondAttribute="height" multiplier="129:96" id="gri-YV-yOE"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41g-Xq-TQ0">
-                                        <rect key="frame" x="0.0" y="163" width="375" height="29"/>
+                                        <rect key="frame" x="0.0" y="189" width="375" height="29"/>
                                         <attributedString key="attributedText">
                                             <fragment content="SWITCH EduID">
                                                 <attributes>
@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3Z-bP-pld">
-                                        <rect key="frame" x="-0.5" y="192" width="375" height="17.5"/>
+                                        <rect key="frame" x="-0.66666666666665719" y="218" width="375.33333333333326" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="extension">
                                                 <attributes>
@@ -78,7 +78,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-wO-NAx">
-                                <rect key="frame" x="30" y="248.5" width="78.5" height="46.5"/>
+                                <rect key="frame" x="30.000000000000007" y="299.33333333333331" width="78.666666666666686" height="56.666666666666686"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Username">
                                         <attributes>
@@ -90,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-vJ-1rr">
-                                <rect key="frame" x="118.5" y="248" width="236.5" height="46.5"/>
+                                <rect key="frame" x="118.66666666666667" y="298.66666666666669" width="236.33333333333331" height="57.333333333333314"/>
                                 <attributedString key="attributedText">
                                     <fragment content="example@uni-test.com">
                                         <attributes>
@@ -103,7 +103,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z30-Ch-Khh">
-                                <rect key="frame" x="30" y="298" width="345" height="1"/>
+                                <rect key="frame" x="30" y="359" width="345" height="1"/>
                                 <color key="backgroundColor" red="0.80392156859999997" green="0.80784313730000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -113,7 +113,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-ag-ZGh">
-                                <rect key="frame" x="30" y="329" width="76" height="46.5"/>
+                                <rect key="frame" x="30" y="390" width="76" height="57"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Password">
                                         <attributes>
@@ -125,7 +125,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gE4-SW-JuH">
-                                <rect key="frame" x="116" y="329" width="202.5" height="46.5"/>
+                                <rect key="frame" x="116" y="390" width="192" height="57"/>
                                 <attributedString key="attributedText">
                                     <fragment content="test">
                                         <attributes>
@@ -138,7 +138,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqs-b0-lga">
-                                <rect key="frame" x="318.5" y="329.5" width="46.5" height="46.5"/>
+                                <rect key="frame" x="308" y="390.66666666666669" width="57" height="56.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oqs-b0-lga" secondAttribute="height" multiplier="1:1" id="VCd-ug-qSh"/>
                                 </constraints>
@@ -148,7 +148,7 @@
                                 </connections>
                             </button>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBl-dX-Gjb">
-                                <rect key="frame" x="30" y="378.5" width="345" height="1"/>
+                                <rect key="frame" x="30" y="450.33333333333331" width="345" height="1"/>
                                 <color key="backgroundColor" red="0.80392156859999997" green="0.80784313730000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -158,7 +158,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83b-8k-VkZ" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="40" y="573.5" width="295" height="53.5"/>
+                                <rect key="frame" x="40" y="673" width="295" height="65"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He0-yt-x4L">
-                                <rect key="frame" x="57" y="386.5" width="187.5" height="16.5"/>
+                                <rect key="frame" x="56.999999999999986" y="457.66666666666669" width="187.66666666666663" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Remember my account">
                                         <attributes>
@@ -186,14 +186,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyh-Me-v7O" customClass="BEMCheckBox">
-                                <rect key="frame" x="30" y="384.5" width="19" height="19"/>
+                                <rect key="frame" x="30" y="456.33333333333331" width="18.666666666666671" height="18.333333333333314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qyh-Me-v7O" secondAttribute="height" multiplier="1:1" id="lyS-xK-Uj0"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5C-Nl-9Wg">
-                                <rect key="frame" x="251" y="388" width="114" height="14"/>
+                                <rect key="frame" x="251" y="457" width="114" height="17"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot Password">
@@ -287,7 +287,7 @@
             <objects>
                 <viewController id="Qob-Pm-nlt" customClass="ServiceListViewController" customModule="eduid_iOS_Ext" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K08-eO-2up">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4FV-XD-Lta">
@@ -299,11 +299,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5wl-0Z-Qt7" id="EXK-EH-PnG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="23U-Kt-wqI">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="64.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="64.666666666666671"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -373,14 +373,14 @@
             <objects>
                 <viewController id="bn6-2i-aix" customClass="ServiceViewController" customModule="eduid_iOS_Ext" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VWT-Iq-374">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKa-5F-1cw" customClass="GradientView" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="162.33333333333334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPJ-P9-ndj">
-                                        <rect key="frame" x="15" y="67" width="300" height="66.5"/>
+                                        <rect key="frame" x="15" y="81.666666666666657" width="300.33333333333331" height="80.666666666666657"/>
                                         <attributedString key="attributedText">
                                             <fragment content="EduID">
                                                 <attributes>
@@ -409,8 +409,34 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-gn-ZiO" customClass="UICollectionView">
+                                <rect key="frame" x="0.0" y="162.33333333333334" width="375" height="487.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFQ-1P-mkz" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
+                                <rect key="frame" x="198.33333333333337" y="699.66666666666663" width="131.66666666666663" height="61"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Accept">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="done:" destination="bn6-2i-aix" eventType="touchUpInside" id="IJs-3O-Yte"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3Q-yp-auO" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="45" y="573.5" width="131.5" height="53.5"/>
+                                <rect key="frame" x="45" y="699.66666666666663" width="131" height="61"/>
                                 <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -432,65 +458,42 @@
                                     <action selector="cancel:" destination="bn6-2i-aix" eventType="touchUpInside" id="vHj-Ru-hFW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFQ-1P-mkz" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="199" y="573.5" width="131" height="53.5"/>
-                                <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Accept">
-                                            <attributes>
-                                                <color key="NSColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="done:" destination="bn6-2i-aix" eventType="touchUpInside" id="IJs-3O-Yte"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUf-gn-ZiO" customClass="UICollectionView">
-                                <rect key="frame" x="0.0" y="133.5" width="375" height="427"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qKa-5F-1cw" firstAttribute="height" secondItem="VWT-Iq-374" secondAttribute="height" multiplier="0.2" id="0jm-l3-3Yl"/>
                             <constraint firstItem="qKa-5F-1cw" firstAttribute="top" secondItem="VWT-Iq-374" secondAttribute="top" id="5jA-vR-Cl2"/>
-                            <constraint firstItem="dUf-gn-ZiO" firstAttribute="height" secondItem="VWT-Iq-374" secondAttribute="height" multiplier="0.64" id="7LM-hr-KgH"/>
+                            <constraint firstItem="dUf-gn-ZiO" firstAttribute="height" secondItem="VWT-Iq-374" secondAttribute="height" multiplier="0.6" id="7LM-hr-KgH"/>
                             <constraint firstItem="dUf-gn-ZiO" firstAttribute="top" secondItem="qKa-5F-1cw" secondAttribute="bottom" id="Dc3-q1-PD2"/>
+                            <constraint firstItem="P3Q-yp-auO" firstAttribute="width" secondItem="VWT-Iq-374" secondAttribute="width" multiplier="0.35" id="Fm0-di-Bcm"/>
+                            <constraint firstItem="P3Q-yp-auO" firstAttribute="height" secondItem="tFQ-1P-mkz" secondAttribute="height" id="IFz-aq-73p"/>
                             <constraint firstItem="qKa-5F-1cw" firstAttribute="leading" secondItem="9Wu-KI-q7m" secondAttribute="leading" id="Ki2-kz-hbE"/>
-                            <constraint firstItem="P3Q-yp-auO" firstAttribute="height" secondItem="VWT-Iq-374" secondAttribute="height" multiplier="0.08" id="PDW-w9-GNc"/>
                             <constraint firstItem="dUf-gn-ZiO" firstAttribute="trailing" secondItem="9Wu-KI-q7m" secondAttribute="trailing" id="Qpj-JC-4Dt"/>
-                            <constraint firstItem="P3Q-yp-auO" firstAttribute="centerY" secondItem="tFQ-1P-mkz" secondAttribute="centerY" id="Tb1-dc-fGI"/>
                             <constraint firstItem="dUf-gn-ZiO" firstAttribute="leading" secondItem="9Wu-KI-q7m" secondAttribute="leading" id="ToP-wS-IUU"/>
-                            <constraint firstItem="tFQ-1P-mkz" firstAttribute="width" secondItem="P3Q-yp-auO" secondAttribute="width" id="VQf-iW-cV3"/>
-                            <constraint firstItem="9Wu-KI-q7m" firstAttribute="bottom" secondItem="P3Q-yp-auO" secondAttribute="bottom" constant="40" id="WWj-hq-dcV"/>
-                            <constraint firstItem="P3Q-yp-auO" firstAttribute="width" secondItem="VWT-Iq-374" secondAttribute="width" multiplier="0.73" identifier="cancelButtonDoubleWidth" id="Xis-b2-BTF"/>
-                            <constraint firstItem="P3Q-yp-auO" firstAttribute="leading" secondItem="9Wu-KI-q7m" secondAttribute="leading" constant="45" id="cQI-jL-uom"/>
-                            <constraint firstItem="9Wu-KI-q7m" firstAttribute="bottom" secondItem="tFQ-1P-mkz" secondAttribute="bottom" constant="40" id="pnb-BW-UCD"/>
-                            <constraint firstItem="P3Q-yp-auO" firstAttribute="width" secondItem="VWT-Iq-374" secondAttribute="width" multiplier="0.35" identifier="cancelButtonWidth" id="qhf-oB-yjG"/>
+                            <constraint firstItem="P3Q-yp-auO" firstAttribute="width" secondItem="tFQ-1P-mkz" secondAttribute="width" id="XMA-ry-MrB"/>
+                            <constraint firstItem="P3Q-yp-auO" firstAttribute="height" secondItem="VWT-Iq-374" secondAttribute="height" multiplier="0.075" id="iVb-HH-jod"/>
+                            <constraint firstItem="tFQ-1P-mkz" firstAttribute="centerY" secondItem="P3Q-yp-auO" secondAttribute="centerY" id="khT-wD-W1U"/>
+                            <constraint firstItem="P3Q-yp-auO" firstAttribute="leading" secondItem="9Wu-KI-q7m" secondAttribute="leading" constant="45" id="rb1-02-ZKh"/>
                             <constraint firstItem="qKa-5F-1cw" firstAttribute="trailing" secondItem="9Wu-KI-q7m" secondAttribute="trailing" id="tbi-MZ-EGj"/>
-                            <constraint firstItem="tFQ-1P-mkz" firstAttribute="height" secondItem="P3Q-yp-auO" secondAttribute="height" id="urb-Fr-sZx"/>
-                            <constraint firstItem="tFQ-1P-mkz" firstAttribute="trailing" secondItem="9Wu-KI-q7m" secondAttribute="trailing" constant="-45" id="yde-fs-pcZ"/>
+                            <constraint firstItem="9Wu-KI-q7m" firstAttribute="top" secondItem="qKa-5F-1cw" secondAttribute="top" constant="44" id="vN0-Gq-qfF"/>
+                            <constraint firstItem="9Wu-KI-q7m" firstAttribute="trailing" secondItem="tFQ-1P-mkz" secondAttribute="trailing" constant="45" id="wjh-kp-YPQ"/>
+                            <constraint firstItem="P3Q-yp-auO" firstAttribute="top" secondItem="dUf-gn-ZiO" secondAttribute="bottom" constant="50" id="ybs-wW-8ah"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Wu-KI-q7m"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Xis-b2-BTF"/>
+                                <exclude reference="vN0-Gq-qfF"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="5jA-vR-Cl2"/>
+                                <include reference="vN0-Gq-qfF"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="P3Q-yp-auO" id="goc-u7-qjT"/>
-                        <outlet property="cancelButtonDoubleWidth" destination="Xis-b2-BTF" id="Pq4-11-iU4"/>
-                        <outlet property="cancelButtonWidth" destination="qhf-oB-yjG" id="dpU-cv-ruX"/>
                         <outlet property="collectionView" destination="dUf-gn-ZiO" id="1DG-5a-YWO"/>
                         <outlet property="doneButton" destination="tFQ-1P-mkz" id="tA5-KT-2QE"/>
                         <outlet property="midLabel" destination="WPJ-P9-ndj" id="NDc-8p-AAH"/>
@@ -498,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1a-ze-D8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256.8" y="772.26386806596713"/>
+            <point key="canvasLocation" x="1256.8" y="772.16748768472905"/>
         </scene>
     </scenes>
     <resources>

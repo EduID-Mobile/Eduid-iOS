@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class ServiceSingleTonCell: UICollectionViewCell {
 
-    
     @IBOutlet weak var serviceLabel: UILabel!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var switchButton: BEMCheckBox!
     
     private var service : String?{
         get{

@@ -234,7 +234,7 @@ class EduidConfigModel : NSObject {
     //Save the current object variables into the shared data container
     func save(){
         
-        let entity = NSEntityDescription.entity(forEntityName: "EduidConfiguration", in: managedContext!) as NSEntityDescription!
+        let entity = NSEntityDescription.entity(forEntityName: "EduidConfiguration", in: managedContext!) as NSEntityDescription?
         let configData = NSManagedObject(entity: entity!, insertInto: managedContext)
         
         configData.setValue(auth?.absoluteString, forKey: "auth")

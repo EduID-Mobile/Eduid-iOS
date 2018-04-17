@@ -104,7 +104,7 @@ class TokenModel : NSObject {
         var timestamp = Int(date.timeIntervalSince1970)
         payload["exp"] = String(timestamp)
         
-        timestamp = Int(Date().timeIntervalSince1970)
+        timestamp = Int(Date().timeIntervalSince1970) - 60 //remove 60 ticks workaround from server rejection
         payload["iat"] = String(timestamp)
         payload["cnf"] = cnf
         payload["azp"] =  UIDevice.current.identifierForVendor?.uuidString //jwk?["kid"]?
@@ -285,7 +285,7 @@ class TokenModel : NSObject {
     // FIXME: why save "expired" in database model as Integer 64 result a crash
     // Save the current token variables into the shared data store, for the next usage of the app.
     func save() {
-        let entity = NSEntityDescription.entity(forEntityName: "Tokens", in: self.managedContext!) as NSEntityDescription!
+        let entity = NSEntityDescription.entity(forEntityName: "Tokens", in: self.managedContext!) as NSEntityDescription?
         let tokenData = NSManagedObject(entity: entity!, insertInto: managedContext)
         
         tokenData.setValue(accesToken, forKey: "accessToken")

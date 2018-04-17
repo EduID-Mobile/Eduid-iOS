@@ -1,18 +1,9 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "1.0.0",
+  "commitish" : "19f0dfc6ca9d8b537022fbca00dae186b140d75d",
   "iOS" : [
     {
       "name" : "JWTswift",
-      "hash" : "bc1adfe09002e5933b96563609e9038d4a0b26fa3fa20f64b43acc5d874f118e"
+      "hash" : "0be180e5356e3b9d11ff6d7c8eee919b38ded88563b476e8e517ade189e36ca0"
     }
   ]
 }
