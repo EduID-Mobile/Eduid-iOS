@@ -78,9 +78,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-wO-NAx">
-                                <rect key="frame" x="30.000000000000007" y="299.33333333333331" width="78.666666666666686" height="56.666666666666686"/>
+                                <rect key="frame" x="30.000000000000007" y="299.33333333333331" width="111.66666666666669" height="56.666666666666686"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Username">
+                                    <fragment content="Benutzername">
                                         <attributes>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -90,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-vJ-1rr">
-                                <rect key="frame" x="118.66666666666667" y="298.66666666666669" width="236.33333333333331" height="57.333333333333314"/>
+                                <rect key="frame" x="151.66666666666663" y="298.66666666666669" width="203.33333333333337" height="57.333333333333314"/>
                                 <attributedString key="attributedText">
                                     <fragment content="example@uni-test.com">
                                         <attributes>
@@ -113,9 +113,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-ag-ZGh">
-                                <rect key="frame" x="30" y="390" width="76" height="57"/>
+                                <rect key="frame" x="30" y="390" width="72" height="57"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Password">
+                                    <fragment content="Passwort">
                                         <attributes>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -125,7 +125,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gE4-SW-JuH">
-                                <rect key="frame" x="116" y="390" width="192" height="57"/>
+                                <rect key="frame" x="112" y="390" width="196" height="57"/>
                                 <attributedString key="attributedText">
                                     <fragment content="test">
                                         <attributes>
@@ -160,7 +160,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83b-8k-VkZ" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
                                 <rect key="frame" x="40" y="673" width="295" height="65"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Anmelden">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -175,7 +175,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He0-yt-x4L">
                                 <rect key="frame" x="56.999999999999986" y="457.66666666666669" width="187.66666666666663" height="16"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Remember my account">
+                                    <fragment content="Konto speichern">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -193,10 +193,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5C-Nl-9Wg">
-                                <rect key="frame" x="251" y="457" width="114" height="17"/>
+                                <rect key="frame" x="229" y="457" width="136" height="17"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Forgot Password">
+                                        <fragment content="Passwort vergessen">
                                             <attributes>
                                                 <color key="NSColor" red="0.69411764705882351" green="0.71764705882352942" blue="0.78431372549019607" alpha="0.85982983732876717" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="Helvetica"/>
@@ -295,7 +295,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellExt" textLabel="23U-Kt-wqI" rowHeight="65" style="IBUITableViewCellStyleDefault" id="5wl-0Z-Qt7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellExt" textLabel="23U-Kt-wqI" rowHeight="65" style="IBUITableViewCellStyleDefault" id="5wl-0Z-Qt7">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5wl-0Z-Qt7" id="EXK-EH-PnG">
@@ -418,10 +418,11 @@
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Accept">
+                                        <fragment content="Annehmen">
                                             <attributes>
                                                 <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -440,7 +441,7 @@
                                 <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Cancel">
+                                        <fragment content="Abbrechen">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
@@ -487,8 +488,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <exclude reference="5jA-vR-Cl2"/>
                                 <include reference="vN0-Gq-qfF"/>
+                                <exclude reference="5jA-vR-Cl2"/>
                             </mask>
                         </variation>
                     </view>

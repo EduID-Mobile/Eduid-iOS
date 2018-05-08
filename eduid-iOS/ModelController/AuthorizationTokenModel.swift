@@ -51,7 +51,7 @@ class AuthorizationTokenModel : NSObject {
         payload["aud"] = audience
         payload["sub"] = subject
             
-        let timestamp = Int(Date().timeIntervalSince1970)
+        let timestamp = Int(Date().timeIntervalSince1970) - 70 //remove 70 ticks workaround from server rejection
         payload["iat"] = String(timestamp)
         payload["cnf"] = ["kid" : kidToSend]
             

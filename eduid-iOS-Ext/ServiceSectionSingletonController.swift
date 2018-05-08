@@ -48,10 +48,16 @@ class ServiceSectionSingletonController: ListSectionController {
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: "ServiceSingletonCell", bundle: nil, for: self, at: index) as? ServiceSingleTonCell else{
             fatalError()
         }
+        guard let vc = self.viewController as? ServiceViewController else{
+            print("error getting view controller on request method")
+            return cell
+        }
+        
         cell.switchButton.tag = index
         cell.switchButton.delegate = self
         cell.serviceLabel.text = entry.serviceName[index]
-    
+        cell.switchButton.on = (vc.selectedServices?.contains(entry.serviceName[index]))! ? true : false
+        
         let border = CALayer()
         border.backgroundColor = UIColor.gray.cgColor
         border.frame = CGRect(x: 0, y: cell.frame.size.height - 1.0, width: cell.frame.size.width, height: 1.0)
@@ -62,24 +68,13 @@ class ServiceSectionSingletonController: ListSectionController {
     
     override func didSelectItem(at index: Int) {
         print("did select item : \(index)")
-//        guard let adress = self.protocolsModel.getApisLink(serviceName: self.entry.serviceName[index]), let homeLink = self.protocolsModel.getHomepageLink(serviceName: self.entry.serviceName[index]) else {
-//            print("no apis found")
-//            return
-//        }
+
         let cell = cells[index]
         DispatchQueue.main.async {
             cell.switchButton.setOn(!cell.switchButton.on, animated: true)
             self.didTap(cell.switchButton)
         }
-        
-//        guard let vc = self.viewController as? ServiceViewController else{
-//            print("error getting view controller on request method")
-//            return
-//        }
-        //vc.showLoadUI()
-        //vc.selectedServices?.append(entry.serviceName[index])
-        
-//        authRequest(adress: adress, homepageLink: homeLink)
+
     }
     
     func authRequest(adress : URL , homepageLink : String){
@@ -107,6 +102,7 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
             print("error getting view controller on request method")
             return
         }
+        vc.selectedServices?.removeAll()
         let cellCount = self.numberOfItems()
         for i in 0..<cellCount {
             //guard let cell = self.cellForItem(at: i) as? ServiceSingleTonCell else {continue}
@@ -121,8 +117,9 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
                 print("Check box = \(checkBox.on )")
                 if checkBox.on {
                     vc.selectedServices?.append(entry.serviceName[i])
+                    print("SELECTED SERVICES = " , vc.selectedServices)
                     selectedIndex = i
-                    print("Selected index : \(selectedIndex)")
+                    print("Selected index : \(String(describing: selectedIndex))")
                 }
             }
         }

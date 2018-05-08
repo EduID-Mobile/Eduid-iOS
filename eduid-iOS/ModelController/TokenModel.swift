@@ -188,8 +188,8 @@ class TokenModel : NSObject {
     /**
      Main function to send the credentials data from the app into the authentication server
      
-     - parameter username : Username on this case is the app's username, which is registered already inside the server, !!NOT user's data!!
-     - parameter password : Password on this case is the app's password, !!NOT user's data'
+     - parameter username : Username on this case is the app's username, which is registered already inside the server, !!NOT user's credential!!
+     - parameter password : Password on this case is the app's password, !!NOT user's credential'
      - Throws : throw ns error if there isn't any url found on the class variable
  */
     func fetchServer(username : String , password : String, assertionBody : String) throws {

@@ -27,6 +27,9 @@ class LoginViewController: UIViewController {
     private var configModel = EduidConfigModel()
     //    private var requestData = RequestData()
     
+    /**
+     * View Objects
+     */
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
    
@@ -40,15 +43,36 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     private var indicator : NVActivityIndicatorView!
     
+    /**
+     *  Additional variables
+     */
     private var userDev: String?
     private var passDev: String?
     private var tokenEnd : URL?
     private var sessionKey : [String : Key]?
     private var signingKey : Key?
     var tokenModel : TokenModel?
+    private let groupID = "group.htwchur.eduid.share"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /**
+          Dont check load here,
+          Because on the case when the user logged out, and want to login again directly. It would be a trouble
+          -> key still on cache and not checked.
+        
+         */
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if self.view.isHidden {
+            self.view.isHidden = false
+        }
+        if loadAccount() != "" {
+            usernameTF.text = loadAccount()
+            checkBox.setOn(true, animated: true)
+        }
         
         loadPlist()
         tokenEnd = configModel.getTokenEndpoint()
@@ -60,6 +84,7 @@ class LoginViewController: UIViewController {
         let keystore = KeyStore()
         
         if !self.loadKey() {
+            
             sessionKey = KeyStore.generateKeyPair(keyType: kSecAttrKeyTypeRSA as String)!
             self.saveKey()
         }
@@ -76,16 +101,6 @@ class LoginViewController: UIViewController {
         signingKey = keystore.getKey(withKid: privateKeyID)!
         
         setUIelements()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if self.view.isHidden {
-            self.view.isHidden = false
-        }
-        if loadAccount() != "" {
-            usernameTF.text = loadAccount()
-            checkBox.setOn(true, animated: true)
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -178,19 +193,25 @@ class LoginViewController: UIViewController {
     
     func saveAccount(){
         if checkBox.on {
-            UserDefaults.standard.set(usernameTF.text, forKey: "username")
+            let userDef = UserDefaults(suiteName: groupID)
+            userDef?.set(usernameTF.text, forKey: "username")
+            //UserDefaults.standard.set(usernameTF.text, forKey: "username")
         }
     }
     
     func loadAccount()-> String {
-        guard let res = UserDefaults.standard.string(forKey: "username") else {
+        let userDef = UserDefaults(suiteName: groupID)
+        
+        guard let res = userDef?.string(forKey: "username") else {  //UserDefaults.standard.string(forKey: "username") else {
             return ""
         }
         return res
     }
     
     func clearAccount(){
-        UserDefaults.standard.removeObject(forKey: "username")
+        let userDef = UserDefaults(suiteName: groupID)
+        userDef?.removeObject(forKey: "username")
+        //UserDefaults.standard.removeObject(forKey: "username")
     }
     
     func loginSuccessful(){

@@ -102,8 +102,8 @@ class ServiceViewController: UIViewController {
             })
             
             guard let sscontroller = adapter.sectionController(forSection: 2) as? ServiceSectionSingletonController,
-                let adress = protocols?.getApisLink(serviceName: (services?.serviceName[sscontroller.getSelectedIndex()!])! ),
-                let homelink = protocols?.getHomepageLink(serviceName: (services?.serviceName[sscontroller.getSelectedIndex()!])!) else {
+                let adress = protocols?.getApisLink(serviceName: selectedServices!.first!),
+                let homelink = protocols?.getHomepageLink(serviceName: selectedServices!.first!) else {
                     self.removeLoadUI()
                     return
             }

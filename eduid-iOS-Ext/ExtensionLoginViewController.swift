@@ -23,11 +23,11 @@ import BEMCheckBox
  */
 class ExtensionLoginViewController: UIViewController {
 
-    
+    /**
+     * View Objects
+     */
     @IBOutlet weak var imageView : UIImageView!
-
     private var indicator : NVActivityIndicatorView!
-    
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var usernameLine: UIView!
     @IBOutlet weak var passwordTF: UITextField!
@@ -35,6 +35,9 @@ class ExtensionLoginViewController: UIViewController {
     @IBOutlet weak var showButton: UIButton!
     @IBOutlet weak var checkBox: BEMCheckBox!
     
+    /**
+    * Additional variables
+    */
     private var reqConfigUrl : URL?
     private var userDev : String?
     private var passDev : String?
@@ -45,6 +48,7 @@ class ExtensionLoginViewController: UIViewController {
     
     private var configmodel : EduidConfigModel?
     var tokenModel : TokenModel?
+    private let groupID = "group.htwchur.eduid.share"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -221,19 +225,24 @@ class ExtensionLoginViewController: UIViewController {
     
     func saveAccount(){
         if checkBox.on{
-            UserDefaults.standard.set(usernameTF.text, forKey: "username")
+            let userDef = UserDefaults(suiteName: groupID)
+            userDef?.set(usernameTF.text, forKey: "username")
+            //UserDefaults.standard.set(usernameTF.text, forKey: "username")
         }
     }
     
     func loadAccount()-> String {
-        guard let res = UserDefaults.standard.string(forKey: "username") else {
+        let userDef = UserDefaults(suiteName: groupID)
+        guard let res = userDef?.string(forKey: "username") else { //UserDefaults.standard.string(forKey: "username") else {
             return ""
         }
         return res
     }
     
     func clearAccount(){
-        UserDefaults.standard.removeObject(forKey: "username")
+        let userDef = UserDefaults(suiteName: groupID)
+        userDef?.removeObject(forKey: "username")
+        //UserDefaults.standard.removeObject(forKey: "username")
     }
     
     //    MARK: -- UI Functions

@@ -308,6 +308,7 @@ extension EduidConfigModel : URLSessionDataDelegate {
         }
         print(jsonDict!)
         let supportedTypes = jsonDict!["grant_types_supported"] as! [String]
+        //TODO : JWT BEARER not there anymore
         for type in supportedTypes{
             //print(type , " contain bearer : " , type.contains("jwt-bearer"))
             if type.contains("jwt-bearer") {

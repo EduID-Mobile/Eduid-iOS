@@ -80,8 +80,11 @@ class SplashViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
             
-            let tokenEndpoint = self.configModel?.getTokenEndpoint()
-            let tokenModel = TokenModel(tokenURI: tokenEndpoint!)
+            guard let tokenEndpoint = self.configModel?.getTokenEndpoint() else {
+                self.showAlertUI()
+                return
+            }
+            let tokenModel = TokenModel(tokenURI: tokenEndpoint)
             
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC")
             let navController = UINavigationController.init(rootViewController: loginVC!)
