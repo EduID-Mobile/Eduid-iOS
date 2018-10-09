@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import <UIKit/UIKit.h>
@@ -43,6 +41,8 @@ NS_SWIFT_NAME(ListScrollDelegate)
 
  @param listAdapter The list adapter whose collection view ended dragging.
  @param sectionController The visible section controller that ended dragging.
+ @param decelerate 'Yes' if the scrolling movement will continue, but decelerate, after a touch-up gesture during a 
+ dragging operation. If the value is 'No', scrolling stops immediately upon touch-up.
  */
 - (void)listAdapter:(IGListAdapter *)listAdapter didEndDraggingSectionController:(IGListSectionController *)sectionController willDecelerate:(BOOL)decelerate;
 

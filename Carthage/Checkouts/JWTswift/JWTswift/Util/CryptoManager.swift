@@ -28,7 +28,6 @@ public class CryptoManager {
             print(errormsg)
         }
         
-        
         return cipherText
     }
     
@@ -50,7 +49,5 @@ public class CryptoManager {
         }
         return decrpytedData
     }
-    
-    
     
 }

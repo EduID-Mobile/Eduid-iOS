@@ -3,12 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		680BB5AF1FE9143C00A877D3 /* JWTswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680BB5A51FE9143C00A877D3 /* JWTswift.framework */; };
-		680BB5B41FE9143C00A877D3 /* JWTswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BB5B31FE9143C00A877D3 /* JWTswiftTests.swift */; };
+		15119435216B4190008E3B29 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685BBEC71FFCE1D900894040 /* Key.swift */; };
+		15119436216B41B0008E3B29 /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68737F181FEBCC03001B32AB /* UtilExtensions.swift */; };
+		15119438216B46B6008E3B29 /* RSA1_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C2551A2158D7CF00C79695 /* RSA1_5.swift */; };
+		15119439216B46B9008E3B29 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C2551C215908C800C79695 /* AES.swift */; };
+		1511943A216B46BC008E3B29 /* HmacSha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C2551E21592D1100C79695 /* HmacSha.swift */; };
+		1511943B216B46BF008E3B29 /* RSA_OAEP256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ED1E222162287400F2A6F0 /* RSA_OAEP256.swift */; };
+		1511943C216B4A98008E3B29 /* JWTswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BB5B31FE9143C00A877D3 /* JWTswiftTests.swift */; };
+		157FDC6C214B97FA0013B117 /* JWE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157FDC6B214B97FA0013B117 /* JWE.swift */; };
+		15AA82E02150ED81003E0599 /* JWS.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 680BB5C11FE9157900A877D3 /* JWS.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		15AA82E12150ED81003E0599 /* KeyChain.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 680BB5C31FE9157900A877D3 /* KeyChain.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		15AA82E22150ED81003E0599 /* KeyStore.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 680BB5C41FE9157A00A877D3 /* KeyStore.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		15AA82E32150ED81003E0599 /* PemGenerator.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 680BB5C21FE9157900A877D3 /* PemGenerator.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		15AA82E62150ED81003E0599 /* CryptoManager.swift in CopyFiles */ = {isa = PBXBuildFile; fileRef = 680BB5BF1FE9156700A877D3 /* CryptoManager.swift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		15B65DE9216B3DED009F0DDE /* JWE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157FDC6B214B97FA0013B117 /* JWE.swift */; };
+		15C2551B2158D7CF00C79695 /* RSA1_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C2551A2158D7CF00C79695 /* RSA1_5.swift */; };
+		15C2551D215908C800C79695 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C2551C215908C800C79695 /* AES.swift */; };
+		15C2551F21592D1100C79695 /* HmacSha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C2551E21592D1100C79695 /* HmacSha.swift */; };
+		15ED1E232162287400F2A6F0 /* RSA_OAEP256.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15ED1E222162287400F2A6F0 /* RSA_OAEP256.swift */; };
+		15FA9678215D25EC00840C95 /* privateTest.pem in Resources */ = {isa = PBXBuildFile; fileRef = 15FA9676215D25EC00840C95 /* privateTest.pem */; };
+		15FA967D215D2BB100840C95 /* privateTest.jwks in Resources */ = {isa = PBXBuildFile; fileRef = 15FA967C215D2BB100840C95 /* privateTest.jwks */; };
 		680BB5B61FE9143C00A877D3 /* JWTswift.h in Headers */ = {isa = PBXBuildFile; fileRef = 680BB5A81FE9143C00A877D3 /* JWTswift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		680BB5C01FE9156700A877D3 /* CryptoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BB5BF1FE9156700A877D3 /* CryptoManager.swift */; };
 		680BB5C51FE9157A00A877D3 /* JWS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BB5C11FE9157900A877D3 /* JWS.swift */; };
@@ -25,7 +43,6 @@
 		682190DC1FE96A8C00759FA5 /* AppTarget.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 682190DA1FE96A8C00759FA5 /* AppTarget.xcdatamodeld */; };
 		682190DE1FE96A8C00759FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682190DD1FE96A8C00759FA5 /* Assets.xcassets */; };
 		682190E11FE96A8C00759FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 682190DF1FE96A8C00759FA5 /* LaunchScreen.storyboard */; };
-		6851F1182008AD92007AC430 /* JWTswift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 680BB5A51FE9143C00A877D3 /* JWTswift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		685BBEC81FFCE1D900894040 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685BBEC71FFCE1D900894040 /* Key.swift */; };
 		68737F191FEBCC03001B32AB /* UtilExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68737F181FEBCC03001B32AB /* UtilExtensions.swift */; };
 		68DA97AE2006229800CA96B6 /* ios_priv.jwks in Resources */ = {isa = PBXBuildFile; fileRef = 68DA97AD2006229800CA96B6 /* ios_priv.jwks */; };
@@ -56,19 +73,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6851F1172008AD75007AC430 /* CopyFiles */ = {
+		15AA82DD2150ED37003E0599 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6851F1182008AD92007AC430 /* JWTswift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15AA82DE2150ED62003E0599 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15AA82E02150ED81003E0599 /* JWS.swift in CopyFiles */,
+				15AA82E12150ED81003E0599 /* KeyChain.swift in CopyFiles */,
+				15AA82E22150ED81003E0599 /* KeyStore.swift in CopyFiles */,
+				15AA82E32150ED81003E0599 /* PemGenerator.swift in CopyFiles */,
+				15AA82E62150ED81003E0599 /* CryptoManager.swift in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		157FDC6B214B97FA0013B117 /* JWE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWE.swift; sourceTree = "<group>"; };
+		15C2551A2158D7CF00C79695 /* RSA1_5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSA1_5.swift; sourceTree = "<group>"; };
+		15C2551C215908C800C79695 /* AES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
+		15C2551E21592D1100C79695 /* HmacSha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HmacSha.swift; sourceTree = "<group>"; };
+		15ED1E222162287400F2A6F0 /* RSA_OAEP256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSA_OAEP256.swift; sourceTree = "<group>"; };
+		15FA9676215D25EC00840C95 /* privateTest.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = privateTest.pem; sourceTree = "<group>"; };
+		15FA967C215D2BB100840C95 /* privateTest.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = privateTest.jwks; sourceTree = "<group>"; };
 		680BB5A51FE9143C00A877D3 /* JWTswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWTswift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		680BB5A81FE9143C00A877D3 /* JWTswift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWTswift.h; sourceTree = "<group>"; };
 		680BB5A91FE9143C00A877D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +137,6 @@
 		682190E01FE96A8C00759FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		682190E21FE96A8C00759FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682190E61FE96A9600759FA5 /* AppTarget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppTarget.entitlements; sourceTree = "<group>"; };
-		6845BB712080B2AF000AB562 /* libcache.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcache.dylib; path = ../../../../../usr/lib/system/libcache.dylib; sourceTree = "<group>"; };
 		685BBEC71FFCE1D900894040 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		68737F181FEBCC03001B32AB /* UtilExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilExtensions.swift; sourceTree = "<group>"; };
 		68DA97AD2006229800CA96B6 /* ios_priv.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_priv.jwks; sourceTree = "<group>"; };
@@ -118,7 +154,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				680BB5AF1FE9143C00A877D3 /* JWTswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +174,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		157FDC6A214B97E70013B117 /* JWE */ = {
+			isa = PBXGroup;
+			children = (
+				157FDC6B214B97FA0013B117 /* JWE.swift */,
+			);
+			path = JWE;
+			sourceTree = "<group>";
+		};
+		15C255172158D78700C79695 /* CryptoAlgorithm */ = {
+			isa = PBXGroup;
+			children = (
+				15C2551A2158D7CF00C79695 /* RSA1_5.swift */,
+				15C2551C215908C800C79695 /* AES.swift */,
+				15C2551E21592D1100C79695 /* HmacSha.swift */,
+				15ED1E222162287400F2A6F0 /* RSA_OAEP256.swift */,
+			);
+			path = CryptoAlgorithm;
+			sourceTree = "<group>";
+		};
 		680BB59B1FE9143C00A877D3 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +219,8 @@
 		680BB5A71FE9143C00A877D3 /* JWTswift */ = {
 			isa = PBXGroup;
 			children = (
+				15C255172158D78700C79695 /* CryptoAlgorithm */,
+				157FDC6A214B97E70013B117 /* JWE */,
 				68737F1B1FEBCD7F001B32AB /* JWS */,
 				68737F1A1FEBCD4A001B32AB /* JWK */,
 				68737F171FEBCBEA001B32AB /* Util */,
@@ -187,7 +243,6 @@
 		680BB5F31FE9230900A877D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6845BB712080B2AF000AB562 /* libcache.dylib */,
 				682190C11FE9432500759FA5 /* libcommonCrypto.dylib */,
 			);
 			name = Frameworks;
@@ -213,6 +268,8 @@
 				682190C61FE95ECA00759FA5 /* ios_priv.pem */,
 				68DA97AD2006229800CA96B6 /* ios_priv.jwks */,
 				682190C51FE95ECA00759FA5 /* rsaCert.der */,
+				15FA9676215D25EC00840C95 /* privateTest.pem */,
+				15FA967C215D2BB100840C95 /* privateTest.jwks */,
 			);
 			path = TestResources;
 			sourceTree = "<group>";
@@ -289,6 +346,7 @@
 				680BB5A11FE9143C00A877D3 /* Frameworks */,
 				680BB5A21FE9143C00A877D3 /* Headers */,
 				680BB5A31FE9143C00A877D3 /* Resources */,
+				15AA82DD2150ED37003E0599 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -307,7 +365,6 @@
 				680BB5AA1FE9143C00A877D3 /* Sources */,
 				680BB5AB1FE9143C00A877D3 /* Frameworks */,
 				680BB5AC1FE9143C00A877D3 /* Resources */,
-				6851F1172008AD75007AC430 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -345,6 +402,7 @@
 				682190CD1FE96A8C00759FA5 /* Sources */,
 				682190CE1FE96A8C00759FA5 /* Frameworks */,
 				682190CF1FE96A8C00759FA5 /* Resources */,
+				15AA82DE2150ED62003E0599 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -362,7 +420,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Blended Learning Center";
 				TargetAttributes = {
 					680BB5A41FE9143C00A877D3 = {
@@ -391,7 +449,7 @@
 				};
 			};
 			buildConfigurationList = 680BB59F1FE9143C00A877D3 /* Build configuration list for PBXProject "JWTswift" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -416,10 +474,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FA9678215D25EC00840C95 /* privateTest.pem in Resources */,
 				682190CB1FE95ECA00759FA5 /* ios_priv.p12 in Resources */,
 				68DA97AE2006229800CA96B6 /* ios_priv.jwks in Resources */,
 				682190C91FE95ECA00759FA5 /* rsaCert.der in Resources */,
 				682190C81FE95ECA00759FA5 /* eduid_pub.jwks in Resources */,
+				15FA967D215D2BB100840C95 /* privateTest.jwks in Resources */,
 				682190CA1FE95ECA00759FA5 /* ios_priv.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,10 +516,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				685BBEC81FFCE1D900894040 /* Key.swift in Sources */,
+				15C2551F21592D1100C79695 /* HmacSha.swift in Sources */,
+				15C2551D215908C800C79695 /* AES.swift in Sources */,
 				680BB5C51FE9157A00A877D3 /* JWS.swift in Sources */,
+				157FDC6C214B97FA0013B117 /* JWE.swift in Sources */,
 				68737F191FEBCC03001B32AB /* UtilExtensions.swift in Sources */,
 				680BB5C81FE9157A00A877D3 /* KeyStore.swift in Sources */,
+				15C2551B2158D7CF00C79695 /* RSA1_5.swift in Sources */,
 				680BB5C71FE9157A00A877D3 /* KeyChain.swift in Sources */,
+				15ED1E232162287400F2A6F0 /* RSA_OAEP256.swift in Sources */,
 				680BB5C61FE9157A00A877D3 /* PemGenerator.swift in Sources */,
 				680BB5C01FE9156700A877D3 /* CryptoManager.swift in Sources */,
 			);
@@ -469,7 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				680BB5B41FE9143C00A877D3 /* JWTswiftTests.swift in Sources */,
+				1511943C216B4A98008E3B29 /* JWTswiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,8 +550,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				682190DC1FE96A8C00759FA5 /* AppTarget.xcdatamodeld in Sources */,
+				15119436216B41B0008E3B29 /* UtilExtensions.swift in Sources */,
+				15119435216B4190008E3B29 /* Key.swift in Sources */,
 				682190D61FE96A8C00759FA5 /* ViewController.swift in Sources */,
+				1511943A216B46BC008E3B29 /* HmacSha.swift in Sources */,
+				1511943B216B46BF008E3B29 /* RSA_OAEP256.swift in Sources */,
+				15B65DE9216B3DED009F0DDE /* JWE.swift in Sources */,
+				15119439216B46B9008E3B29 /* AES.swift in Sources */,
 				682190D41FE96A8C00759FA5 /* AppDelegate.swift in Sources */,
+				15119438216B46B6008E3B29 /* RSA1_5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +661,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s i386 arm64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -643,11 +715,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s i386 arm64";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -668,9 +742,14 @@
 				INFOPLIST_FILE = JWTswift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.JWTswift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -697,14 +776,18 @@
 				INFOPLIST_FILE = JWTswift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.JWTswift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -719,17 +802,26 @@
 				DEVELOPMENT_TEAM = 4Q8U997468;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = JWTswiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/lib/system,
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.JWTswiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppTarget.app/AppTarget";
+				VALID_ARCHS = "$(ARCHS_STANDARD) armv7s i386";
 			};
 			name = Debug;
 		};
@@ -741,18 +833,26 @@
 				DEVELOPMENT_TEAM = 4Q8U997468;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = JWTswiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/lib/system,
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.JWTswiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppTarget.app/AppTarget";
+				VALID_ARCHS = "$(ARCHS_STANDARD) armv7s i386";
 			};
 			name = Release;
 		};
@@ -771,10 +871,16 @@
 				INFOPLIST_FILE = CommonCrypto/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.CommonCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -795,10 +901,16 @@
 				INFOPLIST_FILE = CommonCrypto/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.CommonCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -814,9 +926,14 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = AppTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.AppTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -833,10 +950,14 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = AppTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = ch.htwchur.AppTarget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

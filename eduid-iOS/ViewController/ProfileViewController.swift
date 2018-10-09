@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        id_Token = (token?.giveIdTokenJWS())!
+        id_Token = (token?.giveIdToken())!
         
         
         profileLabel.text = "Hello " + String(describing: id_Token!["given_name"]!) + " " + String(describing: id_Token!["family_name"]!)

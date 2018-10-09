@@ -19,10 +19,11 @@ class ServiceSectionSingletonController: ListSectionController {
     private weak var authToken : AuthorizationTokenModel!
     private var audience : String!
     private var sessionKeys : [String: Key]!
+    private var encryptKey : Key?
     private var selectedIndex : Int?
     private var cells : [ServiceSingleTonCell] = []
     
-    init(entry : Service, token: TokenModel, protocolsModel : ProtocolsModel, authToken : AuthorizationTokenModel, aud : String, sessionKeys : [String: Key]){
+    init(entry : Service, token: TokenModel, protocolsModel : ProtocolsModel, authToken : AuthorizationTokenModel, aud : String, sessionKeys : [String: Key], encKey : Key?){
         super.init()
         self.entry = entry
         self.token = token
@@ -30,6 +31,7 @@ class ServiceSectionSingletonController: ListSectionController {
         self.sessionKeys = sessionKeys
         self.protocolsModel = protocolsModel
         self.authToken = authToken
+        self.encryptKey = encKey
     }
     
     override func numberOfItems() -> Int {
@@ -84,7 +86,7 @@ class ServiceSectionSingletonController: ListSectionController {
         let idToken = self.token?.giveTokenID()?.last
         print(self.token?.giveTokenID()?.first! as Any)
         print(self.token?.giveTokenID()?.last! as Any)
-        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.audience , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKeys!["public"]?.getKid())! , keyToSign: self.sessionKeys!["private"]!)
+        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.audience , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKeys!["public"]?.getKid())! , keyToSign: self.sessionKeys!["private"]!, keyToEncrypt: encryptKey)
         print("ASSERT : \(assert!)")
         
         authToken.fetch(address: adress, assertionBody: assert!)
@@ -117,7 +119,7 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
                 print("Check box = \(checkBox.on )")
                 if checkBox.on {
                     vc.selectedServices?.append(entry.serviceName[i])
-                    print("SELECTED SERVICES = " , vc.selectedServices)
+                    print("SELECTED SERVICES = " , vc.selectedServices ?? "")
                     selectedIndex = i
                     print("Selected index : \(String(describing: selectedIndex))")
                 }

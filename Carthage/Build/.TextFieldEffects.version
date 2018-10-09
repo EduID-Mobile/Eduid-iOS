@@ -1,9 +1,9 @@
 {
-  "commitish" : "1.4.0",
+  "commitish" : "989dec5ac118a581fef1efe96c9b1a0cb9f97d75",
   "iOS" : [
     {
       "name" : "TextFieldEffects",
-      "hash" : "e8b9857fd522b1d729a537a9e23e583750a7327838507c6a111e95ebcc498cbd"
+      "hash" : "6fc81e64f405f792953a0620e3904ade29e226a3b7ea431c85cb5d74ab66f71f"
     }
   ]
 }

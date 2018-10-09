@@ -44,9 +44,19 @@ class AuthorizationTokenModel : NSObject {
     }
     
     //Create the assert in from of JWS to be sent into the resource provider
-    func createAssert(addressToSend : String, subject : String , audience : String, accessToken : String ,kidToSend : String , keyToSign : Key) -> String? {
+    func createAssert(addressToSend : String, subject : String , audience : String, accessToken : String ,kidToSend : String , keyToSign : Key, keyToEncrypt: Key?) -> String? {
         var payload = [String : Any]()
-        payload["azp"] = addressToSend
+        
+        // This if case is ONLY FOR TESTING moodle core dev RFC 7521 + 23
+        if(addressToSend.contains("moodle-dev.htwchur")){
+            print("CreateAssert addressTosend = " , addressToSend)
+            payload["azp"] = "https://moodle-dev.htwchur.ch/julius/admin/oauth2callback.php"
+            
+        } else {
+            payload["azp"] = addressToSend
+        }
+        
+        //payload["azp"] = addressToSend
         payload["iss"] = UIDevice.current.identifierForVendor?.uuidString
         payload["aud"] = audience
         payload["sub"] = subject
@@ -57,19 +67,43 @@ class AuthorizationTokenModel : NSObject {
             
         payload["x_jwt"] = accessToken
         print("assert Payload: \(payload)")
-        let jwt = JWS.init(payloadDict: payload)
+        let jws = JWS(payloadDict: payload)
+        let jwsCompact = jws.sign(key: keyToSign, alg: .RS256)
         
-        return jwt.sign(key: keyToSign, alg: .RS256)
+        // TODO JWE :: server and moodle plugin cannot handle the JWE correctly yet
+        if keyToEncrypt != nil {
+            let jwe : JWE
+            do{
+                jwe = try JWE(plainJWS: jwsCompact!, alg: .RSA_OAEP_256, publicKey: keyToEncrypt!, kid: keyToEncrypt!.getKid()!, aud: audience)
+            } catch {
+                print(error)
+                return nil
+            }
+            
+//            return jwe.getCompactJWE()
+            return jwsCompact!
+            
+        } else {
+            // Just JWS
+            return jwsCompact!
+        }
+        
     }
     
     //Main function to request the token from the resource provider(RP)
     func fetch (address : URL, assertionBody : String ){
-        
+        // for testing moodle core dev RFC 7521 + 23
+        var addressTmp = address
+        if(address.absoluteString.contains("moodle-dev.htwchur")){
+            print("HTW dev!! = " , address.absoluteString)
+            addressTmp = URL(string: "https://moodle-dev.htwchur.ch/julius/admin/oauth2callback.php")!
+        }
+        //end of testing code
         let body = [ "assertion" : assertionBody,
             "grant_type" : self.grant_type
                     ]
         let bodyUrl = httpBodyBuilder(dict: body)
-        let strUrl = address.absoluteString + "?" + bodyUrl
+        let strUrl = addressTmp.absoluteString + "?" + bodyUrl
         
         let request = NSMutableURLRequest(url: URL(string: strUrl)!)
         request.httpMethod = "GET"
@@ -145,7 +179,7 @@ extension AuthorizationTokenModel : URLSessionDataDelegate {
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         
         do{
-            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
+            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as! [String : Any]
             print("Response : \(jsonResponse)")
             self.jsonResponse = jsonResponse
             self.downloadSuccess.value = true

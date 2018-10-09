@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import "IGTestReorderableSection.h"
@@ -21,7 +19,7 @@
 
 - (id<NSObject>)diffIdentifier {
     // this is for test purposes only. please dont do this.
-    return [NSString stringWithFormat:@"%zi", self.hash];
+    return [NSString stringWithFormat:@"%lu", (unsigned long)self.hash];
 }
 
 - (BOOL)isEqualToDiffableObject:(id)object {

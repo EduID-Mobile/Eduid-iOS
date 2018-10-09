@@ -35,10 +35,9 @@ class TokenModel : NSObject {
     private var id_token : String?
     private var tokenType : String?
     
-    
     private var jsonResponse : [String : Any]?
     private var id_tokenParsed : [[String : Any]]?
-
+    
     //some constants
     private let client_assertion_type = "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
     private let grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer"
@@ -55,7 +54,7 @@ class TokenModel : NSObject {
     }
     
     deinit {
-            print("TokenModel is being deinitialized")
+        print("TokenModel is being deinitialized")
     }
     
     //    TODO: EXPIRED DATE CHECK
@@ -83,12 +82,16 @@ class TokenModel : NSObject {
         print("uuid : \(String(describing: payload["jti"] ))")
         
         let jwt = JWS(payloadDict: payload)
+        // TRY JWE
+        // let jwt = JWE.init(plaintext: payload, publicKey: keyToSign)
         
         return jwt.sign(key: keyToSign, alg: .RS256)!
+        // TRY JWE
+        // return jwt.getCompactJWE()!
     }
     
     //creating a specific user assertion in a signed JWS format, based on the user credentials
-    func createUserAssert(userSub : String, password : String ,issuer: String, audience : String , keyToSend: Key , keyToSign: Key) -> String? {
+    func createUserAssert(userSub : String, password : String, issuer: String, audience : String , keyToSend: Key , keyToSign: Key, keyToEncrypt: Key?) -> String? {
         
         let jwk = KeyStore.keyToJwk(key: keyToSend)
         print("KEYTOSEND : \(String(describing: jwk))")
@@ -110,9 +113,31 @@ class TokenModel : NSObject {
         payload["azp"] =  UIDevice.current.identifierForVendor?.uuidString //jwk?["kid"]?
         payload["x_crd"] = password
         
-        let jwt = JWS.init(payloadDict: payload)
+        let notbfore = Date.init(timeIntervalSinceNow: 0)
+        timestamp = Int(notbfore.timeIntervalSince1970)
+        payload["nbf"] = timestamp
         
-        return jwt.sign(key: keyToSign, alg: .RS256)
+        
+        // JWS
+        let jws = JWS(payloadDict: payload)
+        let jwsCompact = jws.sign(key: keyToSign, alg: .RS256)
+        
+        if keyToEncrypt != nil {
+            //        TRY JWE
+            let jwe : JWE
+            do{
+                jwe = try JWE(plainJWS: jwsCompact!, alg: .RSA_OAEP_256, publicKey: keyToEncrypt!, kid: keyToEncrypt!.getKid()!)
+            } catch {
+                print(error)
+                return nil
+            }
+            return jwe.getCompactJWE()
+            
+        } else {
+            return jwsCompact!
+        }
+        
+        
     }
     
     //Delete all relevant data of this class from variables and also from the shared data container,
@@ -191,7 +216,7 @@ class TokenModel : NSObject {
      - parameter username : Username on this case is the app's username, which is registered already inside the server, !!NOT user's credential!!
      - parameter password : Password on this case is the app's password, !!NOT user's credential'
      - Throws : throw ns error if there isn't any url found on the class variable
- */
+     */
     func fetchServer(username : String , password : String, assertionBody : String) throws {
         
         if self.tokenURI == nil {
@@ -258,11 +283,12 @@ class TokenModel : NSObject {
     }
     
     
-    func giveIdTokenJWS() -> [String : Any]?{
+    
+    func giveIdToken() -> [String : Any]?{
         /*
-        guard let jwsToParse : String = self.jsonResponse?["id_token"] as? String else {
-            return nil
-        }*/
+         guard let jwsToParse : String = self.jsonResponse?["id_token"] as? String else {
+         return nil
+         }*/
         guard let jwsToParse : String  = self.id_token else {
             return nil
         }
@@ -330,21 +356,51 @@ class TokenModel : NSObject {
         }
     }
     
-    //Verify the JWS from the server, with the help of JWTswift library
+    // Verify the ID token from the server, with the help of JWTswift library
+    // This could be JWE with JWS inside or just JWS
     func verifyIDToken() -> Bool {
         self.parseTokenID()
         let ks = KeyStore.init()
-        let pathToPubKey = Bundle.main.url(forResource: "eduid_pub", withExtension: "jwks")
-        let keys = ks.jwksToKeyFromBundle(jwksPath: (pathToPubKey?.relativePath)!)
-        let result = JWS.verify(jwsToVerify: self.id_token!, key: (keys?.first)!)
+        var pathToKey : URL
+        let keys : [Key]
         
+        let countsComponents = id_token!.components(separatedBy: ".").count
+        if countsComponents == 5 {
+            
+            // JWE verify
+            // TRY JWE
+            do{
+                // For private key needs to do two procedures : get kid from jwks, and get key from pem
+                pathToKey = Bundle.main.url(forResource: "ios_priv", withExtension: "jwks")!
+                //keys = ks.jwksToKeyFromBundle(jwksPath: (pathToKey.relativePath))!
+                let kid = ks.getPrivateKeyIDFromJWKSinBundle(resourcePath: pathToKey.relativePath)
+                
+                pathToKey = Bundle.main.url(forResource: "ios_priv", withExtension: "pem")!
+                guard let _ = ks.getPrivateKeyFromPemInBundle(resourcePath: pathToKey.relativePath, identifier: kid!) else {
+                    return false
+                }
+                let privKey = ks.getKey(withKid: kid!)
+                
+                let jwe = try JWE(compactJWE: id_token!, privateKey: privKey!)
+                id_token = jwe.getPayloadJWS()!
+            } catch {
+                print("Error while decrypting incoming JWE == \(error)")
+                return false
+            }
+            
+        }
+        
+        //JWS verify
+        pathToKey = Bundle.main.url(forResource: "eduid_pub", withExtension: "jwks")!
+        keys = ks.jwksToKeyFromBundle(jwksPath: (pathToKey.relativePath))!
+        
+        let result = JWS.verify(jwsToVerify: id_token!, key: (keys.first)!)
         return result
-        
     }
     
 }
 
-// MARK: EXTENSION
+// MARK: EXTENSION URLSession Handling
 // Extension to deal with the response from the server
 extension TokenModel : URLSessionDataDelegate {
     
@@ -376,7 +432,7 @@ extension TokenModel : URLSessionDataDelegate {
             self.jsonResponse = jsonResponse
             self.extractJson()
             if self.verifyIDToken() {
-//                let _ = validateAccessToken()
+                //                let _ = validateAccessToken()
                 self.downloadSuccess.value = true
             } else {
                 self.downloadSuccess.value = false

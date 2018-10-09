@@ -57,7 +57,7 @@ class ProfileListViewController: UIViewController {
     
     //MARK: -- Set Functions
     func loadEntries() {
-        guard let jws = token!.giveIdTokenJWS() else {return}
+        guard let jws = token!.giveIdToken() else {return}
         if (jws["given_name"] == nil) && (jws["family_name"] == nil) {
             self.profileNameLabel.text = "Hello"
         } else {

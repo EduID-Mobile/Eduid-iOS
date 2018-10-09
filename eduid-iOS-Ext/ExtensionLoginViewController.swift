@@ -45,6 +45,7 @@ class ExtensionLoginViewController: UIViewController {
     private var tokenEnd: URL?
     private var signingKey : Key?
     private var sessionKey : [String : Key]?
+    private var encKey : Key?
     
     private var configmodel : EduidConfigModel?
     var tokenModel : TokenModel?
@@ -63,7 +64,7 @@ class ExtensionLoginViewController: UIViewController {
         if !checkSessionKey() {
             
             //create a pair & save if it's not exist yet
-            sessionKey = KeyStore.generateKeyPair(keyType: kSecAttrKeyTypeRSA as String)!
+            sessionKey = KeyStore.generateKeyPair(keyType: .RSAkeys)!
             let x = KeyChain.saveKeyPair(tagString: "sessionKey", keyPair: sessionKey!)
             print("Save new key : \(x)")
         }
@@ -81,6 +82,16 @@ class ExtensionLoginViewController: UIViewController {
         
         //key object always save the kid in base64url
         signingKey = keystore.getKey(withKid: privateKeyID)!
+        
+        //get Enc Key for JWE
+        
+        urlPathKey = Bundle.main.url(forResource: "eduid_pub", withExtension: "jwks")
+        let keys = keystore.jwksToKeyFromBundle(jwksPath: urlPathKey!.path)
+        
+        if keys != nil && keys!.count > 0 {
+            encKey = keys!.first
+        }
+        
         
     }
     
@@ -105,8 +116,8 @@ class ExtensionLoginViewController: UIViewController {
                 self.checkDownload(downloaded: dlBool)
             }
         })
-        
-        let userAssert = tokenModel?.createUserAssert(userSub: userSub, password: pass, issuer: userDev!, audience: (configmodel?.getIssuer())!, keyToSend: sessionKey!["public"]!, keyToSign: signingKey!)
+        // JWE 
+        let userAssert = tokenModel?.createUserAssert(userSub: userSub, password: pass, issuer: userDev!, audience: (configmodel?.getIssuer())!, keyToSend: sessionKey!["public"]!, keyToSign: signingKey!, keyToEncrypt: encKey)
         
         do{
             try tokenModel?.fetchServer(username: userDev!, password: passDev!, assertionBody: userAssert!)

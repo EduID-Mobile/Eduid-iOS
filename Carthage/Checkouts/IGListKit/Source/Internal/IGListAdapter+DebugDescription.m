@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import "IGListAdapter+DebugDescription.h"
@@ -36,9 +34,9 @@
         [debug addObject:[NSString stringWithFormat:@"Is prefetching enabled: %@", IGListDebugBOOL(self.collectionView.isPrefetchingEnabled)]];
     }
 
-    if (self.registeredCellClasses.count > 0) {
-        [debug addObject:@"Registered cell classes:"];
-        [debug addObject:[self.registeredCellClasses description]];
+    if (self.registeredCellIdentifiers.count > 0) {
+        [debug addObject:@"Registered cell identifiers:"];
+        [debug addObject:[self.registeredCellIdentifiers description]];
     }
 
     if (self.registeredNibNames.count > 0) {

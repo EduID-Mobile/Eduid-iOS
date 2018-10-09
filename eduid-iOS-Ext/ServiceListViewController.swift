@@ -22,6 +22,7 @@ class ServiceListViewController: UIViewController {
     var apString : String?
     
     private var sessionKey : [String : Key]?
+    private var encKey : Key?
     private var authprotocols : [String]?
     
     override func viewDidLoad() {
@@ -175,7 +176,7 @@ class ServiceListViewController: UIViewController {
         let idToken = self.token?.giveTokenID()?.last
         print(self.token?.giveTokenID()?.first as Any)
         print(self.token?.giveTokenID()?.last as Any)
-        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.apString! , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKey!["public"]?.getKid())! , keyToSign: self.sessionKey!["private"]!)
+        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.apString! , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKey!["public"]?.getKid())! , keyToSign: self.sessionKey!["private"]!, keyToEncrypt: encKey)
         print("ASSERT : \(assert!)")
         
         authToken.fetch(address: adress, assertionBody: assert!)

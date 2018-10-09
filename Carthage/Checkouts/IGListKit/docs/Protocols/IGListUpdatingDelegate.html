@@ -35,6 +35,9 @@
                 <a href="../best-practices-and-faq.html">Best Practices and FAQ</a>
               </li>
               <li class="nav-group-task">
+                <a href="../generating-your-models.html">Generating your models</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../getting-started.html">Getting Started</a>
               </li>
               <li class="nav-group-task">
@@ -145,6 +148,9 @@
                 <a href="../Protocols/IGListAdapterDelegate.html">IGListAdapterDelegate</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/IGListAdapterMoveDelegate.html">IGListAdapterMoveDelegate</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/IGListAdapterUpdateListener.html">IGListAdapterUpdateListener</a>
               </li>
               <li class="nav-group-task">
@@ -211,6 +217,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Type Definitions.html#/c:IGListSingleSectionController.h@T@IGListSingleSectionCellSizeBlock">IGListSingleSectionCellSizeBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:IGListUpdatingDelegate.h@T@IGListToObjectBlock">IGListToObjectBlock</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Type Definitions.html#/c:IGListAdapter.h@T@IGListUpdaterCompletion">IGListUpdaterCompletion</a>
@@ -308,9 +317,9 @@ objects are looked up by pointer, or more traditionally, with <code>-hash</code>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)IGListUpdatingDelegate(im)performUpdateWithCollectionView:fromObjects:toObjects:animated:objectTransitionBlock:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-performUpdateWithCollectionView:fromObjects:toObjects:animated:objectTransitionBlock:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)IGListUpdatingDelegate(im)performUpdateWithCollectionView:fromObjects:toObjects:animated:objectTransitionBlock:completion:">-performUpdateWithCollectionView:fromObjects:toObjects:animated:objectTransitionBlock:completion:</a>
+                    <a name="/c:objc(pl)IGListUpdatingDelegate(im)performUpdateWithCollectionView:fromObjects:toObjectsBlock:animated:objectTransitionBlock:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-performUpdateWithCollectionView:fromObjects:toObjectsBlock:animated:objectTransitionBlock:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)IGListUpdatingDelegate(im)performUpdateWithCollectionView:fromObjects:toObjectsBlock:animated:objectTransitionBlock:completion:">-performUpdateWithCollectionView:fromObjects:toObjectsBlock:animated:objectTransitionBlock:completion:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -339,8 +348,7 @@ that the updater is applying.</p>
 <span class="nf">performUpdateWithCollectionView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UICollectionView</span> <span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span>
                     <span class="nf">fromObjects</span><span class="p">:</span>
                         <span class="p">(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/IGListDiffable.html">IGListDiffable</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromObjects</span>
-                      <span class="nf">toObjects</span><span class="p">:</span>
-                          <span class="p">(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/IGListDiffable.html">IGListDiffable</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">toObjects</span>
+                 <span class="nf">toObjectsBlock</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Type Definitions.html#/c:IGListUpdatingDelegate.h@T@IGListToObjectBlock">IGListToObjectBlock</a></span><span class="p">)</span><span class="nv">toObjectsBlock</span>
                        <span class="nf">animated</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span>
           <span class="nf">objectTransitionBlock</span><span class="p">:</span>
               <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Type Definitions.html#/c:IGListUpdatingDelegate.h@T@IGListObjectTransitionBlock">IGListObjectTransitionBlock</a></span><span class="p">)</span><span class="nv">objectTransitionBlock</span>
@@ -379,12 +387,12 @@ that the updater is applying.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>toObjects</em>
+                                <em>toObjectsBlock</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The new objects in collection view. Objects must conform to <code><a href="../Protocols/IGListDiffable.html">IGListDiffable</a></code>.</p>
+                                  <p>A block returning the new objects in the collection view. Objects must conform to <code><a href="../Protocols/IGListDiffable.html">IGListDiffable</a></code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -724,6 +732,83 @@ destination of the reload to perform a safe transition.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(pl)IGListUpdatingDelegate(im)moveSectionInCollectionView:fromIndex:toIndex:"></a>
+                    <a name="//apple_ref/objc/Method/-moveSectionInCollectionView:fromIndex:toIndex:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)IGListUpdatingDelegate(im)moveSectionInCollectionView:fromIndex:toIndex:">-moveSectionInCollectionView:fromIndex:toIndex:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tells the delegate to move a section from and to given indexes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">moveSectionInCollectionView</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UICollectionView</span> <span class="o">*</span><span class="p">)</span><span class="nv">collectionView</span>
+                          <span class="nf">fromIndex</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">fromIndex</span>
+                            <span class="nf">toIndex</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">toIndex</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">moveSection</span><span class="p">(</span><span class="k">in</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">from</span> <span class="nv">fromIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">to</span> <span class="nv">toIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The collection view on which to perform the transition.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromIndex</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source index of the section to move.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toIndex</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination index of the section to move.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:objc(pl)IGListUpdatingDelegate(im)reloadDataWithCollectionView:reloadUpdateBlock:completion:"></a>
                     <a name="//apple_ref/objc/Method/-reloadDataWithCollectionView:reloadUpdateBlock:completion:" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(pl)IGListUpdatingDelegate(im)reloadDataWithCollectionView:reloadUpdateBlock:completion:">-reloadDataWithCollectionView:reloadUpdateBlock:completion:</a>
@@ -959,7 +1044,7 @@ destination of the reload to perform a safe transition.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://twitter.com/fbOpenSource" target="_blank" rel="external">Instagram</a>. All rights reserved. (Last updated: 2018-02-06)</p>
+          <p>&copy; 2018 <a class="link" href="https://twitter.com/fbOpenSource" target="_blank" rel="external">Instagram</a>. All rights reserved. (Last updated: 2018-05-01)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

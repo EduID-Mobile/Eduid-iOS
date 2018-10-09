@@ -1,9 +1,9 @@
 {
-  "commitish" : "f469c3440b27f255ba29a3c17730a11f4392ec19",
+  "commitish" : "853b0377fc3f63402dec6efe5fa8e95850f908ef",
   "iOS" : [
     {
       "name" : "IGListKit",
-      "hash" : "1f125f25a0239eb9f97dd8c88f76b356833d3a50889fce5827aa2fc0ea082824"
+      "hash" : "5323af5b76ace8caf33992a57447ca5f2bf42b845af0c1ec214f5fac04dd54c4"
     }
   ]
 }

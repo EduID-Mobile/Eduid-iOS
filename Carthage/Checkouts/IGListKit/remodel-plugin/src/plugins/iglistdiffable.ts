@@ -20,6 +20,7 @@ import ObjectSpecCodeUtils = require('../object-spec-code-utils');
 
 function isEqualToDiffableObjectMethod():ObjC.Method {
   return {
+    preprocessors:[],
     belongsToProtocol:Maybe.Just<string>('IGListDiffable'),
     code: ['return [self isEqual:object];'],
     comments:[],
@@ -147,6 +148,7 @@ function diffIdentifierMethodImplementation(objectType:ObjectSpec.Type):string[]
 
 function diffIdentifierMethod(objectType:ObjectSpec.Type):ObjC.Method {
   return {
+    preprocessors:[],
     belongsToProtocol:Maybe.Just<string>('IGListDiffable'),
     code: diffIdentifierMethodImplementation(objectType),
     comments:[],
@@ -208,6 +210,9 @@ export function createPlugin():ObjectSpec.Plugin {
         isEqualToDiffableObjectMethod(),
         diffIdentifierMethod(objectType)
       ];
+    },
+    macros: function(valueType:ObjectSpec.Type):ObjC.Macro[] {
+      return [];
     },
     properties: function(objectType:ObjectSpec.Type):ObjC.Property[] {
       return [];

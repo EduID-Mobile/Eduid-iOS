@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
     private var tokenEnd : URL?
     private var sessionKey : [String : Key]?
     private var signingKey : Key?
+    private var encryptKey : Key?
     var tokenModel : TokenModel?
     private let groupID = "group.htwchur.eduid.share"
     
@@ -85,20 +86,32 @@ class LoginViewController: UIViewController {
         
         if !self.loadKey() {
             
-            sessionKey = KeyStore.generateKeyPair(keyType: kSecAttrKeyTypeRSA as String)!
+            sessionKey = KeyStore.generateKeyPair(keyType: .RSAkeys)!
             self.saveKey()
         }
+        
+        // JWS
         
         var urlPathKey = Bundle.main.url(forResource: "ios_priv", withExtension: "jwks")
         let keyID = keystore.getPrivateKeyIDFromJWKSinBundle(resourcePath: (urlPathKey?.relativePath)!)
         urlPathKey = Bundle.main.url(forResource: "ios_priv", withExtension: "pem")
-        
         guard let privateKeyID = keystore.getPrivateKeyFromPemInBundle(resourcePath: (urlPathKey?.relativePath)!, identifier: keyID!) else {
             print("ERROR getting private key")
             return
         }
-        //key object always save the kid in base64url
-        signingKey = keystore.getKey(withKid: privateKeyID)!
+        signingKey = keystore.getKey(withKid: privateKeyID)
+ 
+        
+        
+       
+        // TRY JWE
+        urlPathKey = Bundle.main.url(forResource: "eduid_pub", withExtension: "jwks")
+        let keys = keystore.jwksToKeyFromBundle(jwksPath: (urlPathKey?.path)!)
+        
+        if keys?.count != 0 && keys?.count == 1 {
+            // TRY JWE get public instead of private for encryption
+            encryptKey = keys!.first
+        }
         
         setUIelements()
     }
@@ -125,7 +138,9 @@ class LoginViewController: UIViewController {
             }
         })
         
-        let userAssert = tokenModel?.createUserAssert(userSub: userSub , password: pass, issuer: userDev! , audience: configModel.getIssuer()!, keyToSend: sessionKey!["public"]!, keyToSign: signingKey!) //use signing key
+        // TRY JWE
+        // Send different signing key (private key) and encrypting key for JWE (public key)
+        let userAssert = tokenModel?.createUserAssert(userSub: userSub, password: pass, issuer: userDev!, audience: configModel.getIssuer()!, keyToSend: sessionKey!["public"]!, keyToSign: signingKey!, keyToEncrypt: encryptKey)
         do{
             try tokenModel?.fetchServer(username: userDev!, password: passDev!, assertionBody: userAssert!)
         } catch {

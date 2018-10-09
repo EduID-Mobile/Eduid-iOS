@@ -52,6 +52,7 @@ class ServiceViewController: UIViewController {
     
     
     private var sessionKey : [String : Key]?
+    private var encryptKey : Key?
     private var authprotocols : [String]?
     private var services : Service?
     
@@ -63,6 +64,16 @@ class ServiceViewController: UIViewController {
         if !self.checkSessionKey() {
             print("No Session Key")
             return
+        }
+        
+        // TRY JWE -- get key for enc
+        let urlPathKey = Bundle.main.url(forResource: "eduid_pub", withExtension: "jwks")
+        let keystore = KeyStore()
+        let keys = keystore.jwksToKeyFromBundle(jwksPath: (urlPathKey?.path)!)
+        
+        if keys?.count != 0 && keys?.count == 1 {
+            // TRY JWE get public instead of private for encryption
+            encryptKey = keys!.first
         }
         
         self.collectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -400,7 +411,7 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
                 fatalError()
             }
             if !singleton! {
-                return ServiceSectionController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!)
+                return ServiceSectionController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!, encKey: encryptKey)
             }else {
                 
                 self.authToken.downloadSuccess.bind { (dlbool) in
@@ -416,7 +427,7 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
                         }
                     }
                 }
-                return ServiceSectionSingletonController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!)
+                return ServiceSectionSingletonController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!, encKey: encryptKey)
             }
         }
     }

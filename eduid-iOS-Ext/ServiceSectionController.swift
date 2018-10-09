@@ -19,9 +19,10 @@ class ServiceSectionController : ListSectionController {
     private weak var authToken : AuthorizationTokenModel!
     private var audience : String!
     private var sessionKeys : [String: Key]!
+    private var encryptKey: Key?
     private lazy var cells = [ServiceCell]()
     
-    init(entry: Service, token: TokenModel, protocolsModel : ProtocolsModel, authToken: AuthorizationTokenModel, aud : String, sessionKeys: [String: Key]){
+    init(entry: Service, token: TokenModel, protocolsModel : ProtocolsModel, authToken: AuthorizationTokenModel, aud : String, sessionKeys: [String: Key], encKey: Key?){
         super.init()
         self.entry = entry
         self.token = token
@@ -29,6 +30,7 @@ class ServiceSectionController : ListSectionController {
         self.sessionKeys = sessionKeys
         self.protocolsModel = protocolsModel
         self.authToken = authToken
+        self.encryptKey = encKey
     }
     
     override func numberOfItems() -> Int {
@@ -152,7 +154,7 @@ class ServiceSectionController : ListSectionController {
         let idToken = self.token?.giveTokenID()?.last
 //        print(self.token?.giveTokenID()?.first! as Any)
 //        print(self.token?.giveTokenID()?.last! as Any)
-        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.audience , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKeys!["public"]?.getKid())! , keyToSign: self.sessionKeys!["private"]!)
+        let assert = authToken.createAssert(addressToSend: adress.absoluteString, subject: idToken!["sub"] as! String, audience: self.audience , accessToken: (token?.giveAccessToken()!)!, kidToSend: (self.sessionKeys!["public"]?.getKid())! , keyToSign: self.sessionKeys!["private"]!, keyToEncrypt: encryptKey)
 //        print("ASSERT : \(assert!)")
         
 //        guard let vc = self.viewController as? ServiceViewController else{

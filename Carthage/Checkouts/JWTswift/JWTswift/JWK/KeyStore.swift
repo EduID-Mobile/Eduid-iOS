@@ -10,6 +10,10 @@ import Foundation
 import CoreFoundation
 import Security
 
+public enum KeyType {
+    case RSAkeys
+}
+
 public class KeyStore {
     
     private var keysCollection : [Key]?
@@ -240,7 +244,7 @@ public class KeyStore {
         }
         var jsonData : [String : Any]?
         do{
-            jsonData = try JSONSerialization.jsonObject(with: dataFromPath! as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String : Any]
+            jsonData = try JSONSerialization.jsonObject(with: dataFromPath! as Data, options: []) as? [String : Any]
         }catch{
             print(error)
             return nil
@@ -320,9 +324,9 @@ public class KeyStore {
      */
     public class func pemToJWK(pemData : Data , kid: String? = nil) -> [String: Any]{
         var jwk : [String : String] = [:]
-        print("LAST INDEX : \(pemData.endIndex.hashValue)")
+        print("LAST INDEX : \(pemData.endIndex)") //.hashValue)")
         let rangeModulus : Range<Int> = 9..<265
-        let rangeExponent : Range<Int> = Int(267)..<pemData.endIndex.hashValue
+        let rangeExponent : Range<Int> = Int(267)..<pemData.endIndex //.hashValue
         //rangeExponent
         print("DATA SIZE :  \(pemData.count),",pemData.base64EncodedString())
         let subdataMod = pemData.subdata(in: rangeModulus)
@@ -410,10 +414,16 @@ public class KeyStore {
      - returns : A dictionary contains one key pair with keys "public", "private" to access the specific key
      */
     
-    public class func generateKeyPair(keyType : String) -> [String : Key]? { // parameter keyTag : String
-//        let tag = keyTag.data(using: .utf8)!
+    public static func generateKeyPair(keyType : KeyType) -> [String : Key]? { // parameter keyTag : String
+        // let tag = keyTag.data(using: .utf8)!
+        
+        // Only support RSA Keys for now
+        if keyType != .RSAkeys {
+            return nil
+        }
+        
         var keysResult : [String : Key] = [:]
-        let attributes : [String : Any] = [ kSecAttrKeyType as String : keyType,
+        let attributes : [String : Any] = [ kSecAttrKeyType as String : kSecAttrKeyTypeRSA as String,
                                             kSecAttrKeySizeInBits as String : 2048,
                                             kSecPrivateKeyAttrs as String : [kSecAttrIsPermanent as String : false]
                             
@@ -433,5 +443,13 @@ public class KeyStore {
         
         
         return keysResult
+    }
+    
+    public static func getPublicKey(key : Key) -> Key? {
+        guard let publicKey = SecKeyCopyPublicKey(key.getKeyObject()) else {
+            return nil
+        }
+        let pubkeyObject = Key(keyObject: publicKey, kid: key.getKid()!)
+        return pubkeyObject
     }
 }

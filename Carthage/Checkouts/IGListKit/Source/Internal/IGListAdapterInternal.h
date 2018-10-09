@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import <IGListKit/IGListAdapter.h>
@@ -60,7 +58,11 @@ IGListBatchContext
 @property (nonatomic, assign) BOOL isInUpdateBlock;
 @property (nonatomic, strong, nullable) IGListSectionMap *previousSectionMap;
 
-@property (nonatomic, strong) NSMutableSet<Class> *registeredCellClasses;
+/**
+ Set of cell identifiers registered with the list context.
+ Identifiers are constructed with the `IGListReusableViewIdentifier` function.
+ */
+@property (nonatomic, strong) NSMutableSet<NSString *> *registeredCellIdentifiers;
 @property (nonatomic, strong) NSMutableSet<NSString *> *registeredNibNames;
 @property (nonatomic, strong) NSMutableSet<NSString *> *registeredSupplementaryViewIdentifiers;
 @property (nonatomic, strong) NSMutableSet<NSString *> *registeredSupplementaryViewNibNames;

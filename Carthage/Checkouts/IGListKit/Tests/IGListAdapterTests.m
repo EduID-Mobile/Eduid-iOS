@@ -1,10 +1,8 @@
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import <objc/runtime.h>
@@ -143,7 +141,7 @@
     XCTAssertEqualObjects(identifier, @"UICollectionViewCell");
 }
 
-- (void)test_whenQueryingReusableIdentifierWithGivenIdentifier_tahtIdentifierEqualsGivenIdentifierAndClassName {
+- (void)test_whenQueryingReusableIdentifierWithGivenIdentifier_thatIdentifierEqualsGivenIdentifierAndClassName {
     NSString *identifier = IGListReusableViewIdentifier(UICollectionViewCell.class, nil, nil, @"MyCoolID");
     XCTAssertEqualObjects(identifier, @"MyCoolIDUICollectionViewCell");
 }
@@ -157,6 +155,21 @@
     NSString *nibName = @"IGNibName";
     NSString *identifier = IGListReusableViewIdentifier(UICollectionViewCell.class, nibName, nil, nil);
     XCTAssertEqualObjects(identifier, @"IGNibNameUICollectionViewCell");
+}
+
+- (void)test_whenDequeueingTwoCellsOfTheSameClassWithDifferentReuseIdentifiers_thatBothReuseIdentifiersReturnCells {
+    self.dataSource.objects = @[@1, @2];
+    [self.adapter reloadDataWithCompletion:nil];
+    UICollectionViewCell *cell1 = [self.adapter dequeueReusableCellOfClass:[UICollectionViewCell class]
+                                                       withReuseIdentifier:@"reuse-1"
+                                                      forSectionController:[self.adapter sectionControllerForObject:@1]
+                                                                   atIndex:0];
+    UICollectionViewCell *cell2 = [self.adapter dequeueReusableCellOfClass:[UICollectionViewCell class]
+                                                       withReuseIdentifier:@"reuse-2"
+                                                      forSectionController:[self.adapter sectionControllerForObject:@1]
+                                                                   atIndex:0];
+    XCTAssertNotNil(cell1);
+    XCTAssertNotNil(cell2);
 }
 
 - (void)test_whenDataSourceChanges_thatBackgroundViewVisibilityChanges {
@@ -273,42 +286,7 @@
     XCTAssertTrue([visibleSectionControllers containsObject:[self.adapter sectionControllerForObject:@4]]);
 }
 
-- (void)test_whenCellsExtendBeyondBounds_withFasterExperiment_thatVisibleSectionControllersAreLimited {
-    // add experiment
-    self.adapter.experiments |= IGListExperimentFasterVisibleSectionController;
-    // # of items for each object == [item integerValue], so @2 has 2 items (cells)
-    self.dataSource.objects = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10, @11, @12];
-    [self.adapter reloadDataWithCompletion:nil];
-    XCTAssertEqual([self.collectionView numberOfSections], 12);
-    NSArray *visibleSectionControllers = [self.adapter visibleSectionControllers];
-    // UIWindow is 100x100, each cell is 100x10 so should have the following section/cell count: 1 + 2 + 3 + 4 = 10 (100 tall)
-    XCTAssertEqual(visibleSectionControllers.count, 4);
-    XCTAssertTrue([visibleSectionControllers containsObject:[self.adapter sectionControllerForObject:@1]]);
-    XCTAssertTrue([visibleSectionControllers containsObject:[self.adapter sectionControllerForObject:@2]]);
-    XCTAssertTrue([visibleSectionControllers containsObject:[self.adapter sectionControllerForObject:@3]]);
-    XCTAssertTrue([visibleSectionControllers containsObject:[self.adapter sectionControllerForObject:@4]]);
-}
-
 - (void) test_withEmptySectionPlusFooter_thatVisibleSectionControllersAreCorrect {
-    self.dataSource.objects = @[@0];
-    [self.adapter reloadDataWithCompletion:nil];
-    IGTestSupplementarySource *supplementarySource = [IGTestSupplementarySource new];
-    supplementarySource.dequeueFromNib = YES;
-    supplementarySource.collectionContext = self.adapter;
-    supplementarySource.supportedElementKinds = @[UICollectionElementKindSectionFooter];
-    IGListSectionController *controller = [self.adapter sectionControllerForObject:@0];
-    controller.supplementaryViewSource = supplementarySource;
-    supplementarySource.sectionController = controller;
-    [self.adapter performUpdatesAnimated:NO completion:nil];
-    NSArray<IGListSectionController *> *visibleSectionControllers = [self.adapter visibleSectionControllers];
-
-    XCTAssertTrue([visibleSectionControllers count] == 1);
-    XCTAssertTrue(visibleSectionControllers.firstObject.supplementaryViewSource == supplementarySource);
-}
-
-- (void) test_withEmptySectionPlusFooter_withFasterExperiment_thatVisibleSectionControllersAreCorrect {
-    // add experiment
-    self.adapter.experiments |= IGListExperimentFasterVisibleSectionController;
     self.dataSource.objects = @[@0];
     [self.adapter reloadDataWithCompletion:nil];
     IGTestSupplementarySource *supplementarySource = [IGTestSupplementarySource new];

@@ -1,18 +1,34 @@
 /**
  * Copyright (c) 2016-present, Facebook, Inc.
- * All rights reserved.
  *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 #import "IGTestBindingWithoutDeselectionDelegate.h"
 
 @implementation IGTestBindingWithoutDeselectionDelegate
 
-- (void)sectionController:(IGListBindingSectionController *)sectionController didSelectItemAtIndex:(NSInteger)index viewModel:(id)viewModel {
+- (void)sectionController:(IGListBindingSectionController *)sectionController
+     didSelectItemAtIndex:(NSInteger)index
+                viewModel:(id)viewModel {
     self.selected = YES;
+}
+
+- (void)sectionController:(IGListBindingSectionController *)sectionController
+   didDeselectItemAtIndex:(NSInteger)index
+                viewModel:(id)viewModel; {
+}
+
+- (void)sectionController:(nonnull IGListBindingSectionController *)sectionController
+  didHighlightItemAtIndex:(NSInteger)index
+                viewModel:(nonnull id)viewModel {
+}
+
+
+- (void)sectionController:(nonnull IGListBindingSectionController *)sectionController
+didUnhighlightItemAtIndex:(NSInteger)index
+                viewModel:(nonnull id)viewModel {
 }
 
 @end
