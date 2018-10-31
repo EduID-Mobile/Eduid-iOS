@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceViewController.swift"
-            timestampString = "560424708.566835"
+            timestampString = "562677941.019897"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "370"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceViewController.swift"
-            timestampString = "560424708.566891"
+            timestampString = "562677941.019973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceViewController.swift"
-            timestampString = "560424708.566932"
+            timestampString = "562677941.02002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
-            timestampString = "560775186.59236"
+            timestampString = "562677941.020067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "authRequest(adress:homepageLink:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
-            timestampString = "560775186.592416"
+            timestampString = "562677941.020118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "authRequest(adress:homepageLink:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "560775186.59326"
+            timestampString = "562580506.058895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "560775186.5939831"
+            timestampString = "562580506.059255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ViewController/LoginViewController.swift"
-            timestampString = "560424708.568444"
+            timestampString = "562582060.7049201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ViewController/LoginViewController.swift"
-            timestampString = "560424708.5684921"
+            timestampString = "562582060.704963"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ViewController/LoginViewController.swift"
-            timestampString = "560424708.56853"
+            timestampString = "562582060.705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "560775186.5942791"
+            timestampString = "562580506.059518"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "560775186.594511"
+            timestampString = "562580506.059702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "426"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "560775186.594734"
+            timestampString = "562580506.0598789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "394"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS/ModelController/TokenModel.swift"
-            timestampString = "560775186.595019"
+            timestampString = "562580506.0600539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "372"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eduid-iOS-Ext/ExtensionLoginViewController.swift"
-            timestampString = "560424708.569308"
+            timestampString = "561568381.737375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -330,12 +330,12 @@
                   moduleName = "eduid-iOS-Ext"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/blcmacbook/Documents/GitHub/Eduid-iOS/eduid-iOS-Ext/ExtensionLoginViewController.swift"
-                  timestampString = "560424708.805178"
+                  timestampString = "562676850.3198121"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
                   endingLineNumber = "120"
-                  offsetFromSymbolStart = "1264">
+                  offsetFromSymbolStart = "1608">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -345,14 +345,142 @@
                   moduleName = "eduid-iOS-Ext"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/blcmacbook/Documents/GitHub/Eduid-iOS/eduid-iOS-Ext/ExtensionLoginViewController.swift"
-                  timestampString = "560424708.807116"
+                  timestampString = "562676850.321335"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "120"
                   endingLineNumber = "120"
-                  offsetFromSymbolStart = "3720">
+                  offsetFromSymbolStart = "4556">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+            timestampString = "562677941.0203739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "cellForItem(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+            timestampString = "562677941.020425"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "didTap(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in eduid_iOS_Ext.ServiceSectionSingletonController.didTap(__C.BEMCheckBox) -&gt; ()"
+                  moduleName = "eduid-iOS-Ext"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/blcmacbook/Documents/GitHub/Eduid-iOS/eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+                  timestampString = "562676850.3278511"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.IGListBatchContext) -&gt; () in closure #1 () -&gt; () in eduid_iOS_Ext.ServiceSectionSingletonController.didTap(__C.BEMCheckBox) -&gt; ()"
+                  moduleName = "eduid-iOS-Ext"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/blcmacbook/Documents/GitHub/Eduid-iOS/eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+                  timestampString = "562676850.3293051"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+            timestampString = "562677941.020472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "sizeForItem(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+            timestampString = "562677941.0205179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "cellForItem(at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS-Ext/ServiceSectionSingletonController.swift"
+            timestampString = "562677941.020563"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "didTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eduid-iOS/Utilities/LocalizedButton.swift"
+            timestampString = "562677941.020606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

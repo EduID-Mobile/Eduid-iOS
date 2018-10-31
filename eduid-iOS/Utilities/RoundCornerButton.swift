@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundCornerButton: UIButton {
+class RoundCornerButton: LocalizedButton {
 
     @IBInspectable var radius : Int = 0 {
         didSet{
@@ -16,5 +16,5 @@ class RoundCornerButton: UIButton {
             self.clipsToBounds = true
         }
     }
-
+    
 }

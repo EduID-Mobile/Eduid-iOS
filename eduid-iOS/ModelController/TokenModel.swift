@@ -107,7 +107,7 @@ class TokenModel : NSObject {
         var timestamp = Int(date.timeIntervalSince1970)
         payload["exp"] = String(timestamp)
         
-        timestamp = Int(Date().timeIntervalSince1970) - 60 //remove 60 ticks workaround from server rejection
+        timestamp = Int(Date().timeIntervalSince1970) - 30 //remove 30 ticks workaround from server rejection
         payload["iat"] = String(timestamp)
         payload["cnf"] = cnf
         payload["azp"] =  UIDevice.current.identifierForVendor?.uuidString //jwk?["kid"]?
@@ -115,7 +115,7 @@ class TokenModel : NSObject {
         
         let notbfore = Date.init(timeIntervalSinceNow: 0)
         timestamp = Int(notbfore.timeIntervalSince1970)
-        payload["nbf"] = timestamp
+//        payload["nbf"] = timestamp
         
         
         // JWS

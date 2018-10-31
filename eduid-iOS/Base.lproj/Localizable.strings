@@ -5,14 +5,32 @@
   Created by Blended Learning Center on 09.04.18.
   Copyright © 2018 Blended Learning Center. All rights reserved.
 */
-
-"TimeoutMessage" = "Please check your internet connection and reopen the app";
-"TryAgain" = "Try Again";
+"Accept" = "Accept";
+"Cancel" = "Cancel";
+"CancelText" = "Cancel";
 "Close" = "Close";
-"Username" = "Username";
-"Password" = "Password";
+"ConfirmText" = "Confirm";
+"ConsentMessage" = "This service will use your registered e-mail and profile data from EduID";
 "ErrorLogout" = "Error occured on the logout process, please contact the support";
+"Forgot Password" = "Forgot Password";
+"Institutions" = "Institutions";
+"Login" = "Login";
 "LoginRejectedTitle" = "Login Failed";
 "LoginRejectedMessage" = "Please check your login details again";
-"RequestAlertTitle" = "Request Rejected";
+"Logout" = "Logout";
+"LogoutText" = "Logging out means also that all app authorizations will be rejected";
+"LogoutTitle" = "Warning";
+"None" = "None";
+"Password" = "Password";
+"Remember my account" = "Remember my account";
 "RequestAlertMessage" = "Please contact the administrator from your service provider";
+"RequestAlertTitle" = "Request Rejected";
+"Search" = "Search";
+"Services" = "Services";
+"Sort By" = "Sort By";
+"TimeoutMessage" = "Please check your internet connection and reopen the app";
+"TryAgain" = "Try Again";
+"Username" = "Username";
+
+
+

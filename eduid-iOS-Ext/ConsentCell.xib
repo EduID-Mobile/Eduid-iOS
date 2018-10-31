@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xhh-oj-jzl" customClass="ConsentCell" customModule="eduid_iOS_Ext" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Consent Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8H-JV-yjG">
+                        <rect key="frame" x="70" y="50" width="312" height="90"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hob-s1-U0Z">
+                        <rect key="frame" x="20" y="2.5" width="313.5" height="45"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp7-uU-rMy" customClass="BEMCheckBox">
+                        <rect key="frame" x="347" y="5" width="40" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Wp7-uU-rMy" secondAttribute="height" multiplier="1:1" id="cXc-a0-Rgm"/>
+                            <constraint firstAttribute="height" constant="40" id="w3x-Wv-m1m"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="profileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="jBE-65-WPV">
+                        <rect key="frame" x="20" y="75" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="jBE-65-WPV" secondAttribute="height" multiplier="1:1" id="AoH-hj-zTT"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="k8H-JV-yjG" secondAttribute="trailing" constant="10" id="0cQ-da-I6F"/>
+                <constraint firstItem="Wp7-uU-rMy" firstAttribute="top" secondItem="8v2-Lq-9ag" secondAttribute="top" constant="5" id="233-2f-qNI"/>
+                <constraint firstItem="k8H-JV-yjG" firstAttribute="top" secondItem="Wp7-uU-rMy" secondAttribute="bottom" constant="5" id="A2E-8M-JLB"/>
+                <constraint firstItem="Hob-s1-U0Z" firstAttribute="leading" secondItem="Xhh-oj-jzl" secondAttribute="leadingMargin" id="AKn-Vo-dLD"/>
+                <constraint firstItem="Hob-s1-U0Z" firstAttribute="centerY" secondItem="Wp7-uU-rMy" secondAttribute="centerY" id="FfW-8s-nVO"/>
+                <constraint firstItem="Hob-s1-U0Z" firstAttribute="width" secondItem="Xhh-oj-jzl" secondAttribute="width" multiplier="0.8" id="UpK-xG-PSy"/>
+                <constraint firstAttribute="trailing" secondItem="Wp7-uU-rMy" secondAttribute="trailing" constant="5" id="XOv-K4-4eX"/>
+                <constraint firstItem="jBE-65-WPV" firstAttribute="leading" secondItem="Hob-s1-U0Z" secondAttribute="leading" id="ZbA-sS-9rK"/>
+                <constraint firstItem="k8H-JV-yjG" firstAttribute="leading" secondItem="jBE-65-WPV" secondAttribute="trailing" constant="10" id="d4o-OK-0P5"/>
+                <constraint firstItem="jBE-65-WPV" firstAttribute="centerY" secondItem="k8H-JV-yjG" secondAttribute="centerY" id="gSO-ZF-g4S"/>
+                <constraint firstItem="Hob-s1-U0Z" firstAttribute="height" secondItem="Xhh-oj-jzl" secondAttribute="height" multiplier="0.25" id="hRQ-Cc-fr2"/>
+                <constraint firstItem="k8H-JV-yjG" firstAttribute="height" secondItem="Xhh-oj-jzl" secondAttribute="height" multiplier="0.5" id="vjh-J4-bru"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="8v2-Lq-9ag"/>
+            <size key="customSize" width="392" height="180"/>
+            <connections>
+                <outlet property="consentLabel" destination="k8H-JV-yjG" id="iUG-g7-wmm"/>
+                <outlet property="iconImageView" destination="jBE-65-WPV" id="1bK-iF-2cq"/>
+                <outlet property="serviceLabel" destination="Hob-s1-U0Z" id="Xk2-du-egF"/>
+                <outlet property="switchButton" destination="Wp7-uU-rMy" id="ReH-Pi-LS0"/>
+            </connections>
+            <point key="canvasLocation" x="36.799999999999997" y="-70.164917541229386"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="profileIcon" width="40" height="40"/>
+    </resources>
+</document>

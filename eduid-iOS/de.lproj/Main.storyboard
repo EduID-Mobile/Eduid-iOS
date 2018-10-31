@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qU2-jO-nBc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qU2-jO-nBc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pT4-mM-ARF">
-                                <rect key="frame" x="34" y="358.5" width="307" height="29"/>
+                                <rect key="frame" x="34" y="358" width="307" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="SWITCH EduID">
                                         <attributes>
@@ -35,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconSet" translatesAutoresizingMaskIntoConstraints="NO" id="LlB-kl-iFS">
-                                <rect key="frame" x="125.5" y="254" width="124" height="92.5"/>
+                                <rect key="frame" x="125.5" y="254" width="124" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LlB-kl-iFS" secondAttribute="height" multiplier="129:96" id="Z0t-jc-JxS"/>
                                 </constraints>
@@ -80,7 +77,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-Ql-seu" customClass="RoundCornerButton" customModule="eduid_iOS" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="573.5" width="300" height="53.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Anmelden">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -96,13 +93,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconSet" translatesAutoresizingMaskIntoConstraints="NO" id="Iiv-LF-2QW">
-                                        <rect key="frame" x="141" y="82" width="94" height="69.5"/>
+                                        <rect key="frame" x="140.5" y="82" width="94" height="69.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Iiv-LF-2QW" secondAttribute="height" multiplier="129:96" id="s8o-84-jcM"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9p-yH-Qm5">
-                                        <rect key="frame" x="-0.5" y="163.5" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="375" height="30"/>
                                         <attributedString key="attributedText">
                                             <fragment content="SWITCH EduID">
                                                 <attributes>
@@ -133,9 +130,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-zB-hgy">
-                                <rect key="frame" x="30" y="248.5" width="111.5" height="46.5"/>
+                                <rect key="frame" x="30" y="248.5" width="78.5" height="46.5"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Benutzername">
+                                    <fragment content="Username">
                                         <attributes>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -145,9 +142,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kp-OL-70n">
-                                <rect key="frame" x="30" y="329" width="72" height="47"/>
+                                <rect key="frame" x="30" y="329" width="76" height="47"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Passwort">
+                                    <fragment content="Password">
                                         <attributes>
                                             <font key="NSFont" size="16" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -177,7 +174,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JOT-BF-Ljh">
-                                <rect key="frame" x="151.5" y="248.5" width="203.5" height="46.5"/>
+                                <rect key="frame" x="118.5" y="248.5" width="236.5" height="46.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="example@uni-test.com">
                                         <attributes>
@@ -190,7 +187,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1a-Ki-u7Y">
-                                <rect key="frame" x="112" y="329" width="206.5" height="47"/>
+                                <rect key="frame" x="116" y="329" width="202.5" height="47"/>
                                 <attributedString key="attributedText">
                                     <fragment content="test">
                                         <attributes>
@@ -220,9 +217,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkb-te-kFQ">
-                                <rect key="frame" x="57" y="386.5" width="187.5" height="16"/>
+                                <rect key="frame" x="57" y="386" width="187.5" height="16"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Konto speichern">
+                                    <fragment content="Remember my account">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -233,10 +230,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGV-dD-RGx">
-                                <rect key="frame" x="229" y="387" width="136" height="14.5"/>
+                                <rect key="frame" x="251" y="387" width="114" height="14"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Passwort vergessen">
+                                        <fragment content="Forgot Password">
                                             <attributes>
                                                 <color key="NSColor" red="0.69411764705882351" green="0.71764705882352942" blue="0.78431372549019607" alpha="0.85982983732876717" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" size="15" name="Helvetica"/>
@@ -334,7 +331,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zza-35-BDV" customClass="RoundCornerButton" customModule="eduid_iOS" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="577" width="300" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Abmelden">
+                                <state key="normal" title="Logout">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -350,7 +347,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="126.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbc-T0-u76">
-                                        <rect key="frame" x="16" y="10.5" width="343" height="106"/>
+                                        <rect key="frame" x="16" y="10" width="343" height="106.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Label">
                                                 <attributes>
@@ -460,7 +457,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHe-Xs-jd9">
-                                                    <rect key="frame" x="157" y="0.0" width="212" height="38"/>
+                                                    <rect key="frame" x="157" y="0.0" width="212" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

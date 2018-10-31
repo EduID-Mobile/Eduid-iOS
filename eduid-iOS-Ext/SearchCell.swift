@@ -20,7 +20,7 @@ final class SearchCell: UICollectionViewCell, UISearchBarDelegate {
         super.layoutSubviews()
         searchBar.frame = self.bounds
         //searchBar.
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = NSLocalizedString("Search", comment: "Search placeholder for search bar.")
         searchBar.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 0.82)
 //        searchBar.scopeBarBackgroundImage = UIImage.imageWithColor(color: .black)
         searchBar.searchBarStyle = .minimal

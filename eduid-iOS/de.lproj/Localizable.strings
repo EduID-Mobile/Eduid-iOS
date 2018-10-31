@@ -5,18 +5,29 @@
   Created by Blended Learning Center on 09.04.18.
   Copyright © 2018 Blended Learning Center. All rights reserved.
 */
-
-"TimeoutMessage" = "Bitte überprüfen Sie Ihre Verbindung";
-"TryAgain" = "Nochmals Versuchen";
-"Close" = "Schliessen";
-"Username" = "Benutzername";
-"Password" = "Passwort";
+"Accept" = "Annehmen";
+"Cancel" = "Abbrechen";
+"CancelText" = "Abbrechen";
+"Close" = "Schliesse";
+"ConfirmText" = "Annehmen";
+"ConsentMessage" = "Diese Anwendung wird Ihre registrierte E-mail und Profil Daten von EduID verwenden";
 "ErrorLogout" = "Error beim Ausloggen, bitte kontaktieren Sie den Support";
+"Forgot Password" = "Passwort Vergessen";
+"Institutions" = "Institutions";
+"Login" = "Anmelden";
 "LoginRejectedTitle" = "Anmeldung Fehlgeschlagen";
 "LoginRejectedMessage" = "Bitte überprüfen Sie nochmals Ihre Anmeldedaten";
-"RequestAlertTitle" = "Anfrage abgelehnt";
-"RequestAlertMessage" = "Bitte kontaktieren Sie Ihre Admin von dem ausgewählten Service";
+"Logout" = "Abmelden";
+"LogoutText" = "Beim Ausloggen verlieren Sie Ihre aktuelle Authorizierung zu allen Services";
 "LogoutTitle" = "Achtung";
-"LogoutText" = "Beim Ausloggen verlieren Sie ihre aktuelle Auhtorizierung zu allen Services";
-"CancelText" = "Abbrechen";
-"ConfirmText" = "Annehmen";
+"None" = "Ohne";
+"Password" = "Passwort";
+"Remember my account" = "Konto merken";
+"RequestAlertMessage" = "Bitte kontaktieren Sie Ihre Admin von dem ausgewählten Service";
+"RequestAlertTitle" = "Anfrage Abgelehnt";
+"Search" = "Suchen";
+"Services" = "Services";
+"Sort By" = "Sortierung nach";
+"TimeoutMessage" = "Bitte überprüfen Sie Ihre Verbindung";
+"TryAgain" = "Nochmals Versuchen";
+"Username" = "Benutzername";

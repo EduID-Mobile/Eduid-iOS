@@ -1,0 +1,22 @@
+"zc3-zB-hgy.text" = "Benutzername";
+
+"7kp-OL-70n.text" = "Passwort";
+
+"Tkb-te-kFQ.text" = "Konto merken";
+
+"LGV-dD-RGx.normalTitle" = "Passwort Vergessen";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "23U-Kt-wqI"; */
+"23U-Kt-wqI.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Anmelden"; ObjectID = "83b-8k-VkZ"; */
+"83b-8k-VkZ.normalTitle" = "Anmelden";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "SXH-v1-53R"; */
+"SXH-v1-53R.normalTitle" = "Abbrechen";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "T0a-fA-h31"; */
+"T0a-fA-h31.normalTitle" = "Annehmen";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oqs-b0-lga"; */
+"oqs-b0-lga.normalTitle" = "Button";

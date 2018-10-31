@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bij-SC-8ZL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bij-SC-8ZL">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="284.33333333333331"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconGray" translatesAutoresizingMaskIntoConstraints="NO" id="lHl-uv-jNG">
-                                        <rect key="frame" x="140.33333333333334" y="107" width="94.333333333333343" height="70"/>
+                                        <rect key="frame" x="140.66666666666666" y="107.33333333333331" width="93.666666666666657" height="69.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lHl-uv-jNG" secondAttribute="height" multiplier="129:96" id="gri-YV-yOE"/>
                                         </constraints>
@@ -43,7 +41,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3Z-bP-pld">
-                                        <rect key="frame" x="-0.66666666666665719" y="218" width="375.33333333333326" height="18"/>
+                                        <rect key="frame" x="0.0" y="218" width="375" height="18"/>
                                         <attributedString key="attributedText">
                                             <fragment content="extension">
                                                 <attributes>
@@ -77,7 +75,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-wO-NAx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-wO-NAx" customClass="LocalizedLabel" customModule="eduid_iOS_Ext" customModuleProvider="target">
                                 <rect key="frame" x="30.000000000000007" y="299.33333333333331" width="78.666666666666686" height="56.666666666666686"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Username">
@@ -90,7 +88,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-vJ-1rr">
-                                <rect key="frame" x="118.66666666666667" y="298.66666666666669" width="236.33333333333331" height="57.333333333333314"/>
+                                <rect key="frame" x="118.66666666666667" y="299.33333333333331" width="236.33333333333331" height="56.666666666666686"/>
                                 <attributedString key="attributedText">
                                     <fragment content="example@uni-test.com">
                                         <attributes>
@@ -112,7 +110,7 @@
                                     <constraint firstAttribute="height" constant="1" id="PXk-KL-YFN"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-ag-ZGh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-ag-ZGh" customClass="LocalizedLabel" customModule="eduid_iOS_Ext" customModuleProvider="target">
                                 <rect key="frame" x="30" y="390" width="76" height="57"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Password">
@@ -138,7 +136,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqs-b0-lga">
-                                <rect key="frame" x="308" y="390.66666666666669" width="57" height="56.666666666666686"/>
+                                <rect key="frame" x="308" y="390" width="57" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oqs-b0-lga" secondAttribute="height" multiplier="1:1" id="VCd-ug-qSh"/>
                                 </constraints>
@@ -148,7 +146,7 @@
                                 </connections>
                             </button>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBl-dX-Gjb">
-                                <rect key="frame" x="30" y="450.33333333333331" width="345" height="1"/>
+                                <rect key="frame" x="30" y="450" width="345" height="1"/>
                                 <color key="backgroundColor" red="0.80392156859999997" green="0.80784313730000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -172,8 +170,8 @@
                                     <action selector="login:" destination="4jO-Y6-PE2" eventType="touchUpInside" id="hta-T4-WvL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He0-yt-x4L">
-                                <rect key="frame" x="56.999999999999986" y="457.66666666666669" width="187.66666666666663" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="He0-yt-x4L" customClass="LocalizedLabel" customModule="eduid_iOS_Ext" customModuleProvider="target">
+                                <rect key="frame" x="56.999999999999986" y="457.33333333333331" width="187.66666666666663" height="16"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Remember my account">
                                         <attributes>
@@ -186,14 +184,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyh-Me-v7O" customClass="BEMCheckBox">
-                                <rect key="frame" x="30" y="456.33333333333331" width="18.666666666666671" height="18.333333333333314"/>
+                                <rect key="frame" x="30" y="456" width="18.666666666666671" height="18.666666666666686"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qyh-Me-v7O" secondAttribute="height" multiplier="1:1" id="lyS-xK-Uj0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5C-Nl-9Wg">
-                                <rect key="frame" x="251" y="457" width="114" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j5C-Nl-9Wg" customClass="LocalizedButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
+                                <rect key="frame" x="251" y="456.66666666666669" width="114" height="17"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Forgot Password">
@@ -380,7 +378,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="162.33333333333334"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPJ-P9-ndj">
-                                        <rect key="frame" x="15" y="81.666666666666657" width="300.33333333333331" height="80.666666666666657"/>
+                                        <rect key="frame" x="15" y="81.333333333333329" width="300" height="80.999999999999986"/>
                                         <attributedString key="attributedText">
                                             <fragment content="EduID">
                                                 <attributes>
@@ -413,18 +411,12 @@
                                 <rect key="frame" x="0.0" y="162.33333333333334" width="375" height="487.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFQ-1P-mkz" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="198.33333333333337" y="699.66666666666663" width="131.66666666666663" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFQ-1P-mkz" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
+                                <rect key="frame" x="198.66666666666663" y="699.66666666666663" width="131.33333333333337" height="61"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Accept">
-                                            <attributes>
-                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Accept">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -435,19 +427,12 @@
                                     <action selector="done:" destination="bn6-2i-aix" eventType="touchUpInside" id="IJs-3O-Yte"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3Q-yp-auO" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
-                                <rect key="frame" x="45" y="699.66666666666663" width="131" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3Q-yp-auO" customClass="RoundCornerButton" customModule="eduid_iOS_Ext" customModuleProvider="target">
+                                <rect key="frame" x="45" y="699.66666666666663" width="131.33333333333334" height="61"/>
                                 <color key="backgroundColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Cancel">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="16" name="HelveticaNeue-Medium"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
@@ -487,8 +472,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <exclude reference="5jA-vR-Cl2"/>
                                 <include reference="vN0-Gq-qfF"/>
+                                <exclude reference="5jA-vR-Cl2"/>
                             </mask>
                         </variation>
                     </view>
