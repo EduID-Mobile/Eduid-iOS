@@ -20,7 +20,7 @@ class ServiceSectionSingletonController: ListSectionController {
     private var audience : String!
     private var sessionKeys : [String: Key]!
     private var encryptKey : Key?
-    private var selectedIndex : Int = -1
+    var selectedIndex : BoxBinding<Int> = BoxBinding(-1)
     private var cells : [UICollectionViewCell] = []
     
     init(entry : Service, token: TokenModel, protocolsModel : ProtocolsModel, authToken : AuthorizationTokenModel, aud : String, sessionKeys : [String: Key], encKey : Key?){
@@ -45,7 +45,7 @@ class ServiceSectionSingletonController: ListSectionController {
     override func sizeForItem(at index: Int) -> CGSize {
         //TODO: MAKE HEIGHT RELATIVE
         
-        return index != selectedIndex ? CGSize(width: collectionContext!.containerSize.width - 20 , height: 50) : CGSize(width: collectionContext!.containerSize.width - 20 , height: 150)
+        return index != selectedIndex.value ? CGSize(width: collectionContext!.containerSize.width - 20 , height: 50) : CGSize(width: collectionContext!.containerSize.width - 20 , height: 150)
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -56,7 +56,7 @@ class ServiceSectionSingletonController: ListSectionController {
             return UICollectionViewCell()
         }
         
-        if selectedIndex != index {
+        if selectedIndex.value != index {
             guard let celltmp = collectionContext?.dequeueReusableCell(withNibName: "ServiceSingletonCell", bundle: nil, for: self, at: index) as? ServiceSingleTonCell else{
                 fatalError()
             }
@@ -115,7 +115,7 @@ class ServiceSectionSingletonController: ListSectionController {
     }
     
     func getSelectedIndex() -> Int?{
-        return selectedIndex
+        return selectedIndex.value
     }
     /*
      func generateConsentCell() -> UICollectionViewCell {
@@ -141,37 +141,6 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
         //vc.selectedServices!.removeAll()
         let cellCount = self.entry.serviceName.count
         
-        /*
-         for i in 0..<cellCount {
-         //guard let cell = self.cellForItem(at: i) as? ServiceSingleTonCell else {continue}
-         guard let cell = cells[i] as? ServiceSingleTonCell else {
-         continue
-         }
-         
-         // Turning off the other checkbox: since it is a singleton mode.
-         if cell.switchButton.tag != checkBox.tag && cell.switchButton.on {
-         DispatchQueue.main.async{
-         //cell.switchButton.setOn(false, animated: true)
-         cell.switchButton.on = false
-         //self.selectedIndex = -1
-         }
-         }else if cell.switchButton.tag == checkBox.tag {
-         //cell.switchButton.setOn(!cell.switchButton.on, animated: true)
-         print("Check box = \(checkBox.on )")
-         if checkBox.on {
-         // Remove all the selected services since it is singleton mode.
-         vc.selectedServices!.removeAll()
-         vc.selectedServices?.append(entry.serviceName[i])
-         print("SELECTED SERVICES = " , vc.selectedServices ?? "")
-         selectedIndex = i
-         print("Selected index : \(String(describing: selectedIndex))")
-         break
-         } else {
-         selectedIndex = -1
-         }
-         }
-         }*/
-        
         for i in 0..<cellCount {
             // Clean all the cell
             if i == checkBox.tag {
@@ -184,7 +153,7 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
             cell.switchButton.setOn(false, animated: true)
         }
         
-        selectedIndex = -1
+        selectedIndex.value = -1
         let indexCell = checkBox.tag
         print("Button tap :: \(indexCell)")
         
@@ -192,7 +161,7 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
         
         if checkBox.on {
             vc.selectedServices?.append(entry.serviceName[indexCell])
-            selectedIndex = indexCell
+            selectedIndex.value = indexCell
             print("SELECTED SERVICES = " , vc.selectedServices ?? "")
             print("Selected index : \(String(describing: selectedIndex))")
         } else {

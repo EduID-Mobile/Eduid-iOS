@@ -81,11 +81,8 @@ class ServiceViewController: UIViewController {
         adapter.collectionView = collectionView
         adapter.dataSource = self
         
-        //        filterButton = DropDownButton(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
-        //        self.view.addSubview(filterButton)
+       
         self.setUIelements()
-        //        self.showLoadUI()
-        //        self.removeLoadUI()
     }
     //   MARK: -- BUTTON ACTIONS
     
@@ -172,6 +169,8 @@ class ServiceViewController: UIViewController {
         indicator!.type = .lineScaleParty
         indicator.isHidden = false
         indicator.center = self.view.center
+        
+        doneButton.isEnabled = false
         
         /*
          filterButton.translatesAutoresizingMaskIntoConstraints = false
@@ -427,7 +426,21 @@ extension ServiceViewController : ListAdapterDataSource, SearchSectionController
                         }
                     }
                 }
-                return ServiceSectionSingletonController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!, encKey: encryptKey)
+                let ssc = ServiceSectionSingletonController(entry: serviceTmp, token: self.token!, protocolsModel: self.protocols!, authToken: self.authToken, aud: self.apString!, sessionKeys: self.sessionKey!, encKey: encryptKey)
+                ssc.selectedIndex.bind{ [unowned self] selectedIdx in
+                    if selectedIdx == -1 {
+                        self.doneButton.isEnabled = false
+                        self.doneButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+                        //007AFF enable
+                    } else {
+                        self.doneButton.isEnabled = true
+                        self.doneButton.backgroundColor = UIColor(red: 0, green: 0.48, blue: 1, alpha: 1)
+                       
+                    }
+                    
+                    
+                }
+                return ssc
             }
         }
     }
