@@ -84,7 +84,6 @@ class ExtensionLoginViewController: UIViewController {
         signingKey = keystore.getKey(withKid: privateKeyID)!
         
         //get Enc Key for JWE
-        
         urlPathKey = Bundle.main.url(forResource: "eduid_pub", withExtension: "jwks")
         let keys = keystore.jwksToKeyFromBundle(jwksPath: urlPathKey!.path)
         

@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+// Helper class to setup the shared data store initialization
 class SharedDataStore : NSObject {
     
     var managedObjectContext : NSManagedObjectContext?
@@ -22,8 +22,6 @@ class SharedDataStore : NSObject {
     
     override init() {
         super.init()
-//        setupCoreData()
-//        self.persistentContainer =  setupContainer()
     }
     
     func setupCoreData() {

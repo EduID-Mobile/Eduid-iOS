@@ -9,6 +9,7 @@ import UIKit
 import ImageIO
 /**
  Some extension to load a gif data into a UIImageView
+ Currently not used for the current version
  */
 extension UIImageView {
     
@@ -20,7 +21,6 @@ extension UIImageView {
             }
         }
     }
-    
 }
 
 extension UIImage {

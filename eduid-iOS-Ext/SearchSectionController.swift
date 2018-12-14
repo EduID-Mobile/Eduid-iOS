@@ -20,7 +20,6 @@ class SearchSectionController : ListSectionController, UISearchBarDelegate, List
     override init(){
         super.init()
         scrollDelegate = self
-        
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
@@ -61,5 +60,4 @@ class SearchSectionController : ListSectionController, UISearchBarDelegate, List
     func listAdapter(_ listAdapter: ListAdapter, willBeginDragging sectionController: ListSectionController) {}
     
     func listAdapter(_ listAdapter: ListAdapter, didEndDragging sectionController: ListSectionController, willDecelerate decelerate: Bool) {}
-    
 }

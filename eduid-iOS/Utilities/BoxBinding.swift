@@ -14,7 +14,6 @@ class BoxBinding<T> {
     
     var value : T {
         didSet{
-            //print("in didSet")
             listener?(value) //call the listener if it exists
         }
     }

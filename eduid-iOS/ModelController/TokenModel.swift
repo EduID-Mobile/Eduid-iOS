@@ -82,15 +82,11 @@ class TokenModel : NSObject {
         print("uuid : \(String(describing: payload["jti"] ))")
         
         let jwt = JWS(payloadDict: payload)
-        // TRY JWE
-        // let jwt = JWE.init(plaintext: payload, publicKey: keyToSign)
-        
         return jwt.sign(key: keyToSign, alg: .RS256)!
-        // TRY JWE
-        // return jwt.getCompactJWE()!
+        
     }
     
-    //creating a specific user assertion in a signed JWS format, based on the user credentials
+    //Creating a specific user assertion in a signed JWS format, based on the user credentials
     func createUserAssert(userSub : String, password : String, issuer: String, audience : String , keyToSend: Key , keyToSign: Key, keyToEncrypt: Key?) -> String? {
         
         let jwk = KeyStore.keyToJwk(key: keyToSend)
@@ -123,7 +119,7 @@ class TokenModel : NSObject {
         let jwsCompact = jws.sign(key: keyToSign, alg: .RS256)
         
         if keyToEncrypt != nil {
-            //        TRY JWE
+            // Pack the JWS and put in inside (JWE #RFC7520 Section6)
             let jwe : JWE
             do{
                 jwe = try JWE(plainJWS: jwsCompact!, alg: .RSA_OAEP_256, publicKey: keyToEncrypt!, kid: keyToEncrypt!.getKid()!)
@@ -177,7 +173,7 @@ class TokenModel : NSObject {
         parseTokenID()
     }
     
-    //extract the data from the response, and assign them into the object variables
+    //Extract the data from the response, and assign them into the object variables
     func extractJson() {
         if jsonResponse == nil {
             print("JSON RESPONSE is empty!")
@@ -192,7 +188,8 @@ class TokenModel : NSObject {
         
     }
     
-    ///Fetch the credentials data of the registered user from the database
+    // Fetch the credentials data of the registered user from the database
+    // Only fetch the first data since the app designed only for one user on one app
     func fetchDatabase() -> Bool{
         let fetchRequest = NSFetchRequest<NSManagedObject>.init(entityName: "Tokens")
         do{
@@ -210,6 +207,8 @@ class TokenModel : NSObject {
         }
         
     }
+    
+    
     /**
      Main function to send the credentials data from the app into the authentication server
      
@@ -244,15 +243,20 @@ class TokenModel : NSObject {
         
     }
     
+    //Getter function for access token
     func giveAccessToken() -> String? {
         return self.accesToken
     }
+    
+    
+    //Getter function for id token
     //Token ID consist of an array with a length of two,
     //First element is Header data as Dictionary, and the second is Payload data
     func giveTokenID() -> [[String : Any]]? {
         return self.id_tokenParsed
     }
     
+    //Getter function for id token as a json data format
     func giveTokenIDasJSON() -> Data? {
         var jsonDict = [String:Any]()
         jsonDict["header"] = id_tokenParsed?.first
@@ -283,7 +287,7 @@ class TokenModel : NSObject {
     }
     
     
-    
+    //Getter function for id token as dictionary
     func giveIdToken() -> [String : Any]?{
         /*
          guard let jwsToParse : String = self.jsonResponse?["id_token"] as? String else {
@@ -310,7 +314,7 @@ class TokenModel : NSObject {
     
     // FIXME: why save "expired" in database model as Integer 64 result a crash
     // Save the current token variables into the shared data store, for the next usage of the app.
-    func save() {
+    private func save() {
         let entity = NSEntityDescription.entity(forEntityName: "Tokens", in: self.managedContext!) as NSEntityDescription?
         let tokenData = NSManagedObject(entity: entity!, insertInto: managedContext)
         
@@ -328,12 +332,7 @@ class TokenModel : NSObject {
         }
     }
     
-    //Set the destination uri, which the credential data will be sent to
-    func setURI(uri : URL) {
-        self.tokenURI = uri
-    }
-    
-    // TODO: Optional, validate the access token, which the app received from the server
+    // TODO: Optional(currently not used), validate the access token, which the app received from the server
     func validateAccessToken () -> Bool {
         if self.id_tokenParsed == nil &&  id_tokenParsed?.first!["alg"] as! String != "RS256" {
             return false
@@ -368,7 +367,6 @@ class TokenModel : NSObject {
         if countsComponents == 5 {
             
             // JWE verify
-            // TRY JWE
             do{
                 // For private key needs to do two procedures : get kid from jwks, and get key from pem
                 pathToKey = Bundle.main.url(forResource: "ios_priv", withExtension: "jwks")!
@@ -407,8 +405,8 @@ extension TokenModel : URLSessionDataDelegate {
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         
         print("Did complete with Error : \(error.debugDescription)")
+        //Set the downloadSuccess to inform the view if there is any error
         self.downloadSuccess.value = nil
-        
     }
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
@@ -416,6 +414,7 @@ extension TokenModel : URLSessionDataDelegate {
         let httpResponse = dataTask.response as! HTTPURLResponse
         print("Did receive response with status : \(httpResponse.statusCode)")
         if(httpResponse.statusCode != 200){
+            //Set the downloadSuccess to inform the view if there is any unwanted response
             print("Response : \(httpResponse.description)" )
             self.downloadSuccess.value = false
             return
@@ -432,11 +431,13 @@ extension TokenModel : URLSessionDataDelegate {
             self.jsonResponse = jsonResponse
             self.extractJson()
             if self.verifyIDToken() {
-                //                let _ = validateAccessToken()
+                //Set the downloadSuccess to inform the view, that user is authenticated
                 self.downloadSuccess.value = true
             } else {
+                //Set the downloadSuccess to inform the view if there is any unverified response
                 self.downloadSuccess.value = false
             }
+            //Save the response token in shared data store
             self.save()
         } catch {
             print(error.localizedDescription)

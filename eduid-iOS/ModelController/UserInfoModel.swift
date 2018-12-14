@@ -9,7 +9,8 @@
 import Foundation
 import CoreData
 
-//    TODO : COMPLETION
+// Currently not used since User Info is delivered directly from the Identity Provider inside id_token at the authentication process (TokenModel).
+// TODO: Next feature separation of getting user info after authentication process.
 class UserInfoModel : NSObject {
     
     private var userinfoURI : URL?
@@ -29,17 +30,9 @@ class UserInfoModel : NSObject {
             return
         }
         
-//        let request = NSMutableURLRequest(url: self.userinfoURI!)
-//        let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-        
-//        request.httpMethod = "GET"
-//        request.addValue(, forHTTPHeaderField: <#T##String#>)
-        
     }
     
 }
 
 extension UserInfoModel : URLSessionDataDelegate {
-    
-    
 }

@@ -72,7 +72,6 @@ class SplashViewController: UIViewController {
             
             return
         }
-        
         downloadFinished()
     }
     

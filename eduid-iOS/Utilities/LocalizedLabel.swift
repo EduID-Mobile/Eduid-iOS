@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Localized label a helper class to help the language support of UILabel
 class LocalizedLabel : UILabel {
     
     override func awakeFromNib() {

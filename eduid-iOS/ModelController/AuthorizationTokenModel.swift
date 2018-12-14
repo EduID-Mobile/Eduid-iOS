@@ -11,12 +11,12 @@ import CoreData
 import JWTswift
 
 /**
- A ViewModel Class who control all the authorization process, this class would send a get request to the Resource Provider.
+ A Class that control all the authorization process, this class would send a get request to the Resource Provider.
  Resource provider then would be verify the data, and return an access token as a reply, if the user has a right to access the data from RP (Resource Provider)
  This view model would be used only on the app extension.
  
  ## Main functions :
- - Request the access token from the resource provider
+ - Request the access token from the RP
  - Extract the access token from the RP, if available
  */
 class AuthorizationTokenModel : NSObject {
@@ -25,29 +25,27 @@ class AuthorizationTokenModel : NSObject {
     private lazy var persistentContainer : NSPersistentContainer? = nil
     private lazy var managedContext : NSManagedObjectContext? = nil
     
-    //contains the whole raw response from the resource provider
+    //Contains the whole raw response from the resource provider
     private var jsonResponse : [String : Any]?
     
-//    private let client_assertion_type = "urn:ietf:params:oauth:client-assertion-type:jwt-bearer"
     private let grant_type = "urn:ietf:params:oauth:grant-type:jwt-bearer"
     
-    //boolean to check the download status, could be attached with a listener
+    //Boolean to check the download status, could be attached with a listener
     var downloadSuccess : BoxBinding<Bool?> = BoxBinding(nil)
     
     override init() {
         super.init()
-
     }
     
     deinit {
         print("AuthorizationTokenModel is being deinitialized")
     }
     
-    //Create the assert in from of JWS to be sent into the resource provider
+    //Create the assert in form of JWS to be sent into the resource provider(ex. Moodle service)
     func createAssert(addressToSend : String, subject : String , audience : String, accessToken : String ,kidToSend : String , keyToSign : Key, keyToEncrypt: Key?) -> String? {
         var payload = [String : Any]()
         
-        // This if case is ONLY FOR TESTING moodle core dev RFC 7521 + 23
+        // This if case is ONLY FOR TESTING purpose moodle core dev RFC 7521 + 23
         if(addressToSend.contains("moodle-dev.htwchur")){
             print("CreateAssert addressTosend = " , addressToSend)
             payload["azp"] = "https://moodle-dev.htwchur.ch/julius/admin/oauth2callback.php"
@@ -56,7 +54,6 @@ class AuthorizationTokenModel : NSObject {
             payload["azp"] = addressToSend
         }
         
-        //payload["azp"] = addressToSend
         payload["iss"] = UIDevice.current.identifierForVendor?.uuidString
         payload["aud"] = audience
         payload["sub"] = subject
@@ -79,8 +76,6 @@ class AuthorizationTokenModel : NSObject {
                 print(error)
                 return nil
             }
-            
-//            return jwe.getCompactJWE()
             return jwsCompact!
             
         } else {
@@ -92,7 +87,7 @@ class AuthorizationTokenModel : NSObject {
     
     //Main function to request the token from the resource provider(RP)
     func fetch (address : URL, assertionBody : String ){
-        // for testing moodle core dev RFC 7521 + 23
+        //For testing moodle core dev RFC 7521 + 23
         var addressTmp = address
         if(address.absoluteString.contains("moodle-dev.htwchur")){
             print("HTW dev!! = " , address.absoluteString)
@@ -128,10 +123,6 @@ class AuthorizationTokenModel : NSObject {
     
     func giveResponseAsDict() -> [String: Any]? {
         return jsonResponse
-    }
-    
-    private func extractJson(){
-        
     }
     
     //Additional function to ease the combining process of the Http body data, which are wanted to be sent
@@ -173,7 +164,6 @@ extension AuthorizationTokenModel : URLSessionDataDelegate {
             return
         }
         completionHandler(URLSession.ResponseDisposition.allow)
-        
     }
     
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {

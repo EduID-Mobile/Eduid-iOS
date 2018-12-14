@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1527AFC421C3C5AC00147BB3 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E7C203B040A0020CA38 /* SearchCell.swift */; };
+		1546742721C3C7FC0019E5F6 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E7C203B040A0020CA38 /* SearchCell.swift */; };
 		1553B91E2189BCD900C90A32 /* LocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553B91D2189BCD900C90A32 /* LocalizedLabel.swift */; };
 		1553B9202189BD4D00C90A32 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553B91F2189BD4D00C90A32 /* LocalizedButton.swift */; };
 		1553B9212189C1BC00C90A32 /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553B91F2189BD4D00C90A32 /* LocalizedButton.swift */; };
@@ -54,7 +56,6 @@
 		6857BD601FFE57EC0002A72B /* JWTswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6857BD5B1FFE49920002A72B /* JWTswift.framework */; };
 		685F8A02207E68F100904433 /* SortingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8A00207E68F100904433 /* SortingCell.swift */; };
 		685F8A06207F5CDE00904433 /* SortSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F8A05207F5CDE00904433 /* SortSectionController.swift */; };
-		685F8A08207F6A3700904433 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685F8A07207F6A3700904433 /* test.xib */; };
 		685F8A09207F6F4500904433 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A85D5207CE99B00BB006A /* GradientView.swift */; };
 		6860AC0E201A3C8E004F4F98 /* BoxBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6347A200769E600D3914F /* BoxBinding.swift */; };
 		686630BD203C0CE600A812F3 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686630BB203C0CE600A812F3 /* ServiceCell.swift */; };
@@ -93,14 +94,11 @@
 		68C6CB762021C3E0000BB409 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6CB752021C3E0000BB409 /* Utilities.swift */; };
 		68C6CB772021C617000BB409 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C6CB752021C3E0000BB409 /* Utilities.swift */; };
 		68C6CB832021D185000BB409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C6CB822021D185000BB409 /* Assets.xcassets */; };
-		68CD9A472012250E000A2407 /* appicontest.png in Resources */ = {isa = PBXBuildFile; fileRef = 68CD9A462012250E000A2407 /* appicontest.png */; };
 		68DA97AC2006208700CA96B6 /* ios_priv.jwks in Resources */ = {isa = PBXBuildFile; fileRef = 68DA97AB2006208700CA96B6 /* ios_priv.jwks */; };
 		68DFE7D1200F74AD006D548A /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DFE7D0200F74AD006D548A /* LogoutViewController.swift */; };
 		68FA8E78203AB4EB0020CA38 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */; };
 		68FA8E7A203B01AF0020CA38 /* SearchSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */; };
 		68FA8E7B203B01AF0020CA38 /* SearchSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */; };
-		68FA8E7D203B040A0020CA38 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E7C203B040A0020CA38 /* SearchCell.swift */; };
-		68FA8E7E203B040A0020CA38 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E7C203B040A0020CA38 /* SearchCell.swift */; };
 		68FA8E84203B31DE0020CA38 /* ServiceSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FA8E83203B31DE0020CA38 /* ServiceSectionController.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,7 +182,6 @@
 		6857BD5B1FFE49920002A72B /* JWTswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JWTswift.framework; path = Carthage/Build/iOS/JWTswift.framework; sourceTree = "<group>"; };
 		685F8A00207E68F100904433 /* SortingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingCell.swift; sourceTree = "<group>"; };
 		685F8A05207F5CDE00904433 /* SortSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortSectionController.swift; sourceTree = "<group>"; };
-		685F8A07207F6A3700904433 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
 		686630BB203C0CE600A812F3 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		686630BC203C0CE600A812F3 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		686BF8671FD02DF000751B08 /* eduid-iOS-Ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "eduid-iOS-Ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +215,6 @@
 		68C6CB6E2021B5AF000BB409 /* TextFieldEffects.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextFieldEffects.framework; path = Carthage/Build/iOS/TextFieldEffects.framework; sourceTree = "<group>"; };
 		68C6CB752021C3E0000BB409 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		68C6CB822021D185000BB409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		68CD9A462012250E000A2407 /* appicontest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicontest.png; sourceTree = "<group>"; };
 		68DA97AB2006208700CA96B6 /* ios_priv.jwks */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ios_priv.jwks; sourceTree = "<group>"; };
 		68DFE7D0200F74AD006D548A /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
@@ -269,6 +265,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1527AFC121C3C3AA00147BB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				68FA8E7C203B040A0020CA38 /* SearchCell.swift */,
+				1590B63F2188670D00E7BB60 /* ConsentCell.swift */,
+				1590B6412188671C00E7BB60 /* ConsentCell.xib */,
+				686630BB203C0CE600A812F3 /* ServiceCell.swift */,
+				686630BC203C0CE600A812F3 /* ServiceCell.xib */,
+				685F8A00207E68F100904433 /* SortingCell.swift */,
+				6877B18C207F926300129EEC /* SortingCell.xib */,
+				68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */,
+				6879171A2024CF3A00E529C2 /* ServiceSingletonCell.xib */,
+				687917192024CF3A00E529C2 /* ServiceSingletonCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		68199B271FCD8A8B001AE0D0 = {
 			isa = PBXGroup;
 			children = (
@@ -374,7 +387,7 @@
 		686BF8681FD02DF000751B08 /* eduid-iOS-Ext */ = {
 			isa = PBXGroup;
 			children = (
-				68CD9A462012250E000A2407 /* appicontest.png */,
+				1527AFC121C3C3AA00147BB3 /* View */,
 				686BF8771FD02FFF00751B08 /* eduid-iOS-Ext.entitlements */,
 				6810E97920171CFA00E020E6 /* ExtensionLoginViewController.swift */,
 				687917132024BEDB00E529C2 /* ServiceViewController.swift */,
@@ -382,22 +395,11 @@
 				687917172024CA4900E529C2 /* ServiceSectionSingletonController.swift */,
 				68FA8E79203B01AF0020CA38 /* SearchSectionController.swift */,
 				685F8A05207F5CDE00904433 /* SortSectionController.swift */,
-				687917192024CF3A00E529C2 /* ServiceSingletonCell.swift */,
-				1590B63F2188670D00E7BB60 /* ConsentCell.swift */,
-				1590B6412188671C00E7BB60 /* ConsentCell.xib */,
-				686630BB203C0CE600A812F3 /* ServiceCell.swift */,
-				686630BC203C0CE600A812F3 /* ServiceCell.xib */,
-				68FA8E7C203B040A0020CA38 /* SearchCell.swift */,
 				687917152024BF2900E529C2 /* Service.swift */,
-				685F8A00207E68F100904433 /* SortingCell.swift */,
-				6877B18C207F926300129EEC /* SortingCell.xib */,
-				68FA8E76203AB4EB0020CA38 /* DropDownButton.swift */,
-				6879171A2024CF3A00E529C2 /* ServiceSingletonCell.xib */,
 				686BF86B1FD02DF000751B08 /* MainInterface.storyboard */,
 				686BF86E1FD02DF000751B08 /* Info.plist */,
 				68531EE920220EF8008E79CE /* ExtensionAssets.xcassets */,
 				686BF8691FD02DF000751B08 /* ServiceListViewController.swift */,
-				685F8A07207F6A3700904433 /* test.xib */,
 			);
 			path = "eduid-iOS-Ext";
 			sourceTree = "<group>";
@@ -654,9 +656,7 @@
 				686BF86D1FD02DF000751B08 /* MainInterface.storyboard in Resources */,
 				6806A01A1FD6E4DB00DDBDFB /* rsaCert.der in Resources */,
 				686630BE203C0CE600A812F3 /* ServiceCell.xib in Resources */,
-				685F8A08207F6A3700904433 /* test.xib in Resources */,
 				6877B18A207F926300129EEC /* SortingCell.xib in Resources */,
-				68CD9A472012250E000A2407 /* appicontest.png in Resources */,
 				6810E97F2017541900E020E6 /* Setting.plist in Resources */,
 				6810E97C2017473F00E020E6 /* eduid_pub.jwks in Resources */,
 				68AB96E1207BBC4300B55A44 /* Localizable.strings in Resources */,
@@ -713,6 +713,7 @@
 				68C6CB762021C3E0000BB409 /* Utilities.swift in Sources */,
 				68C6347920075B0900D3914F /* SplashViewController.swift in Sources */,
 				68ADAD04202340C1006491C2 /* ProfileListViewController.swift in Sources */,
+				1546742721C3C7FC0019E5F6 /* SearchCell.swift in Sources */,
 				1553B9202189BD4D00C90A32 /* LocalizedButton.swift in Sources */,
 				6866979E2004AF0400B224B2 /* SharedDataStore.swift in Sources */,
 				680A85D6207CE99B00BB006A /* GradientView.swift in Sources */,
@@ -726,7 +727,6 @@
 				68DFE7D1200F74AD006D548A /* LogoutViewController.swift in Sources */,
 				68237BD3201B7F8D001E2EFB /* AuthorizationTokenModel.swift in Sources */,
 				68199B3C1FCD8A8B001AE0D0 /* eduid_iOS.xcdatamodeld in Sources */,
-				68FA8E7D203B040A0020CA38 /* SearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,11 +755,11 @@
 				687917182024CA4900E529C2 /* ServiceSectionSingletonController.swift in Sources */,
 				686630BD203C0CE600A812F3 /* ServiceCell.swift in Sources */,
 				686BF86A1FD02DF000751B08 /* ServiceListViewController.swift in Sources */,
-				68FA8E7E203B040A0020CA38 /* SearchCell.swift in Sources */,
 				687917162024BF2900E529C2 /* Service.swift in Sources */,
 				68531ED32021F5AF008E79CE /* UIImage+Gif.swift in Sources */,
 				68FA8E84203B31DE0020CA38 /* ServiceSectionController.swift in Sources */,
 				6866979F2004AF5D00B224B2 /* TokenModel.swift in Sources */,
+				1527AFC421C3C5AC00147BB3 /* SearchCell.swift in Sources */,
 				686BF87D1FD058E000751B08 /* EduidConfigModel.swift in Sources */,
 				686697A02004AF6200B224B2 /* SharedDataStore.swift in Sources */,
 				6810E980201A03F000E020E6 /* ProtocolsModel.swift in Sources */,

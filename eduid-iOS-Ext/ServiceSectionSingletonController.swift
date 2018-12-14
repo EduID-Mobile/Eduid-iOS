@@ -51,11 +51,6 @@ class ServiceSectionSingletonController: ListSectionController {
     override func cellForItem(at index: Int) -> UICollectionViewCell {
         let cell : UICollectionViewCell
         
-        guard let vc = self.viewController as? ServiceViewController else{
-            print("error getting view controller on request method")
-            return UICollectionViewCell()
-        }
-        
         if selectedIndex.value != index {
             guard let celltmp = collectionContext?.dequeueReusableCell(withNibName: "ServiceSingletonCell", bundle: nil, for: self, at: index) as? ServiceSingleTonCell else{
                 fatalError()
@@ -73,12 +68,9 @@ class ServiceSectionSingletonController: ListSectionController {
             celltmp.switchButton.tag = index
             celltmp.switchButton.delegate = self
             celltmp.serviceLabel.text = entry.serviceName[index]
-            celltmp.switchButton.on = true //(vc.selectedServices?.contains(entry.serviceName[index]))! ? true : false
-            
+            celltmp.switchButton.on = true
             cell = celltmp
         }
-        
-        
         
         let border = CALayer()
         border.backgroundColor = UIColor.gray.cgColor
@@ -102,8 +94,6 @@ class ServiceSectionSingletonController: ListSectionController {
     }
     
     func authRequest(adress : URL , homepageLink : String){
-        
-        
         print(self.token?.giveAccessToken()! as Any)
         let idToken = self.token?.giveTokenID()?.last
         print(self.token?.giveTokenID()?.first! as Any)
@@ -117,15 +107,6 @@ class ServiceSectionSingletonController: ListSectionController {
     func getSelectedIndex() -> Int?{
         return selectedIndex.value
     }
-    /*
-     func generateConsentCell() -> UICollectionViewCell {
-     
-     let cell = UICollectionViewCell(frame: CGRect.init(x: 0, y: 0, width: (collectionContext?.containerSize.width)!, height: (collectionContext?.containerSize.height)!))
-     let consentLabel : UILabel = UILabel.init(frame: cell.frame)
-     cell.addSubview(consentLabel)
-     consentLabel.text = NSLocalizedString("ConsentMessage", comment: "Show user the consent text")
-     return cell
-     }*/
 }
 
 extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
@@ -137,8 +118,6 @@ extension ServiceSectionSingletonController : BEMCheckBoxDelegate {
         }
         
         print("CheckBox is \(checkBox.on)")
-        // Remove all the selected services since it is singleton mode.
-        //vc.selectedServices!.removeAll()
         let cellCount = self.entry.serviceName.count
         
         for i in 0..<cellCount {

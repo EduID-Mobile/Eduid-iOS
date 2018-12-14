@@ -6,7 +6,6 @@
 //  Copyright © 2018 Blended Learning Center. All rights reserved.
 //
 
-//import Foundation
 import UIKit
 
 //Extension to make a circle UIImage
@@ -42,6 +41,7 @@ extension UIImage {
     
 }
 
+//Helper function to get the height of an nsstring
 extension NSString{
     
     func height(withConstrainedWidth width: CGFloat, font : UIFont) -> CGFloat {
@@ -53,6 +53,7 @@ extension NSString{
     
 }
 
+//Simple method to convert possible boolean string into real boolean value
 extension String {
     
     func toBool() -> Bool? {

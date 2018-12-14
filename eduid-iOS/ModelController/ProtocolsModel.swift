@@ -33,7 +33,7 @@ class ProtocolsModel : NSObject {
     private var apisLink : [String]?
     
     
-    //boolean to check the download status, could be attached with a listener
+    //Boolean to check the download status, could be attached with a listener
     var downloadSuccess : BoxBinding<Bool?> = BoxBinding(nil)
     
     init(singleton : Bool) {
@@ -49,7 +49,7 @@ class ProtocolsModel : NSObject {
         print("ProtocolsModel is being deinitialized")
     }
     
-    //main function to fetch the service data from a specific URI adress
+    //Main function to fetch the service data from a specific URI adress
     func fetchProtocols ( address : URL , protocolList : [String]){
         self.protocolList = protocolList
         
@@ -71,7 +71,7 @@ class ProtocolsModel : NSObject {
         dataTask.resume()
     }
     
-    //extract the json response and assign them into the object variables
+    //Extract the json response and assign them into the object variables
     private func extractJson(){
         
         if self.rsdResponse == nil {
@@ -93,11 +93,12 @@ class ProtocolsModel : NSObject {
         }
     }
     
-    //return the number of the available services for the specific protocol, used to generate the cells number for the view
+    //Return the number of the available services for the specific protocol, used to generate the cells number for the view
     func getCount() -> Int{
         return (self.engineName?.count) ?? 0
     }
     
+    //Getter function for retrieving apis link from a specific service
     func getApisLink(serviceName: String)-> URL?{
         if engineName == nil{
             return nil
@@ -108,6 +109,7 @@ class ProtocolsModel : NSObject {
         return URL(string: strUrl)
     }
     
+    //Getter function for retrieving homepage link from a specific service
     func getHomepageLink(serviceName: String) -> String?{
         if engineName == nil{
             return nil
@@ -116,6 +118,7 @@ class ProtocolsModel : NSObject {
         return self.homePageLink?[index!]
     }
     
+    //Getter function for retrieving apis link from a specific service with entry number
     private func getApislink(entryNumber : Int) -> URL? {
         
         let strurl = getHomepageLink(entryNumber: entryNumber)! + self.apisLink![entryNumber]
@@ -124,15 +127,21 @@ class ProtocolsModel : NSObject {
         return resultUrl
     }
     
+    //Getter function for retrieving homepage link from a specific service with entry number
     private func getHomepageLink(entryNumber : Int) -> String? {
         return self.homePageLink?[entryNumber] ?? nil
     }
     
+    //Getter function for retrieving service name with entry number as parameter
     func getEngines(entryNumber : Int) -> String? {
         
         return self.engineName?[entryNumber] ?? nil
     }
-    
+    /**
+     Insert the incoming authorization data to the RSD packet dictionary, and filter it
+     - parameter authorization: Authorization data response from resource provider
+     - returns: JSON data format, this will be sent to the main host app of this extension
+     */
     func applyAuthorization( authorization: [String:Any] ) -> Data? {
         var arrayTmp : [Any] = [Any]()
         
@@ -149,12 +158,8 @@ class ProtocolsModel : NSObject {
                     discoveredTmp["authorization"] = authorization[serviceName]
                     
                     arrayTmp.append(discoveredTmp)
-                } /*else {
-                    arrayTmp.append(discoveredService)
-                }*/
-                
+                }
             }
-            
         }
         
         print("COMPLETED RSD : " , arrayTmp)
@@ -168,6 +173,7 @@ class ProtocolsModel : NSObject {
         }
     }
     
+    //Take out the unused api from the RSD json dictionary
     func apisFiltern(completedRSD : [Any]) -> [Any]{
         print("BEFORE FILTER ::  ", completedRSD)
         let protocols  = self.protocolList!
@@ -195,9 +201,7 @@ class ProtocolsModel : NSObject {
                         print("FOUND : \(protocolTmp)")
                         filteredApis[api] = apis[api]
                     }
-                    
                 }
-            
             }
             
             filteredRSD["apis"] = filteredApis
@@ -205,7 +209,6 @@ class ProtocolsModel : NSObject {
         }
         print("AFTER FILTER :: " , result)
         return result
-        
     }
     
     

@@ -69,6 +69,7 @@ class EduidConfigModel : NSObject {
         if indexHelper.count <= 0{
             return
         }
+        
         for i in indexHelper{
             
             do {

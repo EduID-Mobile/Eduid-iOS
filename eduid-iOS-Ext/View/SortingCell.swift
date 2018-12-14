@@ -8,9 +8,8 @@
 
 import UIKit
 
+//Sorting Cell, currently without sorting function, since it is still not deciced with data that app will get to sort the protocols (ex. Institution information)
 class SortingCell: UICollectionViewCell {
-    
-
     @IBOutlet weak var noneFilterButton: RoundCornerButton!
     
     @IBOutlet weak var servicesFilterButton: RoundCornerButton!

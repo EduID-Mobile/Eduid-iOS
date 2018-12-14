@@ -8,7 +8,7 @@
 
 import UIKit
 import BEMCheckBox
-
+//Identical with Service Cell
 class ServiceSingleTonCell: UICollectionViewCell {
 
     @IBOutlet weak var serviceLabel: UILabel!

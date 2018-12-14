@@ -18,7 +18,6 @@ final class ProfileSectionController : ListSectionController {
     init(entry : ProfileEntry) {
         super.init()
         self.entry = entry
-//        inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     

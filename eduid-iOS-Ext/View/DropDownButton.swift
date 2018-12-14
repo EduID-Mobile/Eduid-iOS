@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//Currently not used
+
 protocol DropDownProtocol{
     func dropDownPressed(string: String)
 }

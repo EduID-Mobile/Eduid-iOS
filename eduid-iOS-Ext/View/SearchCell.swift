@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Search bar view UI Component for the protocols search
 final class SearchCell: UICollectionViewCell, UISearchBarDelegate {
     
     lazy var searchBar : UISearchBar = {
@@ -22,13 +22,11 @@ final class SearchCell: UICollectionViewCell, UISearchBarDelegate {
         //searchBar.
         searchBar.placeholder = NSLocalizedString("Search", comment: "Search placeholder for search bar.")
         searchBar.backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 0.82)
-//        searchBar.scopeBarBackgroundImage = UIImage.imageWithColor(color: .black)
         searchBar.searchBarStyle = .minimal
         searchBar.barStyle = .default
         let gesture = UISwipeGestureRecognizer(target: self, action: #selector(gestureSwipedDown(_:)))
         gesture.direction = .down
         self.superview?.addGestureRecognizer(gesture)
-//        self.backgroundColor = .black //UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.8)
     }
     
     @IBAction func gestureSwipedDown(_ sender: UISwipeGestureRecognizer){

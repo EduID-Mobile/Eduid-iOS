@@ -21,9 +21,6 @@ class SortSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
-        //guard let cell = collectionContext?.dequeueReusableCellFromStoryboard(withIdentifier: "SortingCell", for: self, at: index) as? SortingCell else {
-        //    fatalError()
-        //}
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: "SortingCell", bundle: nil, for: self, at: index) as? SortingCell else {
             fatalError()
         }

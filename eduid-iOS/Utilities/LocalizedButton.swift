@@ -6,7 +6,7 @@
 //  Copyright © 2018 Blended Learning Center. All rights reserved.
 //
 import UIKit
-
+//Localized Button a helper class to help the language support of UI Button
 class LocalizedButton : UIButton {
     
     override func awakeFromNib() {

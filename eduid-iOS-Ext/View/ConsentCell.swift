@@ -9,23 +9,13 @@
 import UIKit
 import BEMCheckBox
 
+//Consent Cell that will pop out for every service selected
 class ConsentCell : ServiceSingleTonCell {
     
     @IBOutlet weak var consentLabel: UILabel!
     //@IBOutlet weak var serviceLabel: UILabel!
     //@IBOutlet weak var switchButton: BEMCheckBox!
     @IBOutlet weak var iconImageView: UIImageView!
-    
-    /*
-    private var service : String?{
-        get{
-            return serviceLabel.text
-        }
-        set {
-            serviceLabel.text = newValue
-        }
-    }
- */
     
     override func awakeFromNib() {
         let frame = CGRect(x: self.frame.origin.x, y: consentLabel.frame.origin.y, width: self.frame.size.width - 40, height: consentLabel.frame.size.height)

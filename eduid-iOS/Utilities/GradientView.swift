@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+//UI View with gradient background color
 final class GradientView : UIView {
     
     @IBInspectable var startColor: UIColor = UIColor.clear
